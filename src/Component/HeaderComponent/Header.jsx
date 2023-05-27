@@ -1,6 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 
 function Header() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const handleClick = (e) => {
+        setMobileMenuOpen(!mobileMenuOpen)
+    }
     return (
         <div>
             <header className="bg-white">
@@ -27,8 +32,9 @@ function Header() {
                         <div className="relative">
                             <button type="button"
                                     className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
-                                    aria-expanded="false">
-                                Product
+                                    aria-expanded="false"
+                                    onClick={(e) => handleClick(true)}>
+                                Vòng tay trầm hương
                                 <svg className="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor"
                                      aria-hidden="true">
                                     <path fill-rule="evenodd"
@@ -38,7 +44,9 @@ function Header() {
                             </button>
 
                             <div
-                                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                                className={!mobileMenuOpen ? "absolute -left-8 top-full z-10 hidden mt-3 w-screen max-w-md overflow-hidden " +
+                                    "rounded-3 bg-white shadow-lg ring-1 ring-gray-900/5" : "absolute -left-8 top-full z-10" +
+                                    "  mt-3 w-screen max-w-md overflow-hidden rounded-3x bg-white shadow-lg ring-1 ring-gray-900/5"}>
                                 <div className="p-4">
                                     <div
                                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
@@ -175,15 +183,15 @@ function Header() {
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Company</a>
                     </div>
-                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Log in <span
-                            aria-hidden="true">&rarr;</span></a>
+                    <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-10">
+                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Log in</a>
+                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Sign up</a>
                     </div>
                 </nav>
 
                 {/*Mobile menu, show/hide based on menu open state. */}
                 <div className="lg:hidden" role="dialog" aria-modal="true">
-                     {/*Background backdrop, show/hide based on slide-over state. */}
+                    {/*Background backdrop, show/hide based on slide-over state. */}
                     <div className="fixed inset-0 z-10"></div>
                     <div
                         className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -207,8 +215,9 @@ function Header() {
                                     <div className="-mx-3">
                                         <button type="button"
                                                 className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                aria-controls="disclosure-1" aria-expanded="false">
-                                            Product
+                                                aria-controls="disclosure-1" aria-expanded="false"
+                                                onClick={(e) => handleClick(true)}>
+                                            Vòng tay trầm hương
 
                                             <svg className="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor"
                                                  aria-hidden="true">
@@ -217,7 +226,8 @@ function Header() {
                                                       clip-rule="evenodd"/>
                                             </svg>
                                         </button>
-                                        <div className="mt-2 space-y-2" id="disclosure-1">
+                                        <div className={!mobileMenuOpen ? "hidden mt-2 space-y-2" : "mt-2 space-y-2"}
+                                             id="disclosure-1">
                                             <a href="#"
                                                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Analytics</a>
                                             <a href="#"
@@ -255,7 +265,7 @@ function Header() {
             </header>
 
         </div>
-)
+    )
 }
 
 export default Header

@@ -1,5 +1,6 @@
 import HomePage from "../page/HomePage/Homepage";
 import Login from "../page/Login/Login";
+import SignUp from "../page/SignUp/SignUp";
 
 export const router = [
     {
@@ -10,6 +11,11 @@ export const router = [
     {
         path: '/login',
         page: Login,
+        isShowHeader: true
+    },
+    {
+        path: '/signup',
+        page: SignUp,
         isShowHeader: true
     },
    

@@ -47,11 +47,11 @@ function Header() {
                                 className={!mobileMenuOpen ? "absolute -left-8 top-full z-10 hidden mt-3 w-screen max-w-md overflow-hidden " +
                                     "rounded-3 bg-white shadow-lg ring-1 ring-gray-900/5" : "absolute -left-8 top-full z-10" +
                                     "  mt-3 w-screen max-w-md overflow-hidden rounded-3x bg-white shadow-lg ring-1 ring-gray-900/5"}>
-                                <div className="p-4">
+                                <div className="p-4 bg-[#101628]">
                                     <div
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#fab55a]">
                                         <div
-                                            className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                            className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-[#fab55a]">
                                             <svg className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
                                                  fill="none"
                                                  viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -72,7 +72,7 @@ function Header() {
                                         </div>
                                     </div>
                                     <div
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#fab55a]">
                                         <div
                                             className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                             <svg className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -92,7 +92,7 @@ function Header() {
                                         </div>
                                     </div>
                                     <div
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#fab55a]">
                                         <div
                                             className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                             <svg className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -113,7 +113,7 @@ function Header() {
                                         </div>
                                     </div>
                                     <div
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#fab55a]">
                                         <div
                                             className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                             <svg className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -133,7 +133,7 @@ function Header() {
                                         </div>
                                     </div>
                                     <div
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-[#fab55a]">
                                         <div
                                             className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                             <svg className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -214,7 +214,7 @@ function Header() {
                                 <div className="space-y-2 py-6">
                                     <div className="-mx-3">
                                         <button type="button"
-                                                className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                                                className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a]"
                                                 aria-controls="disclosure-1" aria-expanded="false"
                                                 onClick={(e) => handleClick(true)}>
                                             Vòng tay trầm hương
@@ -229,33 +229,33 @@ function Header() {
                                         <div className={!mobileMenuOpen ? "hidden mt-2 space-y-2" : "mt-2 space-y-2"}
                                              id="disclosure-1">
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Analytics</a>
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Analytics</a>
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Engagement</a>
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Engagement</a>
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Security</a>
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Security</a>
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Integrations</a>
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Integrations</a>
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Automations</a>
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Automations</a>
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Watch
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Watch
                                                 demo</a>
                                             <a href="#"
-                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50">Contact
+                                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a]">Contact
                                                 sales</a>
                                         </div>
                                     </div>
                                     <a href="#"
-                                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50">Features</a>
+                                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-[#fab55a]">Features</a>
                                     <a href="#"
-                                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50">Marketplace</a>
+                                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-[#fab55a]">Marketplace</a>
                                     <a href="#"
-                                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50">Company</a>
+                                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-[#fab55a]">Company</a>
                                 </div>
                                 <div className="py-6">
                                     <a href="#"
-                                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50">Log
+                                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a]">Log
                                         in</a>
                                 </div>
                             </div>

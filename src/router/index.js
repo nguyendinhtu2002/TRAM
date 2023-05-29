@@ -3,6 +3,7 @@ import Login from "../page/Login/Login";
 import SignUp from "../page/SignUp/SignUp";
 import Cart from "../page/Cart/Cart";
 import Account from "../page/Account/Account";
+import Wishlist from "../page/Wishlist/Wishlist";
 
 export const router = [
     {
@@ -28,6 +29,11 @@ export const router = [
     {
         path: '/account',
         page: Account,
+        isShowHeader: true
+    },
+    {
+        path: '/wishlist',
+        page: Wishlist,
         isShowHeader: true
     },
    

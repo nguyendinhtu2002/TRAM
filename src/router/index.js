@@ -2,6 +2,7 @@ import HomePage from "../page/HomePage/Homepage";
 import Login from "../page/Login/Login";
 import SignUp from "../page/SignUp/SignUp";
 import Cart from "../page/Cart/Cart";
+import Account from "../page/Account/Account";
 
 export const router = [
     {
@@ -22,6 +23,11 @@ export const router = [
     {
         path: '/cart',
         page: Cart,
+        isShowHeader: true
+    },
+    {
+        path: '/account',
+        page: Account,
         isShowHeader: true
     },
    

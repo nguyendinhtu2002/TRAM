@@ -29,7 +29,8 @@ export const router = [
     {
         path: '/account',
         page: Account,
-        isShowHeader: true
+        isShowHeader: true,
+        isProtected:true
     },
     {
         path: '/wishlist',

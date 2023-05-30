@@ -4,7 +4,7 @@ const initialState = {
   id: "",
   name: "",
   lastName: "",
-  email: "",
+  firstName: "",
   sex: "",
   address: [],
   wishList: [],

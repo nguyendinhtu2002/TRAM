@@ -4,6 +4,7 @@ import SignUp from "../page/SignUp/SignUp";
 import Cart from "../page/Cart/Cart";
 import Account from "../page/Account/Account";
 import Wishlist from "../page/Wishlist/Wishlist";
+import Test from "../page/Test/Test";
 
 export const router = [
     {
@@ -35,6 +36,11 @@ export const router = [
     {
         path: '/wishlist',
         page: Wishlist,
+        isShowHeader: true
+    },
+    {
+        path: '/abc',
+        page: Test,
         isShowHeader: true
     },
    

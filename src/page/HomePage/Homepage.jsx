@@ -131,12 +131,37 @@ function Homepage() {
     const settingsProducts = {
         dots: true,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        speed: 400,
-        cssEase: "linear",
+        speed: 300,
         nextArrow: <NextArrow/>,
         prevArrow: <PrevArrow/>,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+
+        ]
 
     };
     return (
@@ -182,7 +207,7 @@ function Homepage() {
                 <div className="mb-3  py-3">
                     <Slider {...settingsSales} style={{}}>
                         <div>
-                            <div className="flex justify-center gap-4 ">
+                            <div className="flex justify-center gap-4">
 
                                 <div
                                     className="rounded-lg bg-[#192034] w-[22%]">
@@ -590,18 +615,18 @@ function Homepage() {
 
 
             {/*Start Product*/}
-            <div className="w-4/5 mx-auto rounded-2xl py-5 flex justify-around">
-                <div className="w-[25%] ">
+            <div className="w-4/5 mx-auto rounded-2xl py-5 md:flex">
+                <div className="w-[25%] lg:w-[30%] hidden lg:block">
                     <div className="">
                         <img className="rounded-2xl "
                              src="https:thienmochuong.com/wp-content/uploads/2022/06/banner-tram-huong-dot.jpg"
                              alt=""/>
                     </div>
                 </div>
-                <div className="rounded-2xl w-[70%] bg-[#0C1327] py-3 ">
-                    <div className="m-3 px-2 flex justify-between ">
-                        <h3 className="text-white capitalize font-bold text-3xl">Trầm Hương Đốt</h3>
-                        <a href="" className="text-white flex items-center hover:opacity-90">Xem tất cả <svg
+                <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] py-3 ">
+                    <div className="m-3 px-2 flex justify-between">
+                        <h3 className="text-white capitalize font-bold lg:text-3xl sm:text-xl">Trầm Hương Đốt</h3>
+                        <a href="" className="text-white flex items-center md:text-sm hover:opacity-90">Xem tất cả <svg
                             aria-hidden="true"
                             className="w-4 h-4 ml-2 -mr-1"
                             fill="currentColor"
@@ -615,305 +640,219 @@ function Homepage() {
                     <div className="py-3">
                         <Slider {...settingsProducts} >
                             <div>
-                                <div className="flex justify-center gap-4 ">
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
-
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                <div
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    <a href="#">
+                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                             alt=""/>
+                                    </a>
+                                    <div className="py-5 px-3 max-w-sm">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
 
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
                                         </div>
-                                    </div>
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
-
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <div className="flex justify-center gap-4 ">
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
-
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                <div
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    <a href="#">
+                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                             alt=""/>
+                                    </a>
+                                    <div className="py-5 px-3 max-w-sm">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
 
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
                                         </div>
-                                    </div>
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
-
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <div className="flex justify-center gap-4 ">
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
-
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                <div
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    <a href="#">
+                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                             alt=""/>
+                                    </a>
+                                    <div className="py-5 px-3 max-w-sm">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
 
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
                                         </div>
-                                    </div>
-                                    <div
-                                        className="rounded-lg bg-[#192034] w-[28%]">
-                                        <a href="#">
-                                            <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0" alt=""/>
-                                        </a>
-                                        <div className="py-5 px-3 max-w-sm">
-                                            <div>
-                                                <a href="#" className="text-center">
-                                                    <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư đốt
-                                                        trầm hương hoa sen bằng sứ </h5>
-                                                </a>
-                                            </div>
-
-                                            <div className="flex justify-center gap-2">
-                                                <p className="text-white text-center font-bold overflow-wrap">1.590.000 đ</p>
-                                                <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                    đ</p>
-                                            </div>
-                                            <div className="flex justify-center mt-2 items-center gap-3">
-                                                <Rating
-                                                    name="no-value"
-                                                    value={value}
-                                                    emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-
-                                                    onChange={(event, newValue) => {
-                                                        setValue(newValue);
-                                                    }}
-                                                />
-                                                <p className="text-sm text-gray-500">0 đánh giá</p>
-                                            </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div>
+                                <div
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    <a href="#">
+                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                             alt=""/>
+                                    </a>
+                                    <div className="py-5 px-3 max-w-sm">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
+                                        </div>
+
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
+                                        </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    <a href="#">
+                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                             alt=""/>
+                                    </a>
+                                    <div className="py-5 px-3 max-w-sm">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
+                                        </div>
+
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
+                                        </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    <a href="#">
+                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                             alt=""/>
+                                    </a>
+                                    <div className="py-5 px-3 max-w-sm">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
+                                        </div>
+
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
+                                        </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
 
                         </Slider>
                     </div>

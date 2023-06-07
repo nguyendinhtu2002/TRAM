@@ -11,6 +11,8 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
+import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
+
 import  FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
@@ -133,6 +135,43 @@ function Test() {
 
     };
 
+    const settingsCategories = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        speed: 300,
+        nextArrow: <NextArrow/>,
+        prevArrow: <PrevArrow/>,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+
+        ]
+
+    };
+
     const ImageItem=()=>{
         const [isHover, setHover] = useState(null);
         const [isHoverIcon, setHoverIcon] = useState(null);
@@ -161,6 +200,56 @@ function Test() {
     };
     return (
         <>
+
+            {/*Start List Category*/}
+            <div className="w-5/6 mx-auto bg-black">
+                <Slider {...settingsCategories}>
+                    <div className="">
+                        <a href="">
+                            <img className="rounded-full w-[40%] mx-auto mb-1" src={vong_tay} alt="Vòng tay trầm hương"/>
+                            <div ><p className="text-white text-center font-bold capitalize">Vòng tay trầm hương</p></div>
+                        </a>
+                    </div>
+
+                    <div className="">
+                        <a href="">
+                            <img className="rounded-full w-[40%] mx-auto mb-1" src={vong_tay} alt="Vòng tay trầm hương"/>
+                            <div ><p className="text-white text-center font-bold capitalize">Vòng tay trầm hương</p></div>
+                        </a>
+                    </div>
+
+                    <div className="">
+                        <a href="">
+                            <img className="rounded-full w-[40%] mx-auto mb-1" src={vong_tay} alt="Vòng tay trầm hương"/>
+                            <div ><p className="text-white text-center font-bold capitalize">Vòng tay trầm hương</p></div>
+                        </a>
+                    </div>
+
+                    <div className="">
+                        <a href="">
+                            <img className="rounded-full w-[40%] mx-auto mb-1" src={vong_tay} alt="Vòng tay trầm hương"/>
+                            <div ><p className="text-white text-center font-bold capitalize">Vòng tay trầm hương</p></div>
+                        </a>
+                    </div>
+
+                    <div className="">
+                        <a href="">
+                            <img className="rounded-full w-[40%] mx-auto mb-1" src={vong_tay} alt="Vòng tay trầm hương"/>
+                            <div ><p className="text-white text-center font-bold capitalize">Vòng tay trầm hương</p></div>
+                        </a>
+                    </div>
+
+                    <div className="">
+                        <a href="">
+                            <img className="rounded-full w-[40%] mx-auto mb-1" src={vong_tay} alt="Vòng tay trầm hương"/>
+                            <div ><p className="text-white text-center font-bold capitalize">Vòng tay trầm hương</p></div>
+                        </a>
+                    </div>
+
+                </Slider>
+
+            </div>
+            {/*End List Category*/}
 
             {/*Start Sales*/}
             <div className="w-5/6 mx-auto rounded-2xl py-5 md:flex">

@@ -93,10 +93,10 @@ function PrevArrow(props) {
 
 function Test() {
     const [value, setValue] = useState(null);
-    const settingsProducts = {
+    const settingsSales = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         speed: 300,
         nextArrow: <NextArrow/>,
@@ -133,41 +133,17 @@ function Test() {
     return (
         <>
 
-            {/*Start Product*/}
-            <div className="w-4/5 mx-auto rounded-2xl py-5 md:flex">
-                <div className="w-[25%] lg:w-[30%] hidden lg:block">
-                    <div className="">
-                        <img className="rounded-2xl "
-                             src="https:thienmochuong.com/wp-content/uploads/2022/06/banner-tram-huong-dot.jpg"
-                             alt=""/>
-                    </div>
-                </div>
-
-                <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] px-2 py-3 space-y-10">
-                    <div className="mt-4 px-2 flex justify-between">
-                        <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">Trầm Hương Đốt</h3>
-                        <a href="" className="text-white flex items-center md:text-sm hover:opacity-90">Xem tất cả <svg
-                            aria-hidden="true"
-                            className="w-4 h-4 ml-2 -mr-1"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http:www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"></path>
-                        </svg></a>
-                    </div>
-                    <div className="hidden xl:flex xl:gap-3 xl:pl-2" >
-                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Nhang trầm hương</button>
-                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Nụ Trầm Hương</button>
-                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Trầm Hương Miếng</button>
-                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Bột Trầm Hương</button>
+            {/*Start Sales*/}
+            <div className="w-5/6 mx-auto rounded-2xl py-5 md:flex">
+                <div className="rounded-2xl mx-auto w-full bg-[#0C1327] px-2 py-3 space-y-10">
+                    <div className="mt-4 px-2 flex justify-center">
+                        <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">Sale up to 20% 🔥</h3>
                     </div>
                     <div className="py-3 h-[70%]">
-                        <Slider {...settingsProducts} >
+                        <Slider {...settingsSales} >
                             <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                                     <a href="#">
                                         <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
@@ -203,7 +179,7 @@ function Test() {
 
                             <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                                     <a href="#">
                                         <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
@@ -239,7 +215,7 @@ function Test() {
 
                             <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                                     <a href="#">
                                         <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
@@ -275,7 +251,7 @@ function Test() {
 
                             <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                                     <a href="#">
                                         <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
@@ -311,7 +287,7 @@ function Test() {
 
                             <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%] ">
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%] ">
                                     <a href="#">
                                         <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
@@ -347,7 +323,7 @@ function Test() {
 
                             <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                                     <a href="#">
                                         <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
@@ -391,7 +367,7 @@ function Test() {
                 </div>
 
             </div>
-            {/*    End Product*/}
+            {/*    End Sales*/}
 
         </>
 

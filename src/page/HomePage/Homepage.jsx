@@ -623,9 +623,10 @@ function Homepage() {
                              alt=""/>
                     </div>
                 </div>
-                <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] py-3 ">
-                    <div className="m-3 px-2 flex justify-between">
-                        <h3 className="text-white capitalize font-bold lg:text-3xl sm:text-xl">Trầm Hương Đốt</h3>
+
+                <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] px-2 py-3 space-y-10">
+                    <div className="mt-4 px-2 flex justify-between">
+                        <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">Trầm Hương Đốt</h3>
                         <a href="" className="text-white flex items-center md:text-sm hover:opacity-90">Xem tất cả <svg
                             aria-hidden="true"
                             className="w-4 h-4 ml-2 -mr-1"
@@ -637,16 +638,22 @@ function Homepage() {
                                   clip-rule="evenodd"></path>
                         </svg></a>
                     </div>
-                    <div className="py-3">
+                    <div className="hidden xl:flex xl:gap-3 xl:pl-2" >
+                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Nhang trầm hương</button>
+                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Nụ Trầm Hương</button>
+                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Trầm Hương Miếng</button>
+                        <button href="" className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 ">Bột Trầm Hương</button>
+                    </div>
+                    <div className="py-3 h-[70%]">
                         <Slider {...settingsProducts} >
-                            <div>
+                            <div className="">
                                 <div
                                     className="rounded-lg bg-[#101638] mx-auto w-[95%]">
                                     <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
                                     </a>
-                                    <div className="py-5 px-3 max-w-sm">
+                                    <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
                                                 <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
@@ -674,14 +681,15 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+
+                            <div className="">
                                 <div
                                     className="rounded-lg bg-[#101638] mx-auto w-[95%]">
                                     <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
                                     </a>
-                                    <div className="py-5 px-3 max-w-sm">
+                                    <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
                                                 <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
@@ -709,14 +717,15 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+
+                            <div className="">
                                 <div
                                     className="rounded-lg bg-[#101638] mx-auto w-[95%]">
                                     <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
                                     </a>
-                                    <div className="py-5 px-3 max-w-sm">
+                                    <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
                                                 <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
@@ -744,14 +753,15 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+
+                            <div className="">
                                 <div
                                     className="rounded-lg bg-[#101638] mx-auto w-[95%]">
                                     <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
                                     </a>
-                                    <div className="py-5 px-3 max-w-sm">
+                                    <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
                                                 <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
@@ -779,14 +789,15 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+
+                            <div className="">
                                 <div
-                                    className="rounded-lg bg-[#101638] mx-auto w-[95%]">
+                                    className="rounded-lg bg-[#101638] mx-auto w-[95%] ">
                                     <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
                                     </a>
-                                    <div className="py-5 px-3 max-w-sm">
+                                    <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
                                                 <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
@@ -814,14 +825,15 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+
+                            <div className="">
                                 <div
                                     className="rounded-lg bg-[#101638] mx-auto w-[95%]">
                                     <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill h-44 w-full m-0"
+                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
                                              alt=""/>
                                     </a>
-                                    <div className="py-5 px-3 max-w-sm">
+                                    <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
                                                 <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
@@ -849,6 +861,7 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
+
 
 
 

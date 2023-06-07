@@ -17,6 +17,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Rating from "@mui/material/Rating";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 
 
@@ -63,8 +65,8 @@ function PrevArrow(props) {
 
 
 function Homepage() {
-    const swiper = useSwiper();
     const [value, setValue] = useState(null);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -113,7 +115,6 @@ function Homepage() {
         ]
 
     };
-
     const settingsProducts = {
         dots: true,
         infinite: true,
@@ -149,6 +150,33 @@ function Homepage() {
 
         ]
 
+    };
+
+    const ImageItem=()=>{
+        const [isHover, setHover] = useState(null);
+        const [isHoverIcon, setHoverIcon] = useState(null);
+        return (
+            <div className="relative" onMouseEnter={() => setHover(true)}
+                 onMouseLeave={() => setHover(false)}>
+                <a href="#" className={isHover ? "hover:opacity-70" : ""}>
+                    <img src={image_1}
+                         className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
+                         alt=""/>
+                </a>
+                <div>
+                    <a href="" className={` ${isHover ? "opacity-100" : "opacity-0"
+                    } text-white hover:text-amber-500 absolute top-0 right-2`}
+                       onMouseEnter={() => setHoverIcon(true)}
+                       onMouseLeave={() => setHoverIcon(false)}>
+
+                        <div className={isHoverIcon?"hidden":"block"}><FavoriteBorderIcon></FavoriteBorderIcon>
+                        </div>
+                        <div className={isHoverIcon?"block":"hidden"}><FavoriteIcon></FavoriteIcon>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        );
     };
     return (
         <div className="bg-[#101608]">
@@ -186,10 +214,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -222,10 +247,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -258,10 +280,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -294,46 +313,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
-                                    <div className="py-5 px-3 max-w-md">
-                                        <div>
-                                            <a href="#" className="text-center">
-                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
-                                                    đốt trầm hương hoa sen bằng sứ </h5>
-                                            </a>
-                                        </div>
-
-                                        <div className="flex justify-center gap-2">
-                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
-                                                đ</p>
-                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
-                                                đ</p>
-                                        </div>
-                                        <div className="flex justify-center mt-2 items-center gap-3">
-                                            <Rating
-                                                name="no-value"
-                                                value={value}
-                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
-                                                onChange={(event, newValue) => {
-                                                    setValue(newValue);
-                                                }}
-                                            />
-                                            <p className="text-sm text-gray-500">0 đánh giá</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="">
-                                <div
-                                    className="rounded-lg bg-[#192034] mx-auto w-[95%] ">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -366,10 +346,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -399,10 +376,38 @@ function Homepage() {
                                 </div>
                             </div>
 
+                            <div className="">
+                                <div
+                                    className="rounded-lg bg-[#192034] mx-auto w-[95%]">
+                                    <ImageItem></ImageItem>
+                                    <div className="py-5 px-3 max-w-md">
+                                        <div>
+                                            <a href="#" className="text-center">
+                                                <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">Lư
+                                                    đốt trầm hương hoa sen bằng sứ </h5>
+                                            </a>
+                                        </div>
 
-
-
-
+                                        <div className="flex justify-center gap-2">
+                                            <p className="text-white text-center font-bold overflow-wrap">1.590.000
+                                                đ</p>
+                                            <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">1.990.000
+                                                đ</p>
+                                        </div>
+                                        <div className="flex justify-center mt-2 items-center gap-3">
+                                            <Rating
+                                                name="no-value"
+                                                value={value}
+                                                emptyIcon={<StarOutlineIcon style={{color: 'yellow'}}/>}
+                                                onChange={(event, newValue) => {
+                                                    setValue(newValue);
+                                                }}
+                                            />
+                                            <p className="text-sm text-gray-500">0 đánh giá</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </Slider>
                     </div>
@@ -447,10 +452,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                   <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -483,10 +485,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -519,10 +518,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -555,10 +551,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -591,10 +584,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%] ">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">
@@ -627,10 +617,7 @@ function Homepage() {
                             <div className="">
                                 <div
                                     className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                                    <a href="#">
-                                        <img src={image_1} className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
-                                             alt=""/>
-                                    </a>
+                                    <ImageItem></ImageItem>
                                     <div className="py-5 px-3 max-w-md">
                                         <div>
                                             <a href="#" className="text-center">

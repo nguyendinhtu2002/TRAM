@@ -2,4 +2,5 @@ Giao diện:
     Details
     Liên hệ
     Chatbox
-    HomePage: reponsive, hover
+    HomePage: đánh giá
+    Trang phân loại

@@ -3,6 +3,7 @@ import HeaderComponent from "../../Component/HeaderComponent/Header"
 import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
 
 import Rating from "@mui/material/Rating";
+import StarOutlineIcon from "@mui/icons-material/StarOutline";
 
 function Detail() {
     const DetailsItem = () => {
@@ -57,12 +58,11 @@ function Detail() {
         </>);
     }
 
-    const CommentItem=()=>{
-        const [reply,setReply]=useState(null)
-        return (
-            <>
+    const CommentItem = () => {
+        const [reply, setReply] = useState(null)
+        return (<>
                 <div className="flex items-center mt-4 space-x-4">
-                    <button onClick={()=>setReply(true)}
+                    <button onClick={() => setReply(true)}
                             className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
                         <svg aria-hidden="true" className="mr-1 w-4 h-4" fill="none" stroke="currentColor"
                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -72,9 +72,12 @@ function Detail() {
                         Phản hồi
                     </button>
                 </div>
-                <div className={reply?"block":"hidden"}>
+                <div className={reply ? "block" : "hidden"}>
                     <div className="relative py-3">
-                        <button className="absolute top-0 right-0 z-10 px-3 py-1 rounded-md bg-orange-500 text-white hover:bg-orange-600" onClick={()=>setReply(false)}>X</button>
+                        <button
+                            className="absolute top-0 right-0 z-10 px-3 py-1 rounded-md bg-orange-500 text-white hover:bg-orange-600"
+                            onClick={() => setReply(false)}>X
+                        </button>
                     </div>
                     <form className=" mt-3">
                         <div
@@ -85,7 +88,7 @@ function Detail() {
                                       placeholder="Bình luận..." required></textarea>
                         </div>
                         <button className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-red-700
-                            rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                            rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-red-800">
                             Bình luận
                         </button>
                     </form>
@@ -95,6 +98,10 @@ function Detail() {
 
         );
     }
+
+    const [showModal, setShowModal] = React.useState(false);
+    const [value, setValue] = useState(null);
+
 
     return (<>
         <HeaderComponent></HeaderComponent>
@@ -199,6 +206,7 @@ function Detail() {
         {/*end describe*/}
 
 
+        {/*<RatingModal></RatingModal>*/}
         {/*start rating*/}
         <section className="text-gray-700 body-font overflow-hidden bg-white">
             <div className="container px-5 py-12 mx-auto">
@@ -320,17 +328,87 @@ function Detail() {
                     </div>
 
                     <div className="mx-auto p-5">
-                        <a className=" p-5 rounded-xl bg-amber-500" href="">Đánh giá ngay</a>
+                        <button onClick={() => setShowModal(true)}
+                                className="p-5 rounded-xl bg-amber-500 hover:bg-amber-600" href="">Đánh giá ngay
+                        </button>
                     </div>
+
+
                 </div>
                 {/*        <!-- End Detailed Basic --> */}
-
-
             </div>
-
         </section>
         {/*end rating*/}
 
+        {showModal ? (
+            <>
+                <div
+                    className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                >
+                    <div className="relative w-auto my-6 mx-auto xl:w-[40%] lg:w-[60%] w-full">
+                        {/*content*/}
+                        <div
+                            className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            {/*header*/}
+                            <div
+                                className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                <h3 className="text-3xl font-semibold">
+                                    Đánh giá
+                                </h3>
+                                <button
+                                    className="p-1 ml-auto border-0 text-black float-right text-3xl leading-none font-semibold "
+                                    onClick={() => setShowModal(false)}
+                                >
+
+                    <span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                    </span>
+                                </button>
+                            </div>
+                            {/*body*/}
+                            <div className="relative p-6 flex-auto">
+                                <form className="mb-6 ">
+                                    <div
+                                        className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                                        <label htmlFor="comment" className="sr-only">Your comment</label>
+                                        <textarea id="comment" rows="4"
+                                                  className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                                                  placeholder="Bình luận..." required></textarea>
+                                    </div>
+                                    <div className="flex gap-3">
+                                        <h4 className="text-xl font-semibold">
+                                            Bạn cảm thấy thế nào về sản phẩm
+                                        </h4>
+                                        <Rating
+                                            name="no-value"
+                                            value={value}
+                                            size="large"
+                                            onChange={(event, newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="mx-auto">
+                                        <button
+                                            className="mt-4 bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:bg-emerald-700 outline-none focus:outline-none ease-linear transition-all duration-150"
+                                            onClick={() => setShowModal(false)}
+                                        >
+                                            Gửi đánh giá
+                                        </button>
+                                    </div>
+
+
+                                </form>
+
+                            </div>
+                            {/*footer*/}
+
+                        </div>
+                    </div>
+                </div>
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            </>
+        ) : null}
         {/*    start comment*/}
         <section className="bg-white dark:bg-gray-900 py-8 lg:py-16">
             <div className="max-w-4xl mx-auto px-4">
@@ -341,12 +419,12 @@ function Detail() {
                     <div
                         className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                         <label htmlFor="comment" className="sr-only">Your comment</label>
-                        <textarea id="comment" rows="6"
+                        <textarea id="comment" rows="4"
                                   className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                                   placeholder="Bình luận..." required></textarea>
                     </div>
                     <button className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-red-700
-                            rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                            rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-red-800">
                         Bình luận
                     </button>
                 </form>
@@ -389,7 +467,8 @@ function Detail() {
                                 </li>
                                 <li>
                                     <a href="#"
-                                       className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Báo cáo</a>
+                                       className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Báo
+                                        cáo</a>
                                 </li>
                             </ul>
                         </div>
@@ -439,7 +518,8 @@ function Detail() {
                                 </li>
                                 <li>
                                     <a href="#"
-                                       className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Báo cáo</a>
+                                       className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Báo
+                                        cáo</a>
                                 </li>
                             </ul>
                         </div>
@@ -487,7 +567,8 @@ function Detail() {
                                 </li>
                                 <li>
                                     <a href="#"
-                                       className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Báo cáo</a>
+                                       className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Báo
+                                        cáo</a>
                                 </li>
                             </ul>
                         </div>

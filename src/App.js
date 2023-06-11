@@ -14,6 +14,7 @@ import Cart from "./page/Cart/Cart";
 import PrivateRoutes from "./ProtectRouter";
 import Homepage from "./page/HomePage/Homepage";
 import Detail from "./page/Detail/Detail";
+import Contact from "./page/Contact/Contact";
 import Test from "./page/Test/Test";
 import { useDispatch } from "react-redux";
 import { isJsonString } from "./utils";
@@ -81,6 +82,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Route>
         <Route path="/detail" element={<Detail/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/test" element={<Test/>}></Route>
       </Routes>
     </BrowserRouter>

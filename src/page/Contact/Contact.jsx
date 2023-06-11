@@ -8,8 +8,8 @@ function Contact() {
             <HeaderComponent/>
 
             <section className="bg-white dark:bg-gray-900">
-                <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                    <h1 className="mb-4 py-3 text-4xl text-start border-b-2 tracking-tight font-extrabold text-center dark:text-white">Hệ thống cửa hàng</h1>
+                <div className="py-8 mx-auto w-3/4 pl-4 ">
+                    <h1 className="mb-4 py-3 text-4xl text-start capitalize border-b-2 tracking-tight font-extrabold text-center dark:text-white">Hệ thống cửa hàng</h1>
                     <div className="flex">
                         <RoomIcon
                             fontSize={"large"}
@@ -19,6 +19,20 @@ function Contact() {
                             <p className="font-medium tracking-tight">ABC Phố XYZ, Q. Thanh Xuân, Hà Nội</p>
                             <p className="font-medium tracking-tight">Giờ mở cửa: ( 8h00 am – 22h00 pm )</p>
                             <p className="font-medium tracking-tight">Hotline: <span className="text-amber-500">0123456789</span></p>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="pb-8 mx-auto w-3/4 pl-4 ">
+                    <h1 className="mb-4 py-3 text-4xl capitalize text-start border-b-2 tracking-tight font-extrabold text-center dark:text-white">Hệ thống Chi Nhánh</h1>
+                    <div className="flex">
+                        <RoomIcon
+                            fontSize={"large"}
+                            className="text-amber-400 mt-1"></RoomIcon>
+                        <div>
+                            <h2 className="text-2xl font-bold text-amber-400">Chi nhánh Hà Nội</h2>
+                            <p className="font-medium tracking-tight">ABC Phố XYZ, Q. Thanh Xuân, Hà Nội</p>
+
                         </div>
 
                     </div>

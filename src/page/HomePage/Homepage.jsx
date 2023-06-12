@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Navigation, Pagination, Autoplay, Mousewheel} from 'swiper';
-import {useSwiper} from 'swiper/react';
-
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
 import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
 import HeaderComponent from "../../Component/HeaderComponent/Header"
-import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -222,15 +218,15 @@ function Homepage() {
                 <div className="mb-3">
                     <Slider {...settings} style={{}}>
                         <a href="#">
-                            <img src={image_1} className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
+                            <img src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg" className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
                                  alt=""/>
                         </a>
                         <a href="#">
-                            <img src={image_2} className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
+                            <img src="https://thienmochuong.com/wp-content/uploads/2022/12/banner-web_ban-mac-dinh.jpg" className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                                  alt=""/>
                         </a>
                         <a href="#">
-                            <img src={image_3} className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
+                            <img src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg" className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                                  alt=""/>
                         </a>
 

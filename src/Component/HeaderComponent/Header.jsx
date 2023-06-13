@@ -12,6 +12,7 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import {ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
+import {useSelector} from "react-redux";
 
 const products = [
     {name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon},
@@ -31,7 +32,8 @@ function classNames(...classes) {
 
 function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+    const userLogin = useSelector((state)=>state.user)
+    console.log(userLogin)
     return (
         <header className="bg-[#101628]">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">

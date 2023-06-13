@@ -15,6 +15,7 @@ import PrivateRoutes from "./ProtectRouter";
 import Homepage from "./page/HomePage/Homepage";
 import Detail from "./page/Detail/Detail";
 import Contact from "./page/Contact/Contact";
+import ProductCategory from "./page/ProductCategory/ProductCategory";
 import Test from "./page/Test/Test";
 import { useDispatch } from "react-redux";
 import { isJsonString } from "./utils";
@@ -78,11 +79,12 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/account" element={<Account />} />
-          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
         </Route>
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/detail" element={<Detail/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/productCategory" element= {<ProductCategory/>} />
         <Route path="/test" element={<Test/>}></Route>
       </Routes>
     </BrowserRouter>

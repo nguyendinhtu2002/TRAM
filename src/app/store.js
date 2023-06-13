@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import userReducers from '../features/userSlide/userSlide'
+import quantityReducers from '../features/quantitySlide/quantitySlide'
 
 import {
   persistStore,
@@ -21,6 +22,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     user: userReducers,
+    quantity: quantityReducers,
 
 });
 

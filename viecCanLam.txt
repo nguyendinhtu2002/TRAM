@@ -1,6 +1,5 @@
 Giao diện:
-    Details
-    Liên hệ
-    Chatbox
+    Details (slider)
     HomePage: đánh giá
-    Trang phân loại
+    ProductCategory
+    header (sửa khi đăng nhập thành công thì thay đổi)

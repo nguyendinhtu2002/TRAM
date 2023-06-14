@@ -24,21 +24,7 @@ import { updateUser } from "./features/userSlide/userSlide";
 
 function App() {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.product.product);
-  const vongTramProducts = [];
-  const thienMocHuongTramProducts = [];
-  const huongDotMyNgheTramHuongProducts = [];
-  products.forEach((product) => {
-    const category = product.category.toLowerCase();
 
-    if (category === "vòng trầm") {
-      vongTramProducts.push(product);
-    } else if (category === "thiên mộc hương trầm") {
-      thienMocHuongTramProducts.push(product);
-    } else if (category === "hương đốt mỹ nghệ trầm hương") {
-      huongDotMyNgheTramHuongProducts.push(product);
-    }
-  });
   useEffect(() => {
     const { storageData, decoded } = handleDecoded();
     if (decoded?.id) {
@@ -91,7 +77,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Route>
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/detail" element={<Detail/>}></Route>
+        <Route path="/detail/:id" element={<Detail/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/productCategory" element= {<ProductCategory/>} />
         <Route path="/checkout" element= {<Checkout/>} />

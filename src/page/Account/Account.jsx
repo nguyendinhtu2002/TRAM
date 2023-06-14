@@ -6,6 +6,7 @@ import * as UserService from "../../services/UserServices";
 import jwt_decode from "jwt-decode";
 import { isJsonString } from "../../utils";
 import { useMutationHooks } from "../../hooks/useMutationHooks";
+import HeaderComponent from "../../Component/HeaderComponent/Header";
 
 function Account() {
   const userLogin = useSelector((state) => state.user);
@@ -91,6 +92,8 @@ function Account() {
 
   return (
     <>
+      <HeaderComponent></HeaderComponent>
+
       <Toast />
       <div className="">
         <div className="bg-gray-200 mb-5">

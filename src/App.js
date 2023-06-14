@@ -11,8 +11,12 @@ import SignUp from "./page/SignUp/SignUp";
 import Account from "./page/Account/Account";
 import Wishlist from "./page/Wishlist/Wishlist";
 import Cart from "./page/Cart/Cart";
+import Checkout from "./page/Checkout/Checkout";
 import PrivateRoutes from "./ProtectRouter";
 import Homepage from "./page/HomePage/Homepage";
+import Detail from "./page/Detail/Detail";
+import Contact from "./page/Contact/Contact";
+import ProductCategory from "./page/ProductCategory/ProductCategory";
 import Test from "./page/Test/Test";
 import { useDispatch, useSelector } from "react-redux";
 import { isJsonString } from "./utils";
@@ -70,9 +74,13 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/account" element={<Account />} />
-          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
         </Route>
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/detail/:id" element={<Detail/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/productCategory" element= {<ProductCategory/>} />
+        <Route path="/checkout" element= {<Checkout/>} />
         <Route path="/test" element={<Test/>}></Route>
       </Routes>
     </BrowserRouter>

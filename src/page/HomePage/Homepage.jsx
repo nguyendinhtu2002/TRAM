@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper";
+import { useSwiper } from "swiper/react";
+
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
@@ -20,6 +23,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch, useSelector } from "react-redux";
 import { updateProduct } from "../../features/productSlide/productSlide";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -163,7 +167,7 @@ function Homepage() {
   const settingsCategories = {
     dots: true,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     speed: 300,
     nextArrow: <NextArrow />,
@@ -234,12 +238,8 @@ function Homepage() {
     const res = await ProductService.getProduct();
     return res;
   };
-  const fetchCategory = async () => {
-    const res = await CategorytService.getFilter();
-    return res;
-  };
   const { isLoading, data } = useQuery(["products"], fetchProduct);
-  const { data: data1 } = useQuery(["category"], fetchCategory);
+
   useEffect(() => {
     if (data) {
       dispatch(updateProduct(data));
@@ -287,25 +287,95 @@ function Homepage() {
         </div>
 
         <Slider {...settingsCategories}>
-          {data1?.uniqueNames.map((item) => (
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                   {item}
-                  </p>
-                </div>
-              </a>
-            </div>
-          ))}
-       
+          <div className="">
+            <a href="" className="hover:opacity-70">
+              <img
+                className="rounded-full w-[40%] mx-auto mb-1"
+                src={vong_tay}
+                alt="Vòng tay trầm hương"
+              />
+              <div>
+                <p className="text-white text-center font-bold capitalize">
+                  Vòng tay trầm hương
+                </p>
+              </div>
+            </a>
+          </div>
 
-          
+          <div className="">
+            <a href="" className="hover:opacity-70">
+              <img
+                className="rounded-full w-[40%] mx-auto mb-1"
+                src={vong_tay}
+                alt="Vòng tay trầm hương"
+              />
+              <div>
+                <p className="text-white text-center font-bold capitalize">
+                  Vòng tay trầm hương
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div className="">
+            <a href="" className="hover:opacity-70">
+              <img
+                className="rounded-full w-[40%] mx-auto mb-1"
+                src={vong_tay}
+                alt="Vòng tay trầm hương"
+              />
+              <div>
+                <p className="text-white text-center font-bold capitalize">
+                  Vòng tay trầm hương
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div className="">
+            <a href="" className="hover:opacity-70">
+              <img
+                className="rounded-full w-[40%] mx-auto mb-1"
+                src={vong_tay}
+                alt="Vòng tay trầm hương"
+              />
+              <div>
+                <p className="text-white text-center font-bold capitalize">
+                  Vòng tay trầm hương
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div className="">
+            <a href="" className="hover:opacity-70">
+              <img
+                className="rounded-full w-[40%] mx-auto mb-1"
+                src={vong_tay}
+                alt="Vòng tay trầm hương"
+              />
+              <div>
+                <p className="text-white text-center font-bold capitalize">
+                  Vòng tay trầm hương
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div className="">
+            <a href="" className="hover:opacity-70">
+              <img
+                className="rounded-full w-[40%] mx-auto mb-1"
+                src={vong_tay}
+                alt="Vòng tay trầm hương"
+              />
+              <div>
+                <p className="text-white text-center font-bold capitalize">
+                  Vòng tay trầm hương
+                </p>
+              </div>
+            </a>
+          </div>
         </Slider>
       </div>
       {/*End List Category*/}
@@ -326,11 +396,11 @@ function Homepage() {
                     <ImageItem image={item.images[0]} />
                     <div className="py-5 px-3 max-w-md">
                       <div>
-                        <a href="#" className="text-center">
+                        <Link to={`/detail/${item._id}`} className="text-center">
                           <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
                             Lư đốt trầm hương hoa sen bằng sứ{" "}
                           </h5>
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="flex justify-center gap-2">
@@ -343,8 +413,9 @@ function Homepage() {
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
                         <Rating
-                          name="no-value"
+                          name="read-only"
                           value={value}
+                          readOnly
                           emptyIcon={
                             <StarOutlineIcon style={{ color: "yellow" }} />
                           }
@@ -443,13 +514,14 @@ function Homepage() {
 
                       <div className="flex justify-center gap-2">
                         <p className="text-white text-center font-bold overflow-wrap">
-                          {product.price}
+                          {product.priceReal}
                         </p>
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
                         <Rating
-                          name="no-value"
+                          name="read-only"
                           value={product.rate}
+                          readOnly
                           emptyIcon={
                             <StarOutlineIcon style={{ color: "yellow" }} />
                           }
@@ -548,13 +620,14 @@ function Homepage() {
 
                       <div className="flex justify-center gap-2">
                         <p className="text-white text-center font-bold overflow-wrap">
-                          {product.price}
+                          {product.priceReal}
                         </p>
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
                         <Rating
-                          name="no-value"
+                          name="read-only"
                           value={product.rate}
+                          readOnly
                           emptyIcon={
                             <StarOutlineIcon style={{ color: "yellow" }} />
                           }
@@ -653,13 +726,14 @@ function Homepage() {
 
                       <div className="flex justify-center gap-2">
                         <p className="text-white text-center font-bold overflow-wrap">
-                          {product.price}
+                          {product.priceReal}
                         </p>
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
                         <Rating
-                          name="no-value"
+                          name="read-only"
                           value={product.rate}
+                          readOnly
                           emptyIcon={
                             <StarOutlineIcon style={{ color: "yellow" }} />
                           }
@@ -680,6 +754,43 @@ function Homepage() {
         </div>
       </div>
       {/*    End Product*/}
+
+      {/*    start customer rating*/}
+      <div className="w-4/5 mx-auto rounded-2xl py-8 mt-8 md:flex md:gap-10 md:items-center">
+        <div className="space-y-6 w-full">
+          <div>
+            <h2 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
+              Cảm nhận khách hàng
+            </h2>
+          </div>
+          <div>
+            <Rating
+              name="read-only"
+              value={5}
+              readOnly
+              emptyIcon={<StarOutlineIcon style={{ color: "yellow" }} />}
+              onChange={(event, newValue) => {
+                // Xử lý thay đổi đánh giá
+              }}
+            />
+            <p className="text-white text-justify leading-relaxed">
+              Lần đầu tiên mua Vòng Tay Trầm Hương nên rất lo, vì hàng giả nhiều
+              nhưng hữu duyên được các bạn nhân viên tư vấn nhiệt tình. Rất là
+              xúc động khi có những bạn nhân viên nhiệt tình đến vậy dù giá trị
+              món mình mua cũng không lớn lắm. Chắc chắn sẽ ủng hộ thêm cho
+              shop. Chúc shop làm ăn ngày càng phát đạt nhé
+            </p>
+          </div>
+        </div>
+        <div className="">
+          <img
+            className="rounded-[100%] "
+            src={image_3}
+            alt="Cảm nhận khác hanng"
+          />
+        </div>
+      </div>
+      {/*    end customer rating*/}
     </div>
   );
 }

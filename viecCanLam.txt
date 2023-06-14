@@ -1,5 +1,5 @@
 Giao diện:
-    Details
-    Liên hệ
-    Chatbox
-    HomePage: reponsive, hover
+    Details (slider)
+    HomePage: đánh giá
+    ProductCategory
+    header (sửa khi đăng nhập thành công thì thay đổi)

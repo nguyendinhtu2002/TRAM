@@ -4,12 +4,14 @@ import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
 import Loading from "../../Component/LoadingError/Loading";
 import Rating from "@mui/material/Rating";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import {useDispatch, useSelector} from "react-redux";
 import * as ProductService from "../../services/ProductService";
 import {useParams} from "react-router-dom";
 import {useQuery} from "react-query";
 import {createWishList} from "../../features/wishlistSlide/wishlistSlide";
 import {decrement, increment} from '../../features/quantitySlide/quantitySlide'
+
 function Detail() {
     const dispatch = useDispatch();
     const {id} = useParams();
@@ -173,7 +175,7 @@ function Detail() {
                                         <span className="mr-3">Số lượng</span>
                                         <div className="relative">
                                             <button
-                                                onClick={()=>dispatch(decrement())}
+                                                onClick={() => dispatch(decrement())}
                                                 className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 mr-1">
                                                 -
                                             </button>
@@ -183,12 +185,27 @@ function Detail() {
                                                 className="rounded border border-gray-400 py-2 w-20 focus:outline-none focus:border-red-500 text-base"
                                             ></input>
                                             <button
-                                                onClick={()=>dispatch(increment())}
+                                                onClick={() => dispatch(increment())}
                                                 className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 ml-1">
                                                 +
                                             </button>
                                         </div>
                                     </div>
+
+                                    <div className="mt-3 mb-5 border-[3px] border-[#FAB55A33]">
+                                        <div className="p-4 bg-[#FAB55A33] flex gap-1 items-end">
+                                            <CardGiftcardIcon className="text-[#ED7103]"></CardGiftcardIcon>
+                                            <h3 className="text-xl text-[#ED7103] font-bold">Khuyến mãi</h3>
+                                        </div>
+                                        <div className="p-4 bg-white">
+                                            <p className="text-sm font-medium">Voucher giảm trực tiếp khi mua trên website: </p>
+                                            <p className="text-sm"><span className="text-[#F99B1C] font-bold">50k1590</span> – Giảm 50.000 Cho đơn hàng từ 1.590.000</p>
+                                            <p className="text-sm"><span className="text-[#F99B1C] font-bold">100k2590</span> – Giảm 100.000 Cho đơn hàng từ 2.590.000 </p>
+                                            <p className="text-sm"><span className="text-[#F99B1C] font-bold">200k4790 </span> – Giảm 200.000 Cho đơn hàng từ 4.790.000</p>
+                                        </div>
+
+                                    </div>
+
 
                                     <div className="flex gap-3">
                                         <button
@@ -216,12 +233,11 @@ function Detail() {
                                             </svg>
                                         </button>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </section>
-
-
 
 
                     <section className="text-gray-700 body-font overflow-hidden bg-white">
@@ -244,10 +260,12 @@ function Detail() {
                                     </tr>
                                     <tr className="bg-gray-100 px-6 py-3">
                                         <td className="px-6 py-3">Số lượng hạt: <span>10mm: 17-21 hạt</span><br/>
-                                            <span className="sr-only">Số lượng hạt:</span> <span>14mm: 17-21 hạt</span></td>
+                                            <span className="sr-only">Số lượng hạt:</span> <span>14mm: 17-21 hạt</span>
+                                        </td>
                                     </tr>
                                     <tr className="bg-gray-200 px-6 py-3">
-                                        <td className="px-6 py-3">Kích thước hạt: <span>12 - 14 năm Tích Trầm</span></td>
+                                        <td className="px-6 py-3">Kích thước hạt: <span>12 - 14 năm Tích Trầm</span>
+                                        </td>
                                     </tr>
                                     <tr className="bg-gray-100 px-6 py-3">
                                         <td className="px-6 py-3">Sử dụng: <span>Nam, Quà tặng cho người thân, cấp trên, bạn bè. Mang đến may mắn, tài lộc, vận khí tốt trong đường công danh. Phụ kiện thời trang</span>

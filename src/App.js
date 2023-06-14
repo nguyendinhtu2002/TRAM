@@ -20,21 +20,7 @@ import { updateUser } from "./features/userSlide/userSlide";
 
 function App() {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.product.product);
-  const vongTramProducts = [];
-  const thienMocHuongTramProducts = [];
-  const huongDotMyNgheTramHuongProducts = [];
-  products.forEach((product) => {
-    const category = product.category.toLowerCase();
 
-    if (category === "vòng trầm") {
-      vongTramProducts.push(product);
-    } else if (category === "thiên mộc hương trầm") {
-      thienMocHuongTramProducts.push(product);
-    } else if (category === "hương đốt mỹ nghệ trầm hương") {
-      huongDotMyNgheTramHuongProducts.push(product);
-    }
-  });
   useEffect(() => {
     const { storageData, decoded } = handleDecoded();
     if (decoded?.id) {

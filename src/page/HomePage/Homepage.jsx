@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import * as ProductService from "../../services/ProductService";
+import * as CategorytService from "../../services/CategoryService";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -161,7 +163,7 @@ function Homepage() {
   const settingsCategories = {
     dots: true,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     speed: 300,
     nextArrow: <NextArrow />,
@@ -232,8 +234,12 @@ function Homepage() {
     const res = await ProductService.getProduct();
     return res;
   };
+  const fetchCategory = async () => {
+    const res = await CategorytService.getFilter();
+    return res;
+  };
   const { isLoading, data } = useQuery(["products"], fetchProduct);
-
+  const { data: data1 } = useQuery(["category"], fetchCategory);
   useEffect(() => {
     if (data) {
       dispatch(updateProduct(data));
@@ -281,95 +287,25 @@ function Homepage() {
         </div>
 
         <Slider {...settingsCategories}>
-          <div className="">
-            <a href="" className="hover:opacity-70">
-              <img
-                className="rounded-full w-[40%] mx-auto mb-1"
-                src={vong_tay}
-                alt="Vòng tay trầm hương"
-              />
-              <div>
-                <p className="text-white text-center font-bold capitalize">
-                  Vòng tay trầm hương
-                </p>
-              </div>
-            </a>
-          </div>
+          {data1?.uniqueNames.map((item) => (
+            <div className="">
+              <a href="" className="hover:opacity-70">
+                <img
+                  className="rounded-full w-[40%] mx-auto mb-1"
+                  src={vong_tay}
+                  alt="Vòng tay trầm hương"
+                />
+                <div>
+                  <p className="text-white text-center font-bold capitalize">
+                   {item}
+                  </p>
+                </div>
+              </a>
+            </div>
+          ))}
+       
 
-          <div className="">
-            <a href="" className="hover:opacity-70">
-              <img
-                className="rounded-full w-[40%] mx-auto mb-1"
-                src={vong_tay}
-                alt="Vòng tay trầm hương"
-              />
-              <div>
-                <p className="text-white text-center font-bold capitalize">
-                  Vòng tay trầm hương
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <div className="">
-            <a href="" className="hover:opacity-70">
-              <img
-                className="rounded-full w-[40%] mx-auto mb-1"
-                src={vong_tay}
-                alt="Vòng tay trầm hương"
-              />
-              <div>
-                <p className="text-white text-center font-bold capitalize">
-                  Vòng tay trầm hương
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <div className="">
-            <a href="" className="hover:opacity-70">
-              <img
-                className="rounded-full w-[40%] mx-auto mb-1"
-                src={vong_tay}
-                alt="Vòng tay trầm hương"
-              />
-              <div>
-                <p className="text-white text-center font-bold capitalize">
-                  Vòng tay trầm hương
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <div className="">
-            <a href="" className="hover:opacity-70">
-              <img
-                className="rounded-full w-[40%] mx-auto mb-1"
-                src={vong_tay}
-                alt="Vòng tay trầm hương"
-              />
-              <div>
-                <p className="text-white text-center font-bold capitalize">
-                  Vòng tay trầm hương
-                </p>
-              </div>
-            </a>
-          </div>
-
-          <div className="">
-            <a href="" className="hover:opacity-70">
-              <img
-                className="rounded-full w-[40%] mx-auto mb-1"
-                src={vong_tay}
-                alt="Vòng tay trầm hương"
-              />
-              <div>
-                <p className="text-white text-center font-bold capitalize">
-                  Vòng tay trầm hương
-                </p>
-              </div>
-            </a>
-          </div>
+          
         </Slider>
       </div>
       {/*End List Category*/}
@@ -387,7 +323,7 @@ function Homepage() {
               {products.map((item) => (
                 <div className="">
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                    <ImageItem image={item.images[0]}/>
+                    <ImageItem image={item.images[0]} />
                     <div className="py-5 px-3 max-w-md">
                       <div>
                         <a href="#" className="text-center">

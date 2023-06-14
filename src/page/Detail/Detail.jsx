@@ -256,45 +256,6 @@ function Detail() {
                             </div>
                             <div className="bg-gray-100 px-5 pb-3">
                                 <div className="py-2">
-                                    <h2 className="font-bold text-2xl pb-1">Thông tin sản phẩm</h2>
-                                    <p className="leading-relaxed text-justify ">
-                                        Sản phẩm được chế tác từ loại gỗ trầm Tốc Việt Nam được lấy
-                                        từ môi trường tự nhiên, không hề bị tác động bởi bàn tay con
-                                        người. Đặc biệt, xuất xứ của trầm là từ rừng Hà Tĩnh, sinh
-                                        trưởng tự nhiên nên chất lượng vòng tốt hơn hẳn các dòng tốc
-                                        ngoài thị trường. Với màu vàng nâu sẫm đặc trưng cùng những
-                                        đường vân trầm xoáy, sắc nét, sản phẩm hứa hẹn sẽ mang đến
-                                        tính thẩm mỹ cao cùng nhiều công dụng tuyệt vời cho người
-                                        đeo.
-                                    </p>
-                                    <div className="my-3">
-                                        <div className="w-96 mx-auto">
-                                            <img
-                                                className=" lg:w-96"
-                                                src={vong_tay}
-                                                alt="Vòng tay trầm hương"
-                                            />
-                                        </div>
-                                        <div className="w-96 mx-auto bg-gray-200 py-1">
-                                            <p className=" text-center b-0">
-                        <span className="font-semibold italic">
-                          Vòng tay Trầm Hương Phật Di Lặc
-                        </span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <p className="leading-relaxed text-justify ">
-                                        Vòng tay Trầm Hương Phật Di Lặc với mùi thơm dịu nhẹ giúp
-                                        tinh thần thoải mái nhẹ nhàng sẽ giúp bé ngoan ngoãn và hiền
-                                        hòa. Trầm hương thật tự nhiên hấp thụ tinh hoa của đất trời
-                                        còn ‘trộm vía’ giúp mau ăn chóng lớn, hoàn toàn lành tính và
-                                        phù hợp cho trẻ nhỏ. Chất liệu vòng: Trầm Hương tự nhiên
-                                        100%, hạt tròn đều, nhẵn mịn rất an toàn cho trẻ nhỏ kết hợp
-                                        cùng charm bạc 925
-                                    </p>
-                                </div>
-
-                                <div className="py-2">
                                     <h2 className="font-bold text-2xl pb-1">Mô tả sản phẩm</h2>
                                     <p className="leading-relaxed text-justify ">
                                         Sản phẩm được chế tác từ loại gỗ trầm Tốc Việt Nam được lấy

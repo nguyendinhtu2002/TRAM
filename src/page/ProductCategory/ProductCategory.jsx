@@ -107,6 +107,9 @@ function ProductCategory() {
     };
     const DropdownItem1 = () => {
         const [isDropdownOpen, setDropdownOpen] = useState(false);
+        const closeDropdown = () => {
+            setDropdownOpen(false);
+        };
         const toggleDropdown = () => {
             setDropdownOpen(!isDropdownOpen);
         };
@@ -118,7 +121,7 @@ function ProductCategory() {
                             id="dropdown"
                             className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
                             onClick={toggleDropdown}
-                            onBlur={toggleDropdown}
+                            onBlur={closeDropdown}
                         >
                             Xuất xứ
                             <svg
@@ -183,6 +186,9 @@ function ProductCategory() {
 
     const DropdownItem2 = () => {
         const [isDropdownOpen, setDropdownOpen] = useState(false);
+        const closeDropdown = () => {
+            setDropdownOpen(false);
+        };
         const toggleDropdown = () => {
             setDropdownOpen(!isDropdownOpen);
         };
@@ -191,10 +197,10 @@ function ProductCategory() {
                 <div className="flex items-center justify-center p-4">
                     <div className="relative">
                         <button
-                            id="dropdown"
+                            id="dropdownCharm"
                             className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
                             onClick={toggleDropdown}
-                            onBlur={toggleDropdown}
+                            onBlur={closeDropdown}
                         >
                             Loại Charm
                             <svg
@@ -214,7 +220,7 @@ function ProductCategory() {
                             </svg>
                         </button>
                         <div
-                            id="dropdownContent" style={{top:"100%"}}
+                            id="dropdownContentCharm" style={{top:"100%"}}
                             className={isDropdownOpen?"absolute m-0 z-10 w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700":"hidden"}
                         >
                             <ul className="space-y-2 text-sm" aria-labelledby="dropdownDefault">

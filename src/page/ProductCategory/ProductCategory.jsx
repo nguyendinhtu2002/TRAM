@@ -70,7 +70,6 @@ function ProductCategory() {
     // console.log(data)
 
     const settingsCategories = {
-        dots: true,
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -269,7 +268,7 @@ function ProductCategory() {
             <div className="bg-white">
 
                 {/*start category*/}
-                <div className="bg-[#101608]">
+                <div className="bg-[#101608] py-3">
                     <Slider {...settingsCategories}>
                         <div className="">
                             <a href="" className="hover:opacity-70">

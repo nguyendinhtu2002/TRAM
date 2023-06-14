@@ -452,7 +452,7 @@ function Detail() {
                     </div>
                     {/*body*/}
                     <div className="relative p-6 flex-auto">
-                      <form className="mb-6 ">
+                      <form className="mb-6 " encType="">
                         <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                           <label htmlFor="comment" className="sr-only">
                             Your comment
@@ -464,6 +464,12 @@ function Detail() {
                             placeholder="Bình luận..."
                             required
                           ></textarea>
+                        </div>
+                        <div className="py-2 mb-4 bg-white rounded-lg rounded-t-lg dark:bg-gray-800 dark:border-gray-700">
+                          <label htmlFor="comment" className="sr-only">
+                            Your comment
+                          </label>
+                          <input type="file"/>
                         </div>
                         <div className="flex gap-3">
                           <h4 className="text-xl font-semibold">

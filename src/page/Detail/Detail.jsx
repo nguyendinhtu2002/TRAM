@@ -4,15 +4,16 @@ import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
 import Loading from "../../Component/LoadingError/Loading";
 import Rating from "@mui/material/Rating";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import * as ProductService from "../../services/ProductService";
 import {useParams} from "react-router-dom";
 import {useQuery} from "react-query";
 import {createWishList} from "../../features/wishlistSlide/wishlistSlide";
-
+import {decrement, increment} from '../../features/quantitySlide/quantitySlide'
 function Detail() {
     const dispatch = useDispatch();
     const {id} = useParams();
+    const count = useSelector((state) => state.quantity.value)
 
     const handleGetDetailProduct = async (id) => {
         const res = await ProductService.getDetail(id);
@@ -172,15 +173,17 @@ function Detail() {
                                         <span className="mr-3">Số lượng</span>
                                         <div className="relative">
                                             <button
+                                                onClick={()=>dispatch(decrement())}
                                                 className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 mr-1">
                                                 -
                                             </button>
                                             <input
                                                 type="number"
-                                                value="1"
+                                                value={count}
                                                 className="rounded border border-gray-400 py-2 w-20 focus:outline-none focus:border-red-500 text-base"
                                             ></input>
                                             <button
+                                                onClick={()=>dispatch(increment())}
                                                 className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 ml-1">
                                                 +
                                             </button>

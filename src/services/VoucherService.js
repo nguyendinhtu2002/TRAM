@@ -10,3 +10,7 @@ export const getCodeVoucher = async (code) => {
     });
     return res.data;
 };
+export const getAllVoucher = async()=>{
+    const res = await axios.get(`${URL}api/v1/voucher`)
+    return res.data
+}

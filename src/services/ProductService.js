@@ -9,6 +9,6 @@ export const getProduct = async () => {
 };
 
 export const getDetail = async (id) => {
-  const res = await axios.get(`${URL}api/v1/product/details/${id}`);
+  const res = await axios.get(`${URL}api/v1/product/detail/${id}`);
   return res.data;
 };

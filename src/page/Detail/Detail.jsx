@@ -21,7 +21,6 @@ function Detail() {
   const { isLoading, data } = useQuery(["productDetail"], () =>
     handleGetDetailProduct(id)
   );
-  console.log(data);
   const options = {
     maximumFractionDigits: 0,
   };

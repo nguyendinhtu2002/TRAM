@@ -24,6 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateProduct } from "../../features/productSlide/productSlide";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -198,9 +199,13 @@ function Homepage() {
       },
     ],
   };
-  const ImageItem = ({ image }) => {
+  const ImageItem = ({ image,handleGetDetailProduct,id  }) => {
     const [isHover, setHover] = useState(null);
     const [isHoverIcon, setHoverIcon] = useState(null);
+    
+  const handleClick = (id) => {
+    handleGetDetailProduct(id);
+  };
     return (
       <div
         className="relative"
@@ -215,8 +220,8 @@ function Homepage() {
           />
         </a>
         <div>
-          <a
-            href=""
+          <button
+          onClick={() => handleClick(id)}
             className={` ${
               isHover ? "opacity-100" : "opacity-0"
             } text-white hover:text-amber-500 absolute top-0 right-2`}
@@ -229,7 +234,7 @@ function Homepage() {
             <div className={isHoverIcon ? "block" : "hidden"}>
               <FavoriteIcon></FavoriteIcon>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     );
@@ -237,6 +242,11 @@ function Homepage() {
   const fetchProduct = async () => {
     const res = await ProductService.getProduct();
     return res;
+  };
+  const handleGetDetailProduct = async (id) => {
+    const res = await ProductService.getDetail(id);
+    dispatch(createWishList(res));
+    // return res;
   };
   const { isLoading, data } = useQuery(["products"], fetchProduct);
 
@@ -396,7 +406,10 @@ function Homepage() {
                     <ImageItem image={item.images[0]} />
                     <div className="py-5 px-3 max-w-md">
                       <div>
-                        <Link to={`/detail/${item._id}`} className="text-center">
+                        <Link
+                          to={`/detail/${item._id}`}
+                          className="text-center"
+                        >
                           <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
                             Lư đốt trầm hương hoa sen bằng sứ{" "}
                           </h5>
@@ -502,7 +515,11 @@ function Homepage() {
               {vongTramProducts.map((product) => (
                 <div key={product.id} className="">
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                    <ImageItem image={product.images[0]} />
+                    <ImageItem
+                      image={product.images[0]}
+                      handleGetDetailProduct={handleGetDetailProduct}
+                      id={product._id}
+                    />
                     <div className="py-5 px-3 max-w-md">
                       <div>
                         <a href="#" className="text-center">

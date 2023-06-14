@@ -199,13 +199,13 @@ function Homepage() {
       },
     ],
   };
-  const ImageItem = ({ image,handleGetDetailProduct,id  }) => {
+  const ImageItem = ({ image, handleGetDetailProduct, id }) => {
     const [isHover, setHover] = useState(null);
     const [isHoverIcon, setHoverIcon] = useState(null);
-    
-  const handleClick = (id) => {
-    handleGetDetailProduct(id);
-  };
+
+    const handleClick = (id) => {
+      handleGetDetailProduct(id);
+    };
     return (
       <div
         className="relative"
@@ -221,7 +221,7 @@ function Homepage() {
         </a>
         <div>
           <button
-          onClick={() => handleClick(id)}
+            onClick={() => handleClick(id)}
             className={` ${
               isHover ? "opacity-100" : "opacity-0"
             } text-white hover:text-amber-500 absolute top-0 right-2`}
@@ -249,7 +249,13 @@ function Homepage() {
     // return res;
   };
   const { isLoading, data } = useQuery(["products"], fetchProduct);
+  const options = {
+    maximumFractionDigits: 0,
+  };
 
+  const formattedAmount = (amount, options) => {
+    return amount.toLocaleString(undefined, options);
+  };
   useEffect(() => {
     if (data) {
       dispatch(updateProduct(data));
@@ -420,7 +426,7 @@ function Homepage() {
                         <p className="text-white text-center font-bold overflow-wrap">
                           1.590.000 đ
                         </p>
-                        <p className="text-white text-sm text-gray-600 text-center font-bold line-through overflow-wrap">
+                        <p className=" text-sm text-gray-600 text-center font-bold line-through overflow-wrap">
                           1.990.000 đ
                         </p>
                       </div>
@@ -522,16 +528,19 @@ function Homepage() {
                     />
                     <div className="py-5 px-3 max-w-md">
                       <div>
-                        <a href="#" className="text-center">
+                        <Link
+                          to={`/detail/${product._id}`}
+                          className="text-center"
+                        >
                           <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
-                            {product.name}
+                            Lư đốt trầm hương hoa sen bằng sứ{" "}
                           </h5>
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="flex justify-center gap-2">
                         <p className="text-white text-center font-bold overflow-wrap">
-                          {product.priceReal}
+                          {formattedAmount(product.priceReal) + " " + " đ"}
                         </p>
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
@@ -625,19 +634,26 @@ function Homepage() {
               {thienMocHuongTramProducts.map((product) => (
                 <div key={product.id} className="">
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                    <ImageItem image={product.images[0]} />
+                    <ImageItem
+                      image={product.images[0]}
+                      handleGetDetailProduct={handleGetDetailProduct}
+                      id={product._id}
+                    />{" "}
                     <div className="py-5 px-3 max-w-md">
                       <div>
-                        <a href="#" className="text-center">
+                        <Link
+                          to={`/detail/${product._id}`}
+                          className="text-center"
+                        >
                           <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
                             {product.name}
                           </h5>
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="flex justify-center gap-2">
                         <p className="text-white text-center font-bold overflow-wrap">
-                          {product.priceReal}
+                          {formattedAmount(product.priceReal) + " " + "đ"}
                         </p>
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
@@ -731,19 +747,26 @@ function Homepage() {
               {huongDotMyNgheTramHuongProducts.map((product) => (
                 <div key={product.id} className="">
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                    <ImageItem image={product.images[0]} />
+                    <ImageItem
+                      image={product.images[0]}
+                      handleGetDetailProduct={handleGetDetailProduct}
+                      id={product._id}
+                    />{" "}
                     <div className="py-5 px-3 max-w-md">
                       <div>
-                        <a href="#" className="text-center">
+                        <Link
+                          to={`/detail/${product._id}`}
+                          className="text-center"
+                        >
                           <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
                             {product.name}
                           </h5>
-                        </a>
+                        </Link>
                       </div>
 
                       <div className="flex justify-center gap-2">
                         <p className="text-white text-center font-bold overflow-wrap">
-                          {product.priceReal}
+                          {formattedAmount(product.priceReal) + " " + "đ"}
                         </p>
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">

@@ -25,7 +25,9 @@ function Wishlist() {
           <div className="lg:w-full bg-white px-10 py-10">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Sản phẩm yêu thích</h1>
-              <h2 className="font-semibold text-2xl capitalize">3 sản phẩm</h2>
+              <h2 className="font-semibold text-2xl capitalize">
+                {wishlist.length} sản phẩm
+              </h2>
             </div>
             <div className="flex mt-10 mb-5">
               <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
@@ -54,7 +56,7 @@ function Wishlist() {
 
                       <a
                         type="button"
-                        className="font-semibold hover:text-red-500 text-gray-500 text-xs"
+                        className="font-semibold hover:text-red-500 text-gray-500 text-xs cursor-pointer"
                         onClick={() => handleDelete(item._id)}
                       >
                         Remove

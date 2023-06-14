@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import * as ProductService from "../../services/ProductService";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
+import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
 
 function Detail() {
   const dispatch = useDispatch();
@@ -21,6 +22,10 @@ function Detail() {
   const { isLoading, data } = useQuery(["productDetail"], () =>
     handleGetDetailProduct(id)
   );
+  const handleAddWishList = async (id) => {
+    dispatch(createWishList(data));
+    // return res;
+  };
   const options = {
     maximumFractionDigits: 0,
   };
@@ -107,7 +112,7 @@ function Detail() {
                 <img
                   alt="ecommerce"
                   className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-                  src={vong_tay}
+                  src={data?.images[0]}
                 />
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                   <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
@@ -117,7 +122,7 @@ function Detail() {
                     <span className="flex items-center">
                       <Rating
                         name="read-only"
-                        value={data?.reviews.length}
+                        value={data?.reviews?.length}
                         size="small"
                         readOnly
                       />
@@ -145,7 +150,7 @@ function Detail() {
                   <div className="flex mt-6 items-center pb-5  border-gray-200">
                     <div className="flex">
                       <span className="mr-3 font-bold">Kích thước hạt</span>
-                      {data?.size.length > 0 && (
+                      {data?.size && data.size.length > 0 && (
                         <>
                           {data.size.map((item, index) => (
                             <div key={index} className="mr-3">
@@ -186,7 +191,9 @@ function Detail() {
                     <button className="flex text-white bg-cyan-500  border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded">
                       Add to cart
                     </button>
-                    <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ">
+                    <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 "
+                        onClick={()=>handleAddWishList(data?._id)}
+                    >
                       <svg
                         fill="currentColor"
                         stroke-linecap="round"
@@ -493,7 +500,7 @@ function Detail() {
             <div className="max-w-4xl mx-auto px-4">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
-                  Bình luận (20)
+                  Bình luận ({data?.reviews.length})
                 </h2>
               </div>
               <form className="mb-6">
@@ -516,7 +523,7 @@ function Detail() {
                   Bình luận
                 </button>
               </form>
-              <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+              {/* <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
                 <footer className="flex justify-between items-center mb-2">
                   <div className="flex items-center">
                     <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
@@ -757,7 +764,7 @@ function Detail() {
                   design strategy.
                 </p>
                 <CommentItem></CommentItem>
-              </article>
+              </article> */}
             </div>
           </section>
         </>

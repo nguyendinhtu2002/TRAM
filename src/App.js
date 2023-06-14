@@ -40,7 +40,7 @@ function App() {
       storageData = JSON.parse(storageData);
       token_refresh = JSON.parse(token_refresh);
       decoded = jwt_decode(storageData);
-    } 
+    }
     return { decoded, storageData, token_refresh };
   };
   UserService.axiosJWT.interceptors.request.use(
@@ -77,11 +77,11 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Route>
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/detail/:id" element={<Detail/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/productCategory" element= {<ProductCategory/>} />
-        <Route path="/checkout" element= {<Checkout/>} />
-        <Route path="/test" element={<Test/>}></Route>
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/productCategory" element={<ProductCategory />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );

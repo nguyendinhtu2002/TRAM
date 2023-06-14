@@ -9,11 +9,17 @@ export const wishlistSlide = createSlice({
   reducers: {
     createWishList: (state, action) => {
       const newItem = action.payload;
-      state.wishlist.push(newItem);
+      const existingItem = state.wishlist.find(
+        (item) => item._id === newItem._id
+      );
+
+      if (!existingItem) {
+        state.wishlist.push(newItem);
+      }
     },
     deleteWishList: (state, action) => {
       const itemId = action.payload;
-      console.log(itemId)
+      console.log(itemId);
       state.wishlist = state.wishlist.filter((item) => item._id !== itemId);
     },
   },

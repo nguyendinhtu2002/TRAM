@@ -15,8 +15,8 @@ import {ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/so
 import {useSelector} from "react-redux";
 
 const products = [
-    {name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon},
-    {name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon},
+    {name: 'Vòng trầm hương Nam', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon},
+    {name: 'Vòng trầm hương Nữ', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon},
     {name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon},
     {name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon},
     {name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon},
@@ -39,9 +39,7 @@ function Header() {
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link to="/" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Your Company</span>
-                        <img className="h-8 w-auto"
-                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""/>
+                        <span className="uppercase text-white text-3xl font-bold">Logo</span>
                     </Link>
                 </div>
                 <div className="flex lg:hidden">
@@ -55,10 +53,11 @@ function Header() {
                     </button>
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
+                    {/*start header on PC*/}
                     <Popover className="relative">
                         <Popover.Button
                             className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
-                            Product
+                            Vòng tay trầm hương
                             <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true"/>
                         </Popover.Button>
 
@@ -72,7 +71,8 @@ function Header() {
                             leaveTo="opacity-0 translate-y-1"
                         >
                             <Popover.Panel
-                                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5">
+                                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628]
+                                shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
                                     {products.map((item) => (
                                         <div
@@ -112,15 +112,17 @@ function Header() {
                     </Popover>
 
                     <a href="#" className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
-                        Features
+                        Nhang trầm hương
                     </a>
                     <a href="#" className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
-                        Marketplace
+                        Trầm hương đốt
                     </a>
                     <a href="#" className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
                         Company
                     </a>
                 </Popover.Group>
+
+                {/*end header on PC*/}
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-8">
                         <Link to="/Login"
                               className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">

@@ -1,5 +1,5 @@
 Giao diện:
-    Details (slider)
-    HomePage: đánh giá
-    ProductCategory
+    Details (slider, quantity, thông tin chi tiết, khuyến mãi)
     header (sửa khi đăng nhập thành công thì thay đổi)
+    Paginate cho các trang hiển thị sản phẩm
+    Ẩn slider Homepage

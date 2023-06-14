@@ -15,9 +15,10 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-
-
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -43,27 +44,40 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6488207c94cf5d49dc5d5a01/1h2prtqft";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-
     <script>
       let defaultTransform = 0;
       function goNext() {
         defaultTransform = defaultTransform - 398;
         var slider = document.getElementById("slider");
-        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7)
+          defaultTransform = 0;
         slider.style.transform = "translateX(" + defaultTransform + "px)";
       }
-      // next.addEventListener("click", goNext);
+      next.addEventListener("click", goNext);
       function goPrev() {
         var slider = document.getElementById("slider");
         if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
         else defaultTransform = defaultTransform + 398;
         slider.style.transform = "translateX(" + defaultTransform + "px)";
       }
-      // prev.addEventListener("click", goPrev);
-
+      prev.addEventListener("click", goPrev);
     </script>
-
   </body>
 </html>

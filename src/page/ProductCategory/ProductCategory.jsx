@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import HeaderComponent from "../../Component/HeaderComponent/Header"
-
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
@@ -9,7 +8,6 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { Dropdown, DropdownItem } from 'flowbite';
 
 
 import * as UserService from "../../services/UserServices";
@@ -65,7 +63,7 @@ function PrevArrow(props) {
 function ProductCategory() {
 
     const handleGetDetailProducts = async (id, token) => {
-        const res = await ProductService.getProducts();
+        const res = await ProductService.getProduct();
         return res;
     };
     const {isLoading, data} = useQuery(['products'], handleGetDetailProducts)

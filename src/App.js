@@ -11,23 +11,37 @@ import SignUp from "./page/SignUp/SignUp";
 import Account from "./page/Account/Account";
 import Wishlist from "./page/Wishlist/Wishlist";
 import Cart from "./page/Cart/Cart";
+import Checkout from "./page/Checkout/Checkout";
 import PrivateRoutes from "./ProtectRouter";
 import Homepage from "./page/HomePage/Homepage";
 import Detail from "./page/Detail/Detail";
 import Contact from "./page/Contact/Contact";
 import ProductCategory from "./page/ProductCategory/ProductCategory";
 import Test from "./page/Test/Test";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { isJsonString } from "./utils";
 import { updateUser } from "./features/userSlide/userSlide";
 
 function App() {
   const dispatch = useDispatch();
+  const products = useSelector((state) => state.product.product);
+  const vongTramProducts = [];
+  const thienMocHuongTramProducts = [];
+  const huongDotMyNgheTramHuongProducts = [];
+  products.forEach((product) => {
+    const category = product.category.toLowerCase();
+
+    if (category === "vòng trầm") {
+      vongTramProducts.push(product);
+    } else if (category === "thiên mộc hương trầm") {
+      thienMocHuongTramProducts.push(product);
+    } else if (category === "hương đốt mỹ nghệ trầm hương") {
+      huongDotMyNgheTramHuongProducts.push(product);
+    }
+  });
   useEffect(() => {
     const { storageData, decoded } = handleDecoded();
-    console.log(decoded);
     if (decoded?.id) {
-      console.log(storageData);
       handleGetDetailsUser(decoded?.id, storageData);
     }
     //  dispatch(updateUser({data}))
@@ -36,15 +50,11 @@ function App() {
     let storageData = localStorage.getItem("access_token");
     let token_refresh = localStorage.getItem("refresh_token");
     let decoded = {};
-    console.log(storageData)
     if (storageData && isJsonString(storageData)) {
       storageData = JSON.parse(storageData);
       token_refresh = JSON.parse(token_refresh);
       decoded = jwt_decode(storageData);
-      console.log(decoded);
-    } else {
-      console.log("vao day r");
-    }
+    } 
     return { decoded, storageData, token_refresh };
   };
   UserService.axiosJWT.interceptors.request.use(
@@ -67,7 +77,6 @@ function App() {
   );
   const handleGetDetailsUser = async (id, token) => {
     const res = await UserService.getDetailsUser(id, token);
-    console.log(token);
     dispatch(updateUser({ ...res?.data, access_token: token }));
   };
   return (
@@ -85,6 +94,7 @@ function App() {
         <Route path="/detail" element={<Detail/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/productCategory" element= {<ProductCategory/>} />
+        <Route path="/checkout" element= {<Checkout/>} />
         <Route path="/test" element={<Test/>}></Route>
       </Routes>
     </BrowserRouter>

@@ -81,7 +81,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/productCategory" element={<ProductCategory />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/test/:id" element={<Test />} />
+        <Route path="/test/" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );

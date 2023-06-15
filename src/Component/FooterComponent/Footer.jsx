@@ -7,7 +7,7 @@ import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-function Test() {
+function Footer() {
     return (
         <>
             <footer className="bg-[#101628]">
@@ -21,7 +21,7 @@ function Test() {
                             <ul className="mt-5 text-gray-300 font-medium">
                                 <li className="mb-3">
                                     <span href="#"
-                                       className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><FmdGoodIcon fontSize={'small'}></FmdGoodIcon></span>### ABC, P.ABC, quận XYZ, Hà Nội</span>
+                                          className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><FmdGoodIcon fontSize={'small'}></FmdGoodIcon></span>### ABC, P.ABC, quận XYZ, Hà Nội</span>
                                 </li>
                                 <li className="mb-3">
                                     <span href="#"
@@ -133,9 +133,8 @@ function Test() {
                     </div>
                 </div>
             </footer>
-
         </>
     )
 }
 
-export default Test
+export default Footer

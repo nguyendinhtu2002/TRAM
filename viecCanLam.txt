@@ -1,6 +1,4 @@
 Giao diện:
-    Homepage thêm đánh giá
-    Details (slider)
+    Hiện số cho icon cart, whishlist
     Paginate cho các trang hiển thị sản phẩm
-    Ẩn slider Homepage
     Footer

@@ -1,4 +1,6 @@
 Giao diện:
-    Details (slider, quantity, thông tin chi tiết, khuyến mãi)
+    Homepage thêm đánh giá
+    Details (slider)
     Paginate cho các trang hiển thị sản phẩm
     Ẩn slider Homepage
+    Footer

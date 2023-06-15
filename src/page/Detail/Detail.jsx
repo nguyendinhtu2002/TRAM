@@ -7,11 +7,53 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import {useDispatch, useSelector} from "react-redux";
 import * as ProductService from "../../services/ProductService";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {useQuery} from "react-query";
 import {createWishList} from "../../features/wishlistSlide/wishlistSlide";
 import {decrement, increment} from '../../features/quantitySlide/quantitySlide'
+import Slider from "react-slick";
 
+
+function NextArrow(props) {
+    const { className, style, onClick } = props;
+
+    return (
+        <div
+            className={className}
+            style={{
+                ...style,
+                display: "flex",
+                zIndex: "1000",
+                color: "white",
+                marginRight: "30px",
+                padding: "20px",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+            onClick={onClick}
+        />
+    );
+}
+
+function PrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{
+                ...style,
+                display: "flex",
+                zIndex: "1000",
+                color: "white",
+                marginLeft: "30px",
+                padding: "20px",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+            onClick={onClick}
+        />
+    );
+}
 function Detail() {
     const dispatch = useDispatch();
     const {id} = useParams();
@@ -102,6 +144,34 @@ function Detail() {
     const [showModal, setShowModal] = React.useState(false);
     const [value, setValue] = useState(null);
 
+    const ProductSlider = ({ images }) => {
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            nextArrow:<NextArrow/>,
+            prevArrow:<PrevArrow/>,
+        };
+
+        return (
+            <div className="w-1/2 mx-auto">
+                <Slider {...settings}>
+                    {images.map((image, index) => (
+                        <div>
+                            <div className="" key={index}>
+                                <img className="w-full object-cover object-center rounded border border-gray-200"  src={image} alt={`Image ${index}`} />
+                            </div>
+                        </div>
+
+                    ))}
+                </Slider>
+            </div>
+        );
+    };
+
+
     return (
         <>
             <HeaderComponent></HeaderComponent>
@@ -113,11 +183,13 @@ function Detail() {
                     <section className="text-gray-700 body-font overflow-hidden bg-white">
                         <div className="container px-5 py-24 mx-auto">
                             <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                                <img
-                                    alt="ecommerce"
-                                    className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-                                    src={data?.images[0]}
-                                />
+                                {<ProductSlider images={data?.images} />}
+
+                                {/*<img*/}
+                                {/*    alt="ecommerce"*/}
+                                {/*    className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"*/}
+                                {/*    src={data?.images[0]}*/}
+                                {/*/>*/}
                                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                                     <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
                                         {data?.name}

@@ -16,6 +16,7 @@ import {
   decrement,
   increment,
 } from "../../features/quantitySlide/quantitySlide";
+import { addCart, updateCart } from "../../features/cartSlide/cartSlide";
 
 function Detail() {
   const dispatch = useDispatch();
@@ -39,7 +40,6 @@ function Detail() {
     return res;
   };
   const { data: voucher } = useQuery(["Voucher"], handleGetAllVoucher);
-  console.log(voucher);
   const options = {
     maximumFractionDigits: 0,
   };
@@ -47,7 +47,11 @@ function Detail() {
   const formattedAmount = (amount, options) => {
     return amount.toLocaleString(undefined, options);
   };
+  const handleAddCart = async () => {
+    const updatedData = { ...data, quantityOrder:count};
 
+    dispatch(addCart(updatedData)) 
+  }
   const CommentItem = () => {
     const [reply, setReply] = useState(null);
     return (
@@ -243,7 +247,9 @@ function Detail() {
                     <button className="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                       Mua ngay
                     </button>
-                    <button className="flex text-white bg-cyan-500  border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded">
+                    <button className="flex text-white bg-cyan-500  border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded"
+                      onClick={handleAddCart}
+                    >
                       Add to cart
                     </button>
                     <button

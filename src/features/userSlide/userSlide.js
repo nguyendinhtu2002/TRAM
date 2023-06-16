@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   id: "",
-  name: "",
   lastName: "",
   firstName: "",
   sex: "",
@@ -18,7 +17,7 @@ export const userSlide = createSlice({
     updateUser: (state, action) => {
       const {
         isAdmin,
-        name = "",
+        firstName = "",
         email = "",
         sex = "",
         lastName = "",
@@ -27,7 +26,7 @@ export const userSlide = createSlice({
         access_token,
         _id=""
       } = action.payload;
-      state.name = name;
+      state.firstName = firstName;
       state.email = email;
       state.lastName = lastName;
       state.sex = sex;
@@ -37,21 +36,16 @@ export const userSlide = createSlice({
       state.address=address
     },
     resetUser: (state) => {
-      state.name = "";
+      state.firstName = "";
       state.email = "";
-      state.hsd = "";
-      state.money = 0;
+      state.lastName = "";
       state.sex = "";
-      state.sumMoney = 0;
-      state.usename = "";
-      state.chiTieu = 0;
-      state.access_token = "";
       state.id = "";
-      state.phone = "";
-      state.isAdmin = false;
-      state.boclink = false;
-      state.fakelink = false;
-      state.click = 0;
+      state.access_token = "";
+      state.isAdmin = "";
+      state.address=[]
+    
+   
     },
   },
 });

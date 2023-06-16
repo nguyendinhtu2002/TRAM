@@ -17,6 +17,8 @@ export const cartSlide = createSlice({
         addCart: (state, action) => {
             state.cart.push(action.payload);
             state.totalPrice = calculateTotalPrice(state.cart);
+            state.status=false
+
         },
         incrementItemCount: (state, action) => {
             const itemId = action.payload;

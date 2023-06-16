@@ -27,6 +27,7 @@ function App() {
 
   useEffect(() => {
     const { storageData, decoded } = handleDecoded();
+    console.log(storageData)
     if (decoded?.id) {
       handleGetDetailsUser(decoded?.id, storageData);
     }

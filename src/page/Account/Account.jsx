@@ -34,22 +34,27 @@ function Account() {
   };
   const handleDecoded = () => {
     let storageData = localStorage.getItem("access_token");
+    let token_refresh = localStorage.getItem("refresh_token");
     let decoded = {};
     if (storageData && isJsonString(storageData)) {
       storageData = JSON.parse(storageData);
+      token_refresh = JSON.parse(token_refresh);
       decoded = jwt_decode(storageData);
     }
-    return { decoded, storageData };
+    return { decoded, storageData, token_refresh };
   };
   const mutation = useMutationHooks((data) => {
     const { id, access_token, ...rests } = data;
     UserService.updateAccount(id, rests, access_token);
   });
-  const handleUpdate = (e) => {
+  const mutationAddress = useMutationHooks((data) => {
+    const { id, access_token, ...rests } = data;
+    UserService.updateAddress(id, rests, access_token);
+  });
+  const handleUpdateAccount = (e) => {
     e.preventDefault();
-    let storageData = localStorage.getItem("access_token");
+    const { storageData, decoded } = handleDecoded();
 
-    const decoded = jwt_decode(userLogin?.access_token);
     if (passwordOld != "" && password != "") {
       mutation.mutate({
         id: decoded.id,
@@ -57,7 +62,7 @@ function Account() {
         lastName,
         password,
         passwordOld,
-        access_token: storageData,
+        access_token: (storageData),
       });
     } else {
       mutation.mutate({
@@ -68,13 +73,40 @@ function Account() {
       });
     }
   };
-  const { data, error, isLoading, isError, isSuccess } = mutation;
+  const handleUpdateAddress = (e) => {
+    e.preventDefault();
+    let storageData = localStorage.getItem("access_token");
+
+    const decoded = jwt_decode(userLogin?.access_token);
+    if (phone != "" && city != "" && address != "" && district != "") {
+      mutationAddress.mutate({
+        id: decoded.id,
+        phoneNumber:phone,
+        city,
+        address,
+        district,
+        access_token: userLogin?.access_token,
+      });
+    } else {
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.error("Không được bỏ trống!", Toastobjects);
+      }
+    }
+  };
+  const { data, error, isLoading, isSuccess } = mutation;
+
+  const { error: error1, isSuccess: isSuccess1 } = mutationAddress;
 
   useEffect(() => {
     if (userLogin.id !== "") {
       setEmail(userLogin.email);
-      setLastName(userLogin.lastName)
-      setFirstName(userLogin.firstName)
+      setLastName(userLogin.lastName);
+      setFirstName(userLogin.firstName);
+      setAddress(userLogin.address[0].address);
+      setCity(userLogin.address[0].city);
+      setDistrict(userLogin.address[0].district);
+      setPhone(userLogin.address[0].phoneNumber);
+
     }
     if (!error && isSuccess) {
       if (!toast.isActive(toastId.current)) {
@@ -89,6 +121,20 @@ function Account() {
       }
     }
   }, [userLogin]);
+  useEffect(() => {
+    if (!error1 && isSuccess1) {
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.success("Thành công!", Toastobjects);
+      }
+    } else if (error1) {
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.error(
+          error.response.data.message,
+          Toastobjects
+        );
+      }
+    }
+  }, [userLogin,error1,isSuccess1]);
 
   return (
     <>
@@ -134,7 +180,6 @@ function Account() {
                   id="grid-last-name"
                   type="text"
                   value={lastName}
-
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
@@ -220,7 +265,7 @@ function Account() {
                                     leading-6 text-white shadow-sm
                                     hover:bg-indigo-300 focus-visible:outline focus-visible:outline-2
                                     focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              onClick={handleUpdate}
+              onClick={handleUpdateAccount}
             >
               Lưu thông tin tài khoản
             </button>
@@ -242,24 +287,25 @@ function Account() {
                                        placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   id="grid-phone"
                   type="text"
+                  value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
-              <div className="w-full md:w-1/2 px-3">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  htmlFor="grid-name-receipt"
-                >
-                  Tên người nhận
-                </label>
-                <input
-                  className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
-                                       placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  id="grid-name-receipt"
-                  type="text"
-                  onChange={(e) => setNameReceipt(e.target.value)}
-                />
-              </div>
+              {/* <div className="w-full md:w-1/2 px-3">
+                  <label
+                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    htmlFor="grid-name-receipt"
+                  >
+                    Tên người nhận
+                  </label>
+                  <input
+                    className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                                        placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    id="grid-name-receipt"
+                    type="text"
+                    onChange={(e) => setNameReceipt(e.target.value)}
+                  />
+                </div> */}
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -273,8 +319,8 @@ function Account() {
                     setCity(e.target.value);
                   }}
                 >
-                  <option>Hà Nội</option>
-                  <option>Hồ Chí Minh</option>
+                  <option value="Hà Nội">Hà Nội</option>
+                  <option value="Hồ Chí Minh">Hồ Chí Minh</option>
                 </select>
               </div>
               <div className="w-full md:w-1/2 px-3">
@@ -306,6 +352,7 @@ function Account() {
                                        placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   id="grid-address"
                   type="text"
+                  value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
@@ -315,6 +362,7 @@ function Account() {
                                     leading-6 text-white shadow-sm
                                     hover:bg-indigo-300 focus-visible:outline focus-visible:outline-2
                                     focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              onClick={handleUpdateAddress}
             >
               Lưu thông địa chỉ thanh toán
             </button>

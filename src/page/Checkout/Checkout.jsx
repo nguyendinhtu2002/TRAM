@@ -254,7 +254,7 @@ function Checkout() {
               <span className="font-bold text-sm uppercase ">Tổng</span>
               <span className="text-red-600 font-bold">
                 {" "}
-                {formattedAmount(cart.totalPrice)} ₫
+                {formattedAmount(cart.totalPrice)} ₫ 
               </span>
             </div>
             <div className="border-t mt-8">

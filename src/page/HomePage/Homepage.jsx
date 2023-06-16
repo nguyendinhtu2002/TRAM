@@ -25,6 +25,7 @@ import { updateProduct } from "../../features/productSlide/productSlide";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
+import Footer from "../../Component/FooterComponent/Footer";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -265,7 +266,7 @@ function Homepage() {
     <div className="bg-[#101608]">
       <HeaderComponent />
       {/*    Start slider*/}
-      <div className=" mx-auto rounded-2xl pb-5">
+      <div className="hidden md:block mx-auto rounded-2xl pb-5">
         <div className="mb-3">
           <Slider {...settings} style={{}}>
             <a href="#">
@@ -796,41 +797,78 @@ function Homepage() {
       {/*    End Product*/}
 
       {/*    start customer rating*/}
-      <div className="w-4/5 mx-auto rounded-2xl py-8 mt-8 md:flex md:gap-10 md:items-center">
-        <div className="space-y-6 w-full">
-          <div>
-            <h2 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
-              Cảm nhận khách hàng
-            </h2>
+      <div className="w-4/5 mx-auto rounded-2xl py-8 mt-8 space-y-6">
+        <div className="md:flex md:gap-10 md:items-center">
+          <div className="space-y-6 w-full">
+            <div>
+              <h2 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
+                Cảm nhận khách hàng
+              </h2>
+            </div>
+            <div>
+              <Rating
+                name="read-only"
+                value={5}
+                readOnly
+                emptyIcon={<StarOutlineIcon style={{ color: "yellow" }} />}
+                onChange={(event, newValue) => {
+                  // Xử lý thay đổi đánh giá
+                }}
+              />
+              <p className="text-white text-justify leading-relaxed">
+                Lần đầu tiên mua Vòng Tay Trầm Hương nên rất lo, vì hàng giả
+                nhiều nhưng hữu duyên được các bạn nhân viên tư vấn nhiệt tình.
+                Rất là xúc động khi có những bạn nhân viên nhiệt tình đến vậy dù
+                giá trị món mình mua cũng không lớn lắm. Chắc chắn sẽ ủng hộ
+                thêm cho shop. Chúc shop làm ăn ngày càng phát đạt nhé
+              </p>
+            </div>
           </div>
-          <div>
-            <Rating
-              name="read-only"
-              value={5}
-              readOnly
-              emptyIcon={<StarOutlineIcon style={{ color: "yellow" }} />}
-              onChange={(event, newValue) => {
-                // Xử lý thay đổi đánh giá
-              }}
+          <div className="">
+            <img
+              className="rounded-[100%] "
+              src={image_3}
+              alt="Cảm nhận khác hanng"
             />
-            <p className="text-white text-justify leading-relaxed">
-              Lần đầu tiên mua Vòng Tay Trầm Hương nên rất lo, vì hàng giả nhiều
-              nhưng hữu duyên được các bạn nhân viên tư vấn nhiệt tình. Rất là
-              xúc động khi có những bạn nhân viên nhiệt tình đến vậy dù giá trị
-              món mình mua cũng không lớn lắm. Chắc chắn sẽ ủng hộ thêm cho
-              shop. Chúc shop làm ăn ngày càng phát đạt nhé
-            </p>
           </div>
         </div>
-        <div className="">
-          <img
-            className="rounded-[100%] "
-            src={image_3}
-            alt="Cảm nhận khác hanng"
-          />
+        <div className="md:flex md:gap-10 md:items-center">
+          <div className="">
+            <img
+              className="rounded-[100%] "
+              src={image_3}
+              alt="Cảm nhận khác hanng"
+            />
+          </div>
+          <div className="space-y-6 w-full">
+            <div>
+              <h2 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
+                Cảm nhận khách hàng
+              </h2>
+            </div>
+            <div>
+              <Rating
+                name="read-only"
+                value={5}
+                readOnly
+                emptyIcon={<StarOutlineIcon style={{ color: "yellow" }} />}
+                onChange={(event, newValue) => {
+                  // Xử lý thay đổi đánh giá
+                }}
+              />
+              <p className="text-white text-justify leading-relaxed">
+                Lần đầu tiên mua Vòng Tay Trầm Hương nên rất lo, vì hàng giả
+                nhiều nhưng hữu duyên được các bạn nhân viên tư vấn nhiệt tình.
+                Rất là xúc động khi có những bạn nhân viên nhiệt tình đến vậy dù
+                giá trị món mình mua cũng không lớn lắm. Chắc chắn sẽ ủng hộ
+                thêm cho shop. Chúc shop làm ăn ngày càng phát đạt nhé
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       {/*    end customer rating*/}
+      <Footer/>
     </div>
   );
 }

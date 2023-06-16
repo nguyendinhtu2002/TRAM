@@ -1,4 +1,3 @@
 Giao diện:
-    Details (slider, quantity, thông tin chi tiết, khuyến mãi)
+    Hiện số cho icon cart, whishlist
     Paginate cho các trang hiển thị sản phẩm
-    Ẩn slider Homepage

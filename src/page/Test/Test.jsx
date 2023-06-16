@@ -177,12 +177,18 @@ function Test() {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-8">
                     <div className="flex gap-4">
                         <Link to="/cart"
-                              className="text-sm font-semibold leading-6  text-[#fab55a] hover:opacity-80">
-                            <ShoppingCartIcon></ShoppingCartIcon>
+                              className="relative text-sm font-semibold leading-6 text-[#fab55a] hover:opacity-80">
+                            <ShoppingCartIcon/>
+                            <span
+                                className="absolute top-[-4px] left-3 bg-red-500 text-white rounded-full w-4 h-4 flex items-center
+                                justify-center text-xs">3</span>
                         </Link>
                         <Link to="/wishlist"
-                              className="text-sm font-semibold leading-6  text-[#fab55a] hover:opacity-80">
+                              className="relative text-sm font-semibold leading-6  text-[#fab55a] hover:opacity-80">
                             <FavoriteIcon></FavoriteIcon>
+                            <span
+                                className="absolute top-[-4px] left-3 bg-red-500 text-white rounded-full w-4 h-4 flex items-center
+                                justify-center text-xs">3</span>
                         </Link>
 
                         <Link to="/account"
@@ -260,7 +266,7 @@ function Test() {
                                                             {item.name}
                                                         </Disclosure.Button>
                                                         {
-                                                            [...item.sub].map((sub)=>(
+                                                            [...item.sub].map((sub) => (
                                                                 <>
                                                                     <a
                                                                         href={sub.hrefSub}
@@ -323,7 +329,8 @@ function Test() {
                                 <div className="flex-row">
                                     <Link to="/cart"
                                           className="text-sm font-semibold leading-6 text-[#fab55a] hover:opacity-80">
-                                        <ShoppingCartIcon></ShoppingCartIcon> <span className="align-middle text-white font-semibold text-base">Giỏ hàng</span>
+                                        <ShoppingCartIcon></ShoppingCartIcon> <span
+                                        className="align-middle text-white font-semibold text-base">Giỏ hàng</span>
                                     </Link>
 
                                 </div>
@@ -331,14 +338,16 @@ function Test() {
                                 <div>
                                     <Link to="/wishlist"
                                           className="text-sm font-semibold leading-6  text-[#fab55a] hover:opacity-80">
-                                        <FavoriteIcon></FavoriteIcon> <span className="align-middle text-white font-semibold text-base">Yêu thích</span>
+                                        <FavoriteIcon></FavoriteIcon> <span
+                                        className="align-middle text-white font-semibold text-base">Yêu thích</span>
                                     </Link>
                                 </div>
 
                                 <div>
                                     <Link to="/account"
                                           className="text-sm font-semibold leading-6  text-[#fab55a] hover:opacity-80">
-                                        <PersonIcon></PersonIcon> <span className="align-middle text-white font-semibold text-base">Tài khoản</span>
+                                        <PersonIcon></PersonIcon> <span
+                                        className="align-middle text-white font-semibold text-base">Tài khoản</span>
                                     </Link>
                                 </div>
                                 {
@@ -362,13 +371,13 @@ function Test() {
                                         )
                                         : (
                                             <div className="mt-3">
-                                            <Link
-                                                to="/Logout"
-                                                className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
-                                            >
-                                                Log out
-                                            </Link>
-                                        </div>)
+                                                <Link
+                                                    to="/Logout"
+                                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
+                                                >
+                                                    Log out
+                                                </Link>
+                                            </div>)
 
                                 }
                             </div>

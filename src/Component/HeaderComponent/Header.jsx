@@ -12,9 +12,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
 
-import { useDispatch, useSelector } from "react-redux";
-import { resetUser } from "../../features/userSlide/userSlide";
-import { Button } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const vongtay = [
   {
@@ -59,13 +57,6 @@ function classNames(...classes) {
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const userLogin = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-  const handleLogout = () => {
-    // console.log("Ok");
-    dispatch(resetUser());
-    localStorage.clear("access_token");
-    localStorage.clear("refresh_token");
-  };
   return (
     <header className="bg-[#101628]">
       {/*start header on PC*/}
@@ -218,7 +209,7 @@ function Header() {
             </Link>
           </div>
 
-          {!userLogin.id ? (
+          {!userLogin ? (
             <>
               <Link
                 to="/login"
@@ -235,12 +226,12 @@ function Header() {
             </>
           ) : (
             <>
-              <button
-                onClick={handleLogout}
+              <Link
+                to="/logout"
                 className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
               >
                 Log out
-              </button>
+              </Link>
             </>
           )}
         </div>
@@ -385,7 +376,7 @@ function Header() {
                     </span>
                   </Link>
                 </div>
-                {!userLogin.id ? (
+                {!userLogin ? (
                   <div className="mt-3">
                     <Link
                       to="/Login"
@@ -402,12 +393,12 @@ function Header() {
                   </div>
                 ) : (
                   <div className="mt-3">
-                    <button
-                      onClick={handleLogout}
+                    <Link
+                      to="/Logout"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
                     >
                       Log out
-                    </button>
+                    </Link>
                   </div>
                 )}
               </div>

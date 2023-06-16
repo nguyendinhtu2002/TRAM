@@ -8,7 +8,7 @@ import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import { useDispatch, useSelector } from "react-redux";
 import * as ProductService from "../../services/ProductService";
 import * as VoucherService from "../../services/VoucherService";
-
+import Slider from "react-slick";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
@@ -16,8 +16,48 @@ import {
   decrement,
   increment,
 } from "../../features/quantitySlide/quantitySlide";
-import { addCart, updateCart } from "../../features/cartSlide/cartSlide";
+import { addCart } from "../../features/cartSlide/cartSlide";
 
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        zIndex: "1000",
+        color: "white",
+        marginRight: "30px",
+        padding: "20px",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        zIndex: "1000",
+        color: "white",
+        marginLeft: "30px",
+        padding: "20px",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClick={onClick}
+    />
+  );
+}
 function Detail() {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -48,10 +88,10 @@ function Detail() {
     return amount.toLocaleString(undefined, options);
   };
   const handleAddCart = async () => {
-    const updatedData = { ...data, quantityOrder:count};
+    const updatedData = { ...data, quantityOrder: count };
 
-    dispatch(addCart(updatedData)) 
-  }
+    dispatch(addCart(updatedData));
+  };
   const CommentItem = () => {
     const [reply, setReply] = useState(null);
     return (
@@ -112,6 +152,35 @@ function Detail() {
       </>
     );
   };
+  const ProductSlider = ({ images }) => {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+    };
+
+    return (
+      <div className="w-1/2 mx-auto">
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div>
+              <div className="" key={index}>
+                <img
+                  className="w-full object-cover object-center rounded border border-gray-200"
+                  src={image}
+                  alt={`Image ${index}`}
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    );
+  };
 
   const [showModal, setShowModal] = React.useState(false);
   const [value, setValue] = useState(null);
@@ -127,11 +196,13 @@ function Detail() {
           <section className="text-gray-700 body-font overflow-hidden bg-white">
             <div className="container px-5 py-24 mx-auto">
               <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                <img
+                {/* <img
                   alt="ecommerce"
                   className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
                   src={data?.images[0]}
-                />
+                /> */}
+                {<ProductSlider images={data?.images} />}
+
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                   <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
                     {data?.name}
@@ -224,8 +295,8 @@ function Detail() {
                           <span className="text-[#F99B1C] font-bold">
                             {item.code}
                           </span>{" "}
-                          – Giảm {formattedAmount(item.discount)}VND Cho đơn hàng
-                          từ 1.590.000
+                          – Giảm {formattedAmount(item.discount)}VND Cho đơn
+                          hàng từ 1.590.000
                         </p>
                       ))}
                       {/* <p className="text-sm">
@@ -247,7 +318,8 @@ function Detail() {
                     <button className="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                       Mua ngay
                     </button>
-                    <button className="flex text-white bg-cyan-500  border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded"
+                    <button
+                      className="flex text-white bg-cyan-500  border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded"
                       onClick={handleAddCart}
                     >
                       Add to cart

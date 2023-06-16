@@ -15,7 +15,7 @@ export const refreshToken = async (token) => {
   });
 
   const newAccessToken = res.data.access_token;
-  localStorage.setItem("access_token",  JSON.stringify(newAccessToken));
+  localStorage.setItem("access_token", JSON.stringify(newAccessToken));
   return res.data;
 };
 
@@ -37,6 +37,7 @@ export const updateAccount = async (id, data, access_token) => {
   const headers = {
     Authorization: `Bearer ${access_token}`,
   };
+  console.log(access_token)
   const res = await axios.post(`${URL}api/v1/users/updateProfile/${id}`, data, {
     headers,
   });

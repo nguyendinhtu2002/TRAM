@@ -4,23 +4,23 @@ import * as VoucherService from "../../services/VoucherService";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import { useSelector, useDispatch } from 'react-redux';
 import { decrementItemCount, deleteItemFromCart, incrementItemCount, updatePrice } from '../../features/cartSlide/cartSlide';
+import { Link } from 'react-router-dom';
 
 function Cart() {
     const [code, setCoder] = useState('')
     const [hidden, setHidden] = useState(false)
     const [discount, setDiscount] = useState(0)
-    const [priceNew,setPriceNew] = useState()
+    const [priceNew, setPriceNew] = useState()
     const cart = useSelector((state) => state.cart)
 
     const handleGetVoucher = async () => {
-        
+
         try {
-            const res = await VoucherService.getCodeVoucher(code);  
-            setHidden(true) 
+            const res = await VoucherService.getCodeVoucher(code);
+            setHidden(true)
             setDiscount(res.discount)
             handleUpdatePrice(cart.totalPrice - res.discount)
         } catch (error) {
-            console.log(error)
             setHidden(false)
         }
 
@@ -45,12 +45,12 @@ function Cart() {
     const formattedAmount = (amount, options) => {
         return amount.toLocaleString(undefined, options);
     };
-    const handleUpdatePrice = (priceNew)=>{
-        if(cart.status){
+    const handleUpdatePrice = (priceNew) => {
+        if (cart.status) {
             alert("Bạn đã nhập voucher rồi")
-            
+
         }
-        else{
+        else {
             dispatch(updatePrice(priceNew))
 
         }
@@ -118,7 +118,7 @@ function Cart() {
 
                                     </div>
                                     <span className="text-center w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal)}</span>
-                                    <span className="text-center w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal*item.quantityOrder )}</span>
+                                    <span className="text-center w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal * item.quantityOrder)}</span>
                                 </div>) : <div className="text-center">Không có sản phẩm nào</div>
 
                         }
@@ -146,10 +146,12 @@ function Cart() {
                             <input type="text" id="promo" placeholder="Enter your code" className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
                                        placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 onChange={(e) => setCoder(e.target.value)} />
+                            {cart.status ? <p class="mt-2 text-sm text-green-600 dark:text-green-500"><span class="font-medium">Bạn đã dùng voucher!</span></p> : ""}
+
                             <button
                                 className="mt-3 bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase rounded"
                                 onClick={handleGetVoucher}
-                                disabled={hidden}
+                                disabled={cart.status}
                             >Áp dụng
                             </button>
 
@@ -159,11 +161,13 @@ function Cart() {
                                 <span>Tổng tiền</span>
                                 <span>${formattedAmount(cart.totalPrice)}</span>
                             </div>
-                            <button
-                                className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full rounded"
+                            <Link to="/checkout">
+                                <button
+                                    className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full rounded"
 
-                            >Thanh Toán
-                            </button>
+                                >Thanh Toán
+                                </button>
+                            </Link>
                         </div>
                     </div>
 

@@ -22,28 +22,24 @@ export const cartSlide = createSlice({
             const itemId = action.payload;
             const item = state.cart.find(item => item._id === itemId);
 
-            if (item) {
-                item.quantityOrder += 1;
-                state.totalPrice = calculateTotalPrice(state.cart);
-            }
 
-            if (state.status) {
-                state.totalPrice += item.priceReal;
-            }
+            item.quantityOrder += 1;
+            state.totalPrice = calculateTotalPrice(state.cart);
+            state.status=false
+
         },
 
         decrementItemCount: (state, action) => {
             const itemId = action.payload;
             const item = state.cart.find(item => item._id === itemId);
 
-            if (item && item.quantityOrder > 1) {
+            if ( item.quantityOrder > 1) {
                 item.quantityOrder -= 1;
                 state.totalPrice = calculateTotalPrice(state.cart);
+                state.status=false
+
             }
 
-            if (state.status) {
-                state.totalPrice -= item.priceReal;
-            }
         },
         deleteItemFromCart: (state, action) => {
             const itemId = action.payload;

@@ -44,7 +44,7 @@ function Footer() {
                         </div>
                         <div className="grid grid-cols-2 gap-8 sm:gap-10 sm:grid-cols-3">
                             <div>
-                                <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase text-white">Chính sách</h2>
+                                <h2 className="mb-6 text-sm font-bold  uppercase text-white">Chính sách</h2>
                                 <ul className="text-gray-300 font-medium">
                                     <li className="mb-3">
                                         <a href="#" className="text-sm hover:underline hover:text-[#fab55a]">Chính sách bảo vệ</a>
@@ -75,7 +75,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div>
-                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white ">Về chúng tôi</h2>
+                                <h2 className="mb-6 text-sm font-bold  uppercase text-white ">Về chúng tôi</h2>
                                 <ul className="text-gray-300 font-medium">
                                     <li className="mb-3">
                                         <a href="#"
@@ -96,7 +96,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div>
-                                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Bộ sưu tập</h2>
+                                <h2 className="mb-6 text-sm font-bold  uppercase text-white">Bộ sưu tập</h2>
                                 <ul className="text-gray-300 dark:text-gray-400 font-medium">
                                     <li className="mb-3">
                                         <a href="#" className="text-sm hover:underline hover:text-[#fab55a]">Vòng tay trầm hương</a>

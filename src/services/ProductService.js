@@ -12,3 +12,13 @@ export const getDetail = async (id) => {
   const res = await axios.get(`${URL}api/v1/product/detail/${id}`);
   return res.data;
 };
+
+export const addComment = async (id, data, access_token) => {
+  const headers = {
+    Authorization: `Bearer ${access_token}`,
+  };
+  const res = await axios.post(`${URL}api/v1/product//addReview/${id}`, data, {
+    headers,
+  });
+  return res.data;
+};

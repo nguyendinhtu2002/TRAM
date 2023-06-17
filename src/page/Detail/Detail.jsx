@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
 import Loading from "../../Component/LoadingError/Loading";
@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 import Toast from "../../Component/LoadingError/Toast";
 import Footer from "../../Component/FooterComponent/Footer";
 import axios from "axios";
+import { useMutationHooks } from "../../hooks/useMutationHooks";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -69,7 +70,7 @@ function Detail() {
   const [comment, setComment] = useState("");
   const [value, setValue] = useState(null);
   const [images, setImages] = useState([]);
-
+  const userLogin = useSelector((state) => state.user);
   const toastId = React.useRef(null);
   const Toastobjects = {
     position: "top-right",
@@ -224,6 +225,11 @@ function Detail() {
     const selectedImages = Array.from(event.target.files);
     setImages(selectedImages);
   };
+  const mutationAddComment = useMutationHooks((data) => {
+    const { id, access_token, ...rests } = data;
+    const res = ProductService.addComment(id, rests, access_token);
+    return res;
+  });
   const submitHandler = async (event) => {
     event.preventDefault();
     if (comment === "" || count === 0) {
@@ -234,21 +240,46 @@ function Detail() {
       const uploadedImageUrls = [];
 
       try {
-        const formData = new FormData();
-        formData.append("file", images);
-        formData.append("upload_preset", "Project1");
+        for (const image of images) {
+          const formData = new FormData();
+          formData.append("file", image);
+          formData.append("upload_preset", "Project1");
 
-        const response = await axios.post(
-          `https://api.cloudinary.com/v1_1/dgeeyhyzq/image/upload`,
-          formData
-        );
-        uploadedImageUrls.push(response.data.secure_url);
+          const response = await axios.post(
+            `https://api.cloudinary.com/v1_1/dgeeyhyzq/image/upload`,
+            formData
+          );
+          uploadedImageUrls.push(response.data.secure_url);
+        }
       } catch (error) {
         console.log(error);
       }
+      mutationAddComment.mutate({
+        id:id,
+        username: userLogin.email,
+        images: uploadedImageUrls,
+        comment,
+        rating: value,
+        access_token:userLogin.access_token
+      });
     }
   };
-
+  const { error, isSuccess } = mutationAddComment;
+  useEffect(() => {
+    if (!error && isSuccess) {
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.success("Thành công!", Toastobjects);
+      }
+      setShowModal(false);
+    } else if (error) {
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.error(
+          error.response.data.message,
+          Toastobjects
+        );
+      }
+    }
+  }, [error, isSuccess]);
   return (
     <>
       <HeaderComponent></HeaderComponent>
@@ -798,7 +829,7 @@ function Detail() {
                     </div>
                     {/*body*/}
                     <div className="relative p-6 flex-auto">
-                      <form className="mb-6 " encType="">
+                      <form className="mb-6 ">
                         <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                           <label htmlFor="comment" className="sr-only">
                             Your comment
@@ -809,7 +840,6 @@ function Detail() {
                             className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                             placeholder="Bình luận..."
                             onChange={(e) => setComment(e.target.value)}
-
                             required
                           ></textarea>
                         </div>
@@ -817,7 +847,7 @@ function Detail() {
                           <label htmlFor="comment" className="sr-only">
                             Your comment
                           </label>
-                          <input type="file"  onChange={handleFileInputChange}/>
+                          <input type="file" onChange={handleFileInputChange} />
                         </div>
                         <div className="flex gap-3">
                           <h4 className="text-xl font-semibold">
@@ -835,7 +865,7 @@ function Detail() {
                         <div className="mx-auto">
                           <button
                             className="mt-4 bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:bg-emerald-700 outline-none focus:outline-none ease-linear transition-all duration-150"
-                            onClick={() => setShowModal(false)}
+                            onClick={submitHandler}
                           >
                             Gửi đánh giá
                           </button>
@@ -877,7 +907,7 @@ function Detail() {
                   Bình luận
                 </button>
               </form>
-              {/* <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+              <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
                 <footer className="flex justify-between items-center mb-2">
                   <div className="flex items-center">
                     <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
@@ -1118,12 +1148,12 @@ function Detail() {
                   design strategy.
                 </p>
                 <CommentItem></CommentItem>
-              </article> */}
+              </article>
             </div>
           </section>
         </>
       )}
-        <Footer/>
+      <Footer />
     </>
   );
 }

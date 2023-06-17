@@ -15,6 +15,7 @@ import {updateUser} from "../../features/userSlide/userSlide";
 import * as ProductService from "../../services/ProductService";
 import {useQuery} from "react-query";
 import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
+import Footer from "../../Component/FooterComponent/Footer";
 
 // import Loading from "../../Component/LoadingError/"
 
@@ -394,6 +395,7 @@ function ProductCategory() {
                 </div>
                 {/*    end product*/}
             </div>
+            <Footer/>
         </>
     );
 

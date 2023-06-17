@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
 import { addCart } from "../../features/cartSlide/cartSlide";
+import Footer from "../../Component/FooterComponent/Footer";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -1037,6 +1038,7 @@ function Detail() {
           </section>
         </>
       )}
+        <Footer/>
     </>
   );
 }

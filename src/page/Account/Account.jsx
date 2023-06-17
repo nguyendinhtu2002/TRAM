@@ -7,6 +7,7 @@ import jwt_decode from "jwt-decode";
 import { isJsonString } from "../../utils";
 import { useMutationHooks } from "../../hooks/useMutationHooks";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
+import Footer from "../../Component/FooterComponent/Footer";
 
 function Account() {
   const userLogin = useSelector((state) => state.user);
@@ -369,6 +370,7 @@ function Account() {
           </form>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

@@ -6,6 +6,7 @@ import {
 } from "../../features/quantitySlide/quantitySlide";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import Footer from "../../Component/FooterComponent/Footer";
 
 function Checkout() {
     const count = useSelector((state) => state.quantity.value);
@@ -354,6 +355,7 @@ function Checkout() {
                     {/*    end your cart*/}
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

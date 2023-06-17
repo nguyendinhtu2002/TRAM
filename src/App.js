@@ -17,6 +17,7 @@ import Homepage from "./page/HomePage/Homepage";
 import Detail from "./page/Detail/Detail";
 import Contact from "./page/Contact/Contact";
 import ProductCategory from "./page/ProductCategory/ProductCategory";
+import Blog from "./page/Blog/Blog";
 import Test from "./page/Test/Test";
 import { useDispatch, useSelector } from "react-redux";
 import { isJsonString } from "./utils";
@@ -82,6 +83,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/productCategory" element={<ProductCategory />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/test/" element={<Test />} />
       </Routes>
     </BrowserRouter>

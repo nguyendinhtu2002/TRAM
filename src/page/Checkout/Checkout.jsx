@@ -28,6 +28,10 @@ function Checkout() {
   const [discount, setDiscount] = useState(0);
   const [priceNew, setPriceNew] = useState();
   const [voucher, setVoucher] = useState("");
+  const [isCodChecked, setIsCodChecked] = useState(false);
+  const [isMomoChecked, setIsMomoChecked] = useState(false);
+  const [isSTKChecked, setIsSTKChecked] = useState(false);
+  const dispatch = useDispatch();
   const toastId = React.useRef(null);
   const Toastobjects = {
     position: "top-right",
@@ -38,7 +42,6 @@ function Checkout() {
     draggable: true,
     progress: undefined,
   };
-  const dispatch = useDispatch();
   const options = {
     maximumFractionDigits: 0,
   };
@@ -75,8 +78,8 @@ function Checkout() {
     }
   };
   const handleUpdatePrice = (priceNew) => {
-    if (cart.status) {
-      alert("Bạn đã nhập voucher rồi");
+    if (cart.cart.length == 0) {
+      alert("Không có sản phẩm nào!");
     } else {
       dispatch(updatePrice(priceNew));
     }
@@ -92,13 +95,19 @@ function Checkout() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
-    mutation.mutate({
-      totalPrice: cart.totalPrice,
-      products: productIds,
-      customer: userLogin.id,
-      access_token: userLogin?.access_token,
-    });
+    if (cart.cart.length > 0) {
+      mutation.mutate({
+        totalPrice: cart.totalPrice,
+        products: productIds,
+        customer: userLogin.id,
+        access_token: userLogin?.access_token,
+      });
+    }
+    else{
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.error("Cart đang rỗng", Toastobjects);
+      }
+    }
   };
   const { data, error, isLoading, isError, isSuccess } = mutation;
 
@@ -159,7 +168,7 @@ function Checkout() {
   return (
     <>
       <HeaderComponent></HeaderComponent>
-      <Toast />
+      <Toast/>
       <div className="container mx-auto mt-10">
         <div className="lg:flex shadow-md my-10">
           {/*start info checkout*/}
@@ -338,8 +347,7 @@ function Checkout() {
                   required
                   className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
                                                placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
+                  value={userLogin.address[0].address}
                 />
               </div>
               <div className="pb-3">
@@ -456,6 +464,102 @@ function Checkout() {
             <div className="flex justify-between mt-10 border-b pb-5">
               <span className="font-bold text-sm uppercase ">Giao hàng</span>
               <span className="text-sm">Giao hàng miễn phí</span>
+            </div>
+
+            <div className="mt-10 pb-5 space-y-3">
+              <label className="font-bold text-sm uppercase ">
+                Phương thức thanh toán
+              </label>
+              <div>
+                <div className=" border-t py-3">
+                  <input
+                    type="radio"
+                    id="cod"
+                    name="optionCheckout"
+                    className="border-2 border-gray-300 rounded-full focus:outline-none"
+                    onChange={(event) => {
+                      setIsCodChecked(event.target.checked);
+                      setIsMomoChecked(false);
+                      setIsSTKChecked(false);
+                    }}
+                  />
+                  <label htmlFor="cod" className="ml-3 font-bold text-xs">
+                    1. Thanh toán khi giao hàng (COD)
+                  </label>
+                  {isCodChecked && (
+                    <div className="ml-5">
+                      <ul className="text-xs list-disc ">
+                        <li>
+                          Nhận hàng từ 1-2 ngày (Nội thành), 2-4 ngày (Tỉnh)
+                        </li>
+                        <li>
+                          Kiểm tra Trầm đúng chất lượng rồi mới nhận hàng & trả
+                          tiền mặt.
+                        </li>
+                        <li>
+                          Trường hợp không ưng ý, Quý Khách hoàn toàn có thể
+                          không nhận hàng và không mất phí vận chuyển.
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                <div className="border-t py-3">
+                  <input
+                    type="radio"
+                    id="cod"
+                    name="optionCheckout"
+                    className="border-2 border-gray-300 rounded-full focus:outline-none"
+                    onChange={(event) => {
+                      setIsMomoChecked(event.target.checked);
+                      setIsCodChecked(false);
+                      setIsSTKChecked(false);
+                    }}
+                  />
+                  <label htmlFor="cod" className="ml-3 font-bold text-xs">
+                    2. Thanh toán bằng Ví Momo
+                  </label>
+                  {isMomoChecked && (
+                    <div className="ml-5">
+                      <ul className="text-xs list-disc ">
+                        <li>Người nhận: ABC.</li>
+                        <li>Số điện thoại: 0123456789.</li>
+                        <li>
+                          Nội dung thanh toán: Thanh toan tram huong_[Họ tên].
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                <div className="border-t py-3">
+                  <input
+                    type="radio"
+                    id="cod"
+                    name="optionCheckout"
+                    className="border-2 border-gray-300 rounded-full focus:outline-none"
+                    onChange={(event) => {
+                      setIsSTKChecked(event.target.checked);
+                      setIsCodChecked(false);
+                      setIsMomoChecked(false);
+                    }}
+                  />
+                  <label htmlFor="cod" className="ml-3 font-bold text-xs">
+                    3. Chuyển khoản ngân hàng
+                  </label>
+                  {isSTKChecked && (
+                    <div className="ml-5">
+                      <ul className="text-xs list-disc ">
+                        <li>Người nhận: ABC.</li>
+                        <li>Số tài khoản:0123456789.</li>
+                        <li>Ngân hàng: XYZ.</li>
+                        <li>
+                          Nội dung thanh toán: Thanh toan tram huong_[Họ tên].
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div className="flex justify-between mt-10 pb-2 border-b">

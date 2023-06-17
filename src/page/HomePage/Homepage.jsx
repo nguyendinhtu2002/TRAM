@@ -200,7 +200,7 @@ function Homepage() {
       },
     ],
   };
-  const ImageItem = ({ image, handleGetDetailProduct, id }) => {
+  const ImageItem = ({ image, handleGetDetailProduct, id,link }) => {
     const [isHover, setHover] = useState(null);
     const [isHoverIcon, setHoverIcon] = useState(null);
 
@@ -213,13 +213,13 @@ function Homepage() {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <a href="#" className={isHover ? "hover:opacity-70" : ""}>
+        <Link to={link} className={isHover ? "hover:opacity-70" : ""}>
           <img
             src={image}
             className="rounded-t-lg object-fill xl:h-56 h-44 w-full m-0"
             alt=""
           />
-        </a>
+        </Link>
         <div>
           <button
             onClick={() => handleClick(id)}
@@ -269,27 +269,27 @@ function Homepage() {
       <div className="hidden md:block mx-auto rounded-2xl pb-5">
         <div className="mb-3">
           <Slider {...settings} style={{}}>
-            <a href="#">
+            <Link href="#">
               <img
                 src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
                 className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
                 alt=""
               />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <img
                 src="https://thienmochuong.com/wp-content/uploads/2022/12/banner-web_ban-mac-dinh.jpg"
                 className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                 alt=""
               />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <img
                 src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
                 className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                 alt=""
               />
-            </a>
+            </Link>
           </Slider>
         </div>
       </div>
@@ -305,7 +305,7 @@ function Homepage() {
 
         <Slider {...settingsCategories}>
           <div className="">
-            <a href="" className="hover:opacity-70">
+            <Link href="" className="hover:opacity-70">
               <img
                 className="rounded-full w-[40%] mx-auto mb-1"
                 src={vong_tay}
@@ -316,11 +316,11 @@ function Homepage() {
                   Vòng tay trầm hương
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="">
-            <a href="" className="hover:opacity-70">
+            <Link href="" className="hover:opacity-70">
               <img
                 className="rounded-full w-[40%] mx-auto mb-1"
                 src={vong_tay}
@@ -331,11 +331,11 @@ function Homepage() {
                   Vòng tay trầm hương
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="">
-            <a href="" className="hover:opacity-70">
+            <Link href="" className="hover:opacity-70">
               <img
                 className="rounded-full w-[40%] mx-auto mb-1"
                 src={vong_tay}
@@ -346,11 +346,11 @@ function Homepage() {
                   Vòng tay trầm hương
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="">
-            <a href="" className="hover:opacity-70">
+            <Link href="" className="hover:opacity-70">
               <img
                 className="rounded-full w-[40%] mx-auto mb-1"
                 src={vong_tay}
@@ -361,11 +361,11 @@ function Homepage() {
                   Vòng tay trầm hương
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="">
-            <a href="" className="hover:opacity-70">
+            <Link href="" className="hover:opacity-70">
               <img
                 className="rounded-full w-[40%] mx-auto mb-1"
                 src={vong_tay}
@@ -376,11 +376,11 @@ function Homepage() {
                   Vòng tay trầm hương
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="">
-            <a href="" className="hover:opacity-70">
+            <Link href="" className="hover:opacity-70">
               <img
                 className="rounded-full w-[40%] mx-auto mb-1"
                 src={vong_tay}
@@ -391,7 +391,7 @@ function Homepage() {
                   Vòng tay trầm hương
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
         </Slider>
       </div>
@@ -410,7 +410,11 @@ function Homepage() {
               {products.map((item) => (
                 <div className="">
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
-                    <ImageItem image={item.images[0]} />
+                    <ImageItem
+                        image={item.images[0]}
+                        link={`/detail/${item._id}`}
+
+                    />
                     <div className="py-5 px-3 max-w-md">
                       <div>
                         <Link
@@ -471,7 +475,7 @@ function Homepage() {
             <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">
               Trầm Hương Đốt
             </h3>
-            <a
+            <Link
               href=""
               className="text-white flex items-center md:text-sm hover:opacity-90"
             >
@@ -489,33 +493,33 @@ function Homepage() {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
           <div className="hidden xl:flex xl:gap-3 xl:pl-2">
-            <button
+            <Link
               href=""
               className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
             >
               Nhang trầm hương
-            </button>
-            <button
+            </Link>
+            <Link
               href=""
               className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
             >
               Nụ Trầm Hương
-            </button>
-            <button
+            </Link>
+            <Link
               href=""
               className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
             >
               Trầm Hương Miếng
-            </button>
-            <button
+            </Link>
+            <Link
               href=""
               className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
             >
               Bột Trầm Hương
-            </button>
+            </Link>
           </div>
           <div className="py-3 h-[70%]">
             <Slider {...settingsProducts}>
@@ -526,6 +530,7 @@ function Homepage() {
                       image={product.images[0]}
                       handleGetDetailProduct={handleGetDetailProduct}
                       id={product._id}
+                      link={`/detail/${product._id}`}
                     />
                     <div className="py-5 px-3 max-w-md">
                       <div>
@@ -639,6 +644,7 @@ function Homepage() {
                       image={product.images[0]}
                       handleGetDetailProduct={handleGetDetailProduct}
                       id={product._id}
+                      link={`/detail/${product._id}`}
                     />{" "}
                     <div className="py-5 px-3 max-w-md">
                       <div>
@@ -752,6 +758,8 @@ function Homepage() {
                       image={product.images[0]}
                       handleGetDetailProduct={handleGetDetailProduct}
                       id={product._id}
+                      link={`/detail/${product._id}`}
+
                     />{" "}
                     <div className="py-5 px-3 max-w-md">
                       <div>

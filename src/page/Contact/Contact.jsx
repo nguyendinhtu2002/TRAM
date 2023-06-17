@@ -2,6 +2,7 @@ import React from 'react'
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import RoomIcon from '@mui/icons-material/Room';
+import Footer from "../../Component/FooterComponent/Footer";
 function Contact() {
     return (
         <>
@@ -78,6 +79,7 @@ function Contact() {
                     </form>
                 </div>
             </section>
+            <Footer/>
         </>
     );
 }

@@ -5,6 +5,7 @@ import HeaderComponent from "../../Component/HeaderComponent/Header";
 import { useSelector, useDispatch } from 'react-redux';
 import { decrementItemCount, deleteItemFromCart, incrementItemCount, updatePrice } from '../../features/cartSlide/cartSlide';
 import { Link } from 'react-router-dom';
+import Footer from "../../Component/FooterComponent/Footer";
 
 function Cart() {
     const [code, setCoder] = useState('')
@@ -173,6 +174,7 @@ function Cart() {
 
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

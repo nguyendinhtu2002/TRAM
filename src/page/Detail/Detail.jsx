@@ -15,7 +15,9 @@ import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
 import { addCart } from "../../features/cartSlide/cartSlide";
 import { toast } from "react-toastify";
 import Toast from "../../Component/LoadingError/Toast";
+import Footer from "../../Component/FooterComponent/Footer";
 import axios from "axios";
+
 function NextArrow(props) {
   const { className, style, onClick } = props;
 
@@ -1121,6 +1123,7 @@ function Detail() {
           </section>
         </>
       )}
+        <Footer/>
     </>
   );
 }

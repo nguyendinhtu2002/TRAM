@@ -3,6 +3,7 @@ import Header from "../../Component/HeaderComponent/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteWishList } from "../../features/wishlistSlide/wishlistSlide";
 import { Link } from "react-router-dom";
+import Footer from "../../Component/FooterComponent/Footer";
 
 function Wishlist() {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
@@ -97,6 +98,7 @@ function Wishlist() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

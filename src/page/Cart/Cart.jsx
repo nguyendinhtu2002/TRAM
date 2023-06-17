@@ -24,9 +24,6 @@ function Cart() {
         } catch (error) {
             setHidden(false)
         }
-
-
-
     };
     const calculateTotalPrice = () => {
         return cart.cart.reduce((total, item) => {
@@ -53,7 +50,6 @@ function Cart() {
         }
         else {
             dispatch(updatePrice(priceNew))
-
         }
     }
     return (
@@ -134,43 +130,47 @@ function Cart() {
                             Tiếp tục mua hàng
                         </a>
                     </div>
-
-                    <div id="summary" className="lg:w-1/4 px-8 py-10">
-                        <h1 className="font-semibold text-2xl border-b pb-8">Cộng giỏ hàng</h1>
-                        <div className="flex justify-between mt-10 mb-5">
-                            <span className="font-bold text-sm uppercase text-[#e7ad00]">Tạm tính</span>
-                            <span className="font-semibold text-sm">{formattedAmount(cart.totalPrice)}$</span>
-                        </div>
-                        <div className="py-5">
-                            <label htmlFor="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Mã giảm
-                                giá</label>
-                            <input type="text" id="promo" placeholder="Enter your code" className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
-                                       placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                onChange={(e) => setCoder(e.target.value)} />
-                            {cart.status ? <p class="mt-2 text-sm text-green-600 dark:text-green-500"><span class="font-medium">Bạn đã dùng voucher!</span></p> : ""}
-
-                            <button
-                                className="mt-3 bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase rounded"
-                                onClick={handleGetVoucher}
-                                disabled={cart.status}
-                            >Áp dụng
-                            </button>
-
-                        </div>
-                        <div className="border-t mt-8">
-                            <div className="flex font-bold justify-between py-6 text-sm uppercase text-[#e7ad00]">
-                                <span>Tổng tiền</span>
-                                <span>${formattedAmount(cart.totalPrice)}</span>
+                    {cart.cart.length > 0 &&(
+                        <div id="summary" className="lg:w-1/4 px-8 py-10">
+                            <h1 className="font-semibold text-2xl border-b pb-8">Cộng giỏ hàng</h1>
+                            <div className="flex justify-between mt-10 mb-5">
+                                <span className="font-bold text-sm uppercase text-[#e7ad00]">Tạm tính</span>
+                                <span className="font-semibold text-sm">{formattedAmount(cart.totalPrice)}$</span>
                             </div>
-                            <Link to="/checkout">
-                                <button
-                                    className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full rounded"
+                            <div className="py-5">
+                                <label htmlFor="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Mã
+                                    giảm
+                                    giá</label>
+                                <input type="text" id="promo" placeholder="Enter your code" className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                                       placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                       onChange={(e) => setCoder(e.target.value)}/>
+                                {cart.status ? <p className="mt-2 text-sm text-green-600 dark:text-green-500"><span
+                                    className="font-medium">Bạn đã dùng voucher!</span></p> : ""}
 
-                                >Thanh Toán
+                                <button
+                                    className="mt-3 bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase rounded"
+                                    onClick={handleGetVoucher}
+                                    disabled={cart.status}
+                                >Áp dụng
                                 </button>
-                            </Link>
+
+                            </div>
+                            <div className="border-t mt-8">
+                                <div className="flex font-bold justify-between py-6 text-sm uppercase text-[#e7ad00]">
+                                    <span>Tổng tiền</span>
+                                    <span>${formattedAmount(cart.totalPrice)}</span>
+                                </div>
+                                <Link to="/checkout">
+                                    <button
+                                        className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full rounded"
+
+                                    >Thanh Toán
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
+
+                    )}
 
                 </div>
             </div>

@@ -53,7 +53,7 @@ function Wishlist() {
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
                       <span className="font-bold text-sm">{item.name}</span>
-                      <span className="text-red-500 text-xs">Apple</span>
+                      <span className="text-red-500 text-xs">{item.category}</span>
 
                       <a
                         type="button"

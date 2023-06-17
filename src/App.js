@@ -81,7 +81,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/productCategory" element={<ProductCategory />} />
+        <Route path="/productCategory/:slug" element={<ProductCategory />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/test/" element={<Test />} />

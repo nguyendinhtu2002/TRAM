@@ -20,19 +20,19 @@ const vongtay = [
     name: "Danh mục sản phẩm",
     description: "Get a better understanding of your traffic",
     sub: [
-      { nameSub: "Vòng trầm hương nam", hrefSub: "#" },
-      { nameSub: "Vòng trầm hương nữ", hrefSub: "#" },
+      { nameSub: "Vòng trầm hương nam", hrefSub: "/productCategory/vong-tram-huong-nam" },
+      { nameSub: "Vòng trầm hương nữ", hrefSub: "/productCategory/vong-tram-huong-nu" },
     ],
   },
   {
     name: "Vòng tay theo mệnh",
     description: "Speak directly to your customers",
     sub: [
-      { nameSub: "Mệnh mộc", hrefSub: "#" },
-      { nameSub: "Mệnh thủy", hrefSub: "#" },
-      { nameSub: "Mệnh hỏa", hrefSub: "#" },
-      { nameSub: "Mệnh thổ", hrefSub: "#" },
-      { nameSub: "Mệnh kim", hrefSub: "#" },
+      { nameSub: "Mệnh mộc", hrefSub: "/productCategory/menh-moc" },
+      { nameSub: "Mệnh thủy", hrefSub: "/productCategory/menh-thuy" },
+      { nameSub: "Mệnh hỏa", hrefSub: "/productCategory/menh-hoa" },
+      { nameSub: "Mệnh thổ", hrefSub: "/productCategory/menh-tho" },
+      { nameSub: "Mệnh kim", hrefSub: "/productCategory/menh-kim" },
     ],
   },
 ];

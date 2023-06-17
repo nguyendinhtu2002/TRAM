@@ -22,3 +22,9 @@ export const addComment = async (id, data, access_token) => {
   });
   return res.data;
 };
+
+export const getProductSlug = async (slug) => {
+  const res = await axios.get(`${URL}api/v1/product/getProduct/${slug}`);
+  return res.data;
+};
+

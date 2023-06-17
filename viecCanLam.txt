@@ -1,5 +1,4 @@
 Giao diện:
     Paginate cho các trang hiển thị sản phẩm
-    Phương thức thanh toán trang checkout
     Chọn đầy đủ yêu cầu ở trang detail
     Thông báo khi add item to cart

@@ -58,7 +58,8 @@ function Detail() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [count, setCount] = useState(1);
-
+  const [isSelected, setSelected] = useState(false);
+  const [checkBeforeAdd,setCheckBeforeAdd] = useState(null);
   const handleGetDetailProduct = async (id) => {
     const res = await ProductService.getDetail(id);
 
@@ -84,9 +85,15 @@ function Detail() {
     return amount.toLocaleString(undefined, options);
   };
   const handleAddCart = async () => {
-    const updatedData = { ...data, quantityOrder: count };
+      if(isSelected){
+          setCheckBeforeAdd(false);
+          const updatedData = { ...data, quantityOrder: count };
+          dispatch(addCart(updatedData));
+      }
+      else{
+          setCheckBeforeAdd(true);
+      }
 
-    dispatch(addCart(updatedData));
   };
   const CommentItem = () => {
     const [reply, setReply] = useState(null);
@@ -241,10 +248,12 @@ function Detail() {
                                 name="size"
                                 className="border-2 border-gray-300 rounded-full focus:outline-none"
                                 required={true}
+                                onClick={() => setSelected(true)}
                               />
                               <label htmlFor={`btn-${item}`}> {item} mm</label>
                             </div>
                           ))}
+                            {checkBeforeAdd&&(<span className="text-red-500">Xin hãy chọn đầy đủ thông tin</span>)}
                         </>
                       )}
                     </div>

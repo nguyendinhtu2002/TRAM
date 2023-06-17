@@ -55,6 +55,11 @@ export const cartSlide = createSlice({
             state.totalPrice = priceNew;
             state.status = true;
         },
+        resetCart:(state,)=>{
+            state.totalPrice = 0;
+            state.status = false;
+            state.cart=[]
+        }
     },
 });
 

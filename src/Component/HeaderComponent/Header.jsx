@@ -12,7 +12,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PersonIcon from "@mui/icons-material/Person";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { resetUser } from "../../features/userSlide/userSlide";
 
 const vongtay = [
   {
@@ -57,9 +58,15 @@ function classNames(...classes) {
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const userLogin = useSelector((state) => state.user);
-  const cart = useSelector((state)=>state.cart.cart)
-  const wishlist = useSelector((state)=>state.wishlist.wishlist)
-
+  const cart = useSelector((state) => state.cart.cart);
+  const wishlist = useSelector((state) => state.wishlist.wishlist);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    console.log("Ok");
+    dispatch(resetUser());
+    localStorage.clear("access_token");
+    localStorage.clear("refresh_token");
+  };
   return (
     <header className="bg-[#101628]">
       {/*start header on PC*/}
@@ -197,7 +204,7 @@ function Header() {
             >
               <ShoppingCartIcon />
               <span className="absolute top-[-4px] left-3 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
-               {cart.length}
+                {cart.length}
               </span>
             </Link>
             <Link
@@ -206,7 +213,7 @@ function Header() {
             >
               <FavoriteIcon></FavoriteIcon>
               <span className="absolute top-[-4px] left-3 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
-               {wishlist.length}
+                {wishlist.length}
               </span>
             </Link>
 
@@ -218,7 +225,7 @@ function Header() {
             </Link>
           </div>
 
-          {!userLogin ? (
+          {!userLogin.id ? (
             <>
               <Link
                 to="/login"
@@ -235,12 +242,12 @@ function Header() {
             </>
           ) : (
             <>
-              <Link
-                to="/logout"
+              <button
+                onClick={handleLogout}
                 className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
               >
                 Log out
-              </Link>
+              </button>
             </>
           )}
         </div>
@@ -362,7 +369,7 @@ function Header() {
                         className="absolute top-[-8px] left-[-14px] bg-red-500 text-white rounded-full w-4 h-4
                                             flex items-center justify-center text-xs"
                       >
-                       {cart.length}
+                        {cart.length}
                       </span>
                     </span>
                   </Link>
@@ -397,7 +404,7 @@ function Header() {
                     </span>
                   </Link>
                 </div>
-                {!userLogin ? (
+                {!userLogin.id ? (
                   <div className="mt-3">
                     <Link
                       to="/Login"
@@ -414,12 +421,12 @@ function Header() {
                   </div>
                 ) : (
                   <div className="mt-3">
-                    <Link
-                      to="/Logout"
+                    <button
+                      onClick={handleLogout}
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
                     >
                       Log out
-                    </Link>
+                    </button>
                   </div>
                 )}
               </div>

@@ -9,11 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 import * as ProductService from "../../services/ProductService";
 import * as VoucherService from "../../services/VoucherService";
 import Slider from "react-slick";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
 import { addCart } from "../../features/cartSlide/cartSlide";
-
+import { toast } from "react-toastify";
+import Toast from "../../Component/LoadingError/Toast";
+import axios from "axios";
 function NextArrow(props) {
   const { className, style, onClick } = props;
 
@@ -59,10 +61,24 @@ function Detail() {
   const { id } = useParams();
   const [count, setCount] = useState(1);
   const [isSelected, setSelected] = useState(false);
-  const [checkBeforeAdd,setCheckBeforeAdd] = useState(null);
-    const [showNotification, setShowNotification] = useState(false);
+  const [checkBeforeAdd, setCheckBeforeAdd] = useState(null);
+  const [showNotification, setShowNotification] = useState(false);
+  const [showModal, setShowModal] = React.useState(false);
+  const [comment, setComment] = useState("");
+  const [value, setValue] = useState(null);
+  const [images, setImages] = useState([]);
 
-    const handleGetDetailProduct = async (id) => {
+  const toastId = React.useRef(null);
+  const Toastobjects = {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  };
+  const handleGetDetailProduct = async (id) => {
     const res = await ProductService.getDetail(id);
 
     return res;
@@ -87,15 +103,31 @@ function Detail() {
     return amount.toLocaleString(undefined, options);
   };
   const handleAddCart = async () => {
-      if(isSelected){
-          setCheckBeforeAdd(false);
-          const updatedData = { ...data, quantityOrder: count };
-          dispatch(addCart(updatedData));
-          setShowNotification(true);
+    if (data?.size && data.size.length > 0) {
+      if (isSelected) {
+        const updatedData = { ...data, quantityOrder: count };
+        dispatch(addCart(updatedData));
+        if (!toast.isActive(toastId.current)) {
+          toastId.current = toast.success(
+            "Thêm vào cart thành công",
+            Toastobjects
+          );
+        }
+      } else {
+        if (!toast.isActive(toastId.current)) {
+          toastId.current = toast.error("Chưa chọn Kích thước ", Toastobjects);
+        }
       }
-      else{
-          setCheckBeforeAdd(true);
+    } else {
+      const updatedData = { ...data, quantityOrder: count };
+      dispatch(addCart(updatedData));
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.success(
+          "Thêm vào cart thành công",
+          Toastobjects
+        );
       }
+    }
   };
   const CommentItem = () => {
     const [reply, setReply] = useState(null);
@@ -186,14 +218,39 @@ function Detail() {
       </div>
     );
   };
+  const handleFileInputChange = (event) => {
+    const selectedImages = Array.from(event.target.files);
+    setImages(selectedImages);
+  };
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    if (comment === "" || count === 0) {
+      if (!toast.isActive(toastId.current)) {
+        toastId.current = toast.error("Không được để trống!", Toastobjects);
+      }
+    } else {
+      const uploadedImageUrls = [];
 
-  const [showModal, setShowModal] = React.useState(false);
-  const [value, setValue] = useState(null);
+      try {
+        const formData = new FormData();
+        formData.append("file", images);
+        formData.append("upload_preset", "Project1");
+
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/dgeeyhyzq/image/upload`,
+          formData
+        );
+        uploadedImageUrls.push(response.data.secure_url);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   return (
     <>
       <HeaderComponent></HeaderComponent>
-
+      <Toast />
       {isLoading ? (
         <Loading />
       ) : (
@@ -201,7 +258,6 @@ function Detail() {
           <section className="text-gray-700 body-font overflow-hidden bg-white">
             <div className="container px-5 py-24 mx-auto">
               <div className="lg:w-4/5 mx-auto flex flex-wrap">
-
                 {<ProductSlider images={data?.images} />}
 
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -255,7 +311,11 @@ function Detail() {
                               <label htmlFor={`btn-${item}`}> {item} mm</label>
                             </div>
                           ))}
-                            {checkBeforeAdd&&(<span className="text-red-500">Xin hãy chọn đầy đủ thông tin</span>)}
+                          {checkBeforeAdd && (
+                            <span className="text-red-500">
+                              Xin hãy chọn đầy đủ thông tin
+                            </span>
+                          )}
                         </>
                       )}
                     </div>
@@ -264,11 +324,11 @@ function Detail() {
                     <span className="mr-3">Số lượng</span>
                     <div className="relative">
                       <button
-                          onClick={() =>{
-                              if(count>1){
-                                  setCount(count-1)
-                              }
-                          } }
+                        onClick={() => {
+                          if (count > 1) {
+                            setCount(count - 1);
+                          }
+                        }}
                         className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 mr-1"
                       >
                         -
@@ -279,8 +339,8 @@ function Detail() {
                         className="rounded border border-gray-400 py-2 w-20 focus:outline-none focus:border-red-500 text-base"
                       ></input>
                       <button
-                          onClick={() => setCount(count+1)}
-                          className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 ml-1"
+                        onClick={() => setCount(count + 1)}
+                        className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 ml-1"
                       >
                         +
                       </button>
@@ -307,14 +367,17 @@ function Detail() {
                           hàng từ 1.590.000
                         </p>
                       ))}
-
                     </div>
                   </div>
 
                   <div className="flex gap-3">
-                    <button className="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                    <Link
+                      to="/checkout"
+                      onClick={handleAddCart}
+                      className="flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"
+                    >
                       Mua ngay
-                    </button>
+                    </Link>
                     <button
                       className="flex text-white bg-cyan-500  border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded"
                       onClick={handleAddCart}
@@ -337,36 +400,55 @@ function Detail() {
                       </svg>
                     </button>
                   </div>
-                    {showNotification&&(
-                        <div id="toast-success"
-                             className="absolute flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
-                             role="alert">
-                            <div
-                                className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
-                                <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                          clip-rule="evenodd"></path>
-                                </svg>
-                                <span className="sr-only">Check icon</span>
-                            </div>
-                            <div className="ml-3 text-sm font-normal">Item moved successfully.</div>
-                            <button type="button"
-                                    className="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-                                    data-dismiss-target="#toast-success" aria-label="Close"
-                                    onClick={() => setShowNotification(false)}
-                            >
-                                <span className="sr-only">Close</span>
-                                <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                          clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    )}
+                  {showNotification && (
+                    <div
+                      id="toast-success"
+                      className="absolute flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                      role="alert"
+                    >
+                      <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                        <svg
+                          aria-hidden="true"
+                          className="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span className="sr-only">Check icon</span>
+                      </div>
+                      <div className="ml-3 text-sm font-normal">
+                        Item moved successfully.
+                      </div>
+                      <button
+                        type="button"
+                        className="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        data-dismiss-target="#toast-success"
+                        aria-label="Close"
+                        onClick={() => setShowNotification(false)}
+                      >
+                        <span className="sr-only">Close</span>
+                        <svg
+                          aria-hidden="true"
+                          className="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -724,6 +806,8 @@ function Detail() {
                             rows="4"
                             className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                             placeholder="Bình luận..."
+                            onChange={(e) => setComment(e.target.value)}
+
                             required
                           ></textarea>
                         </div>
@@ -731,7 +815,7 @@ function Detail() {
                           <label htmlFor="comment" className="sr-only">
                             Your comment
                           </label>
-                          <input type="file" />
+                          <input type="file"  onChange={handleFileInputChange}/>
                         </div>
                         <div className="flex gap-3">
                           <h4 className="text-xl font-semibold">

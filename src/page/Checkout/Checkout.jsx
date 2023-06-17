@@ -100,10 +100,16 @@ function Checkout() {
         totalPrice: cart.totalPrice,
         products: productIds,
         customer: userLogin.id,
+        paymentMethod: setIsCodChecked
+          ? "COD"
+          : setIsMomoChecked
+          ? "MOMO"
+          : setIsSTKChecked
+          ? "BANK"
+          : "",
         access_token: userLogin?.access_token,
       });
-    }
-    else{
+    } else {
       if (!toast.isActive(toastId.current)) {
         toastId.current = toast.error("Cart đang rỗng", Toastobjects);
       }
@@ -168,7 +174,7 @@ function Checkout() {
   return (
     <>
       <HeaderComponent></HeaderComponent>
-      <Toast/>
+      <Toast />
       <div className="container mx-auto mt-10">
         <div className="lg:flex shadow-md my-10">
           {/*start info checkout*/}

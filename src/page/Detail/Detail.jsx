@@ -12,10 +12,6 @@ import Slider from "react-slick";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
-import {
-  decrement,
-  increment,
-} from "../../features/quantitySlide/quantitySlide";
 import { addCart } from "../../features/cartSlide/cartSlide";
 
 function NextArrow(props) {
@@ -61,7 +57,7 @@ function PrevArrow(props) {
 function Detail() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const count = useSelector((state) => state.quantity.value);
+  const [count, setCount] = useState(1);
 
   const handleGetDetailProduct = async (id) => {
     const res = await ProductService.getDetail(id);
@@ -196,11 +192,7 @@ function Detail() {
           <section className="text-gray-700 body-font overflow-hidden bg-white">
             <div className="container px-5 py-24 mx-auto">
               <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                {/* <img
-                  alt="ecommerce"
-                  className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-                  src={data?.images[0]}
-                /> */}
+
                 {<ProductSlider images={data?.images} />}
 
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -248,6 +240,7 @@ function Detail() {
                                 type="radio"
                                 name="size"
                                 className="border-2 border-gray-300 rounded-full focus:outline-none"
+                                required={true}
                               />
                               <label htmlFor={`btn-${item}`}> {item} mm</label>
                             </div>
@@ -260,7 +253,11 @@ function Detail() {
                     <span className="mr-3">Số lượng</span>
                     <div className="relative">
                       <button
-                        onClick={() => dispatch(decrement())}
+                          onClick={() =>{
+                              if(count>1){
+                                  setCount(count-1)
+                              }
+                          } }
                         className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 mr-1"
                       >
                         -
@@ -271,8 +268,8 @@ function Detail() {
                         className="rounded border border-gray-400 py-2 w-20 focus:outline-none focus:border-red-500 text-base"
                       ></input>
                       <button
-                        onClick={() => dispatch(increment())}
-                        className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 ml-1"
+                          onClick={() => setCount(count+1)}
+                          className="rounded border appearance-none border-gray-400 py-2 focus:outline-none hover:border-red-500 px-3 ml-1"
                       >
                         +
                       </button>

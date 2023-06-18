@@ -39,15 +39,15 @@ const vongtay = [
 const nhangTramHuong = [
   {
     name: "Nhang vòng trầm hương",
-    href: "#",
+    href: "/productCategory/nhang-vong-tram-huong",
   },
   {
     name: "Nhang trầm có tăm",
-    href: "#",
+    href: "/productCategory/nhang-vong-co-tam",
   },
   {
     name: "Nhang trầm không tăm",
-    href: "#",
+    href: "/productCategory/nhang-vong-khong-tam",
   },
 ];
 
@@ -175,12 +175,12 @@ function Header() {
                       className="group relative flex gap-x-6 rounded-lg px-4 py-2 text-sm leading-6"
                     >
                       <div className="">
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           className="block uppercase font-semibold text-white hover:text-[#fab55a] mb-2"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   ))}
@@ -189,12 +189,12 @@ function Header() {
             </Transition>
           </Popover>
 
-          <a
-            href="#"
+          <Link
+            to="/productCategory/tram-huong-dot"
             className="uppercase text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
           >
             Trầm hương đốt
-          </a>
+          </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-8">
           <div className="flex gap-4">

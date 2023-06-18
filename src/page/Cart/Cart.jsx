@@ -62,11 +62,11 @@ function Cart() {
                             <h1 className="font-semibold text-2xl">Giỏ hàng</h1>
                             <h2 className="font-semibold text-2xl capitalize">{cart.length} sản phẩm</h2>
                         </div>
-                        <div className="flex mt-10 mb-5">
+                        <div className="hidden md:flex mt-10 mb-5">
                             <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">Sản phẩm</h3>
                             <h3 className="font-semibold  text-gray-600 text-xs uppercase w-1/5 text-center">Số
                                 lượng</h3>
-                            <h3 className="font-semibold  text-gray-600 text-xs uppercase w-1/5 text-center">Giá
+                            <h3 className="font-semibold text-gray-600 text-xs uppercase md:w-1/5 text-center">Giá
                                 tiền</h3>
                             <h3 className="font-semibold  text-gray-600 text-xs uppercase w-1/5 text-center">Thành
                                 tièn</h3>
@@ -76,21 +76,23 @@ function Cart() {
                             cart.cart.length > 0 ? cart.cart.map((item) =>
                                 <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
 
-                                    <div className="flex w-2/5">
-                                        <div className="w-20">
+                                    <div className="flex md:w-2/5">
+                                        <div className="w-[30%]">
                                             <img className="h-24"
                                                 src={item.images[0]}
                                                 alt="" />
                                         </div>
-                                        <div className="flex flex-col justify-between ml-4 flex-grow">
+                                        <div className="w-[70%] flex flex-col justify-between ml-4 flex-grow">
                                             <span className="font-bold text-sm">{item.name}</span>
                                             <span className="text-red-500 text-xs">{item.category}</span>
                                             <a type='button' onClick={() => handleDelte(item._id)}
                                                 className="font-semibold hover:text-red-500 text-gray-500 text-xs cursor-pointer">Remove
                                             </a>
+                                            <span className="md:hidden font-semibold text-sm text-gray-600">{item.quantityOrder} x </span>
+                                            <span className="md:hidden font-bold text-sm">${formattedAmount(item.priceReal)}</span>
                                         </div>
                                     </div>
-                                    <div className="flex justify-center w-1/5">
+                                    <div className="hidden md:flex justify-center w-full md:w-1/5">
                                         <button>
                                             <svg className="fill-current text-gray-600 w-3"
                                                 viewBox="0 0 448 512"
@@ -114,8 +116,8 @@ function Cart() {
                                         </button>
 
                                     </div>
-                                    <span className="text-center w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal)}</span>
-                                    <span className="text-center w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal * item.quantityOrder)}</span>
+                                    <span className="hidden md:block text-center md:w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal)}</span>
+                                    <span className="hidden md:block text-center md:w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal * item.quantityOrder)}</span>
                                 </div>) : <div className="text-center">Không có sản phẩm nào</div>
 
                         }

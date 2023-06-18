@@ -1,3 +1,4 @@
 Giao diện:
     Paginate cho các trang hiển thị sản phẩm
-    Link lại
+    Hover header
+    Component productCategory

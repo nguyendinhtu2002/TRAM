@@ -70,7 +70,7 @@ function Header() {
   };
 
   const [isVongTayOpen, setIsVongTayOpen] = useState(false);
-  const handleVongTayOpen = () => {
+  const handleVongTayOpen =   () => {
     setIsVongTayOpen(true);
   };
   const handleVongTayClose = () => {

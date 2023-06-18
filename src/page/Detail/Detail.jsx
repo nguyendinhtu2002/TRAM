@@ -615,14 +615,14 @@ function Detail() {
                     đeo.
                   </p>
                   <div className="my-3">
-                    <div className="w-96 mx-auto">
+                    <div className="md:w-96 w-72 mx-auto">
                       <img
                         className=" lg:w-96"
                         src={vong_tay}
                         alt="Vòng tay trầm hương"
                       />
                     </div>
-                    <div className="w-96 mx-auto bg-gray-200 py-1">
+                    <div className="md:w-96 w-72 mx-auto bg-gray-200 py-1">
                       <p className=" text-center b-0">
                         <span className="font-semibold italic">
                           Vòng tay Trầm Hương Phật Di Lặc

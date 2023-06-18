@@ -113,8 +113,9 @@ function Header() {
           <Popover className="relative">
             <Popover.Button
                 className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
-                // onMouseEnter={handleVongTayOpen}
-                // onMouseLeave={handleVongTayClose}
+                onMouseEnter={handleVongTayOpen}
+                onMouseOut={handleVongTayClose}
+
             >
               Vòng tay trầm hương
               <ChevronDownIcon

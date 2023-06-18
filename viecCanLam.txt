@@ -1,4 +1,4 @@
 Giao diện:
     Paginate cho các trang hiển thị sản phẩm
-    Hover header
-    Component productCategory
+    reponsive Component productCategory, account, wishlist, cart
+    button vong tay

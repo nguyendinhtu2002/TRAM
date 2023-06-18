@@ -110,7 +110,7 @@ function MenhMoc() {
           chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
           riêng mình.
         </p>
-        <h3 className="text-3xl font-bold">
+        <h3 className="text-3xl py-4 font-bold">
           Ý nghĩa của vòng tay trầm hương dành cho nữ
         </h3>
         <div className="my-3">
@@ -152,7 +152,7 @@ function MenhMoc() {
           cho gia chủ trong sự nghiệp cũng như chuyện tình cảm.
         </p>
       </div>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         3 mẹo chọn chiếc Vòng tay trầm hương Nữ phù hợp cho phái đẹp
       </h3>
       <div className="my-3">
@@ -178,7 +178,7 @@ function MenhMoc() {
         là việc làm không hề dễ. Bạn đừng lo lắng gì cả, dưới đây là một số mẹo
         giúp bạn chọn được vòng tay thích hợp:
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Chọn vòng đeo tay nữ có màu sắc hợp bản mệnh
       </h3>
       <div className="my-3">
@@ -232,7 +232,7 @@ function MenhMoc() {
         Bên cạnh đó, còn có rất nhiều sự đa dạng trong màu sắc và kiểu dáng để
         các quý cô có thể lựa chọn.
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Chú trọng kích thước của vòng hạt trầm hương nữ
       </h3>
       <div className="my-3">
@@ -260,7 +260,7 @@ function MenhMoc() {
         vào sở thích cá nhân mà bạn có thể chọn các kích cỡ hạt lớn hơn hoặc nhỏ
         hơn.
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Chọn vòng tay trầm hương phù hợp với trang phục
       </h3>
       <div className="my-3">
@@ -286,7 +286,7 @@ function MenhMoc() {
         nên bạn không nên chọn bừa trang sức vòng tay. Bởi vì một chiếc vòng độc
         đáo, khác biệt sẽ khiến bạn trở nên đặc biệt và ấn tượng hơn bao hết.
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Địa chỉ mua vòng tay trầm hương nữ uy tín
       </h3>
       <p className="leading-relaxed text-justify pt-2">

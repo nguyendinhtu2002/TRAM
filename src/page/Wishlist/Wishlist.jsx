@@ -30,7 +30,7 @@ function Wishlist() {
                 {wishlist.length} sản phẩm
               </h2>
             </div>
-            <div className="flex mt-10 mb-5">
+            <div className="hidden md:flex mt-10 mb-5">
               <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
                 Sản phẩm
               </h3>
@@ -45,10 +45,10 @@ function Wishlist() {
               <div className="text-center">Không có sản phẩm nào</div>
             ) : (
               wishlist.map((item) => (
-                <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                <div className="md:flex block items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                   {/*Product*/}
-                  <div className="flex w-2/5">
-                    <div className="w-20">
+                  <div className="flex md:w-2/5 w-full">
+                    <div className="w-[30%]">
                       <img className="h-24" src={item.images[0]} alt="" />
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
@@ -64,14 +64,14 @@ function Wishlist() {
                       </a>
                     </div>
                   </div>
-                  <span className="text-center w-1/5 font-semibold text-sm">
-                    ${formattedAmount(item.priceReal)}
-                  </span>
-                  <span className="text-center w-1/5 font-semibold text-sm">
+                  <p className="text-end md:text-center md:w-1/5 font-semibold text-sm">
+                    <span className="md:hidden font-semibold text-gray-600 text-xs uppercase">Giá: </span>${formattedAmount(item.priceReal)}
+                  </p>
+                  <p className="text-center w-1/5 font-semibold text-sm">
                     {item.status === true ? "Còn hàng" : "Hết hàng"}
-                  </span>
+                  </p>
                   <button
-                    className="w-1/5 flex justify-center rounded-md px-3 py-1.5 text-sm font-semibold
+                    className="md:w-1/5 mx-auto my-3 flex justify-center rounded-md px-3 py-1.5 text-sm font-semibold
                                     leading-6 text-white shadow-sm bg-[#fab55a]
                                     hover:bg-[#fab55a]/80 focus-visible:outline focus-visible:outline-2
                                     focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import {Fragment, useRef, useState} from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
@@ -76,6 +76,22 @@ function Header() {
     const handleVongTayClose = () => {
         setIsVongTayOpen(false);
     };
+    const ParentElement = () => {
+        const handleHoverExit = (event) => {
+            // Kiểm tra nếu con trỏ chuột không nằm trong phần tử cha
+            if (!event.currentTarget.contains(event.relatedTarget)) {
+                // Xử lý hành động khi hover ra khỏi vùng
+                handleVongTayClose();
+            }
+        };
+
+        return (
+            <div onMouseOut={handleHoverExit}>
+                {/* Vùng hover */}
+            </div>
+        );
+    };
+
 
     const [isNhangTramHuongOpen, setIsNhangTramHuongOpen] = useState(false);
     const handleNhangTramHuongOpen = () => {
@@ -84,6 +100,7 @@ function Header() {
     const handleNhangTramHuongClose = () => {
         setIsNhangTramHuongOpen(false);
     };
+
     return (
         <header className="bg-[#101628]">
             {/*start header on PC*/}
@@ -113,6 +130,7 @@ function Header() {
                     <Popover className="relative">
                         <Popover.Button
                             className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
+                            onMouseMove={handleVongTayOpen}
                         >
                             Vòng tay trầm hương
                             <ChevronDownIcon
@@ -133,7 +151,7 @@ function Header() {
                             <Popover.Panel
                                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5"
                             >
-                                <div className="flex p-4">
+                                <div className="flex p-4" onMouseOut={handleVongTayClose}>
                                     {vongtay.map((item) => (
                                         <div
                                             key={item.name}

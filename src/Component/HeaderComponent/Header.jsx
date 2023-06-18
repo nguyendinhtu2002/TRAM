@@ -167,9 +167,7 @@ function Header() {
           </Popover>
 
           <Popover className="relative">
-            <Popover.Button className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
-                            onMouseEnter={handleNhangTramHuongOpen}
-                            onMouseLeave={handleNhangTramHuongClose}>
+            <Popover.Button className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
               Nhang trầm hương
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"

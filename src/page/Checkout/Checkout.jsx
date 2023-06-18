@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import {
-    decrement,
-    increment,
+  decrement,
+  increment,
 } from "../../features/quantitySlide/quantitySlide";
-import {useDispatch, useSelector} from "react-redux";
-import {Link} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Footer from "../../Component/FooterComponent/Footer";
 import axios from "axios";
-import * as VoucherService from "../../services/VoucherService"
-import * as OrderService from "../../services/OrderService"
+import * as VoucherService from "../../services/VoucherService";
+import * as OrderService from "../../services/OrderService";
 import { toast } from "react-toastify";
 import Toast from "../../Component/LoadingError/Toast";
 import { resetCart, updatePrice } from "../../features/cartSlide/cartSlide";
@@ -578,19 +578,21 @@ function Checkout() {
                 {" "}
                 {formattedAmount(cart.totalPrice)} ₫
               </span>
-                        </div>
-                        <div className="border-t mt-8">
-                            <button
-                                className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full rounded">
-                                Thanh Toán
-                            </button>
-                        </div>
-                    </div>
-                    {/*    end your cart*/}
-                </div>
             </div>
-        </>
-    );
+            <div className="border-t mt-8">
+              <button
+                className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full rounded"
+                onClick={submitHandler}
+              >
+                Thanh Toán
+              </button>
+            </div>
+          </div>
+          {/*    end your cart*/}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Checkout;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL } from "../utils/API";
+import { axiosJWT } from "./UserServices";
 
-export const axiosJWT = axios.create();
 
 export const getProduct = async () => {
   const res = await axios.get(`${URL}api/v1/product`);
@@ -17,7 +17,7 @@ export const addComment = async (id, data, access_token) => {
   const headers = {
     Authorization: `Bearer ${access_token}`,
   };
-  const res = await axios.post(`${URL}api/v1/product//addReview/${id}`, data, {
+  const res = await axiosJWT.post(`${URL}api/v1/product//addReview/${id}`, data, {
     headers,
   });
   return res.data;

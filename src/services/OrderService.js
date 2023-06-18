@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL } from "../utils/API";
+import { axiosJWT } from "./UserServices";
 
-export const axiosJWT = axios.create();
 
 export const createOrder = async (data, access_token) => {
   const headers = {

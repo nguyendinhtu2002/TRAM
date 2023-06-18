@@ -118,6 +118,10 @@ function ProductCategory() {
       setDropdownOpen(!isDropdownOpen);
     };
 
+    const handleDropdownContentMouseDown = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    };
     return (
       <>
         <div className="flex items-center justify-center p-4">
@@ -126,7 +130,6 @@ function ProductCategory() {
               id="dropdown"
               className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
               onClick={toggleDropdown}
-              onBlur={closeDropdown}
             >
               Xuất xứ
               <svg
@@ -164,6 +167,7 @@ function ProductCategory() {
                     type="checkbox"
                     value=""
                     className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+
                   />
 
                   <label
@@ -213,7 +217,6 @@ function ProductCategory() {
               id="dropdownCharm"
               className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
               onClick={toggleDropdown}
-              onBlur={closeDropdown}
             >
               Loại Charm
               <svg

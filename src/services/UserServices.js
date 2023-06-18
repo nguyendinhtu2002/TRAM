@@ -37,8 +37,7 @@ export const updateAccount = async (id, data, access_token) => {
   const headers = {
     Authorization: `Bearer ${access_token}`,
   };
-  console.log(access_token);
-  const res = await axios.post(`${URL}api/v1/users/updateProfile/${id}`, data, {
+  const res = await axiosJWT.post(`${URL}api/v1/users/updateProfile/${id}`, data, {
     headers,
   });
   return res.data;
@@ -49,7 +48,7 @@ export const updateAddress = async (id, data, access_token) => {
     Authorization: `Bearer ${access_token}`,
   };
   console.log(access_token);
-  const res = await axios.post(`${URL}api/v1/users/updateProfile/address/${id}`, data, {
+  const res = await axiosJWT.post(`${URL}api/v1/users/updateProfile/address/${id}`, data, {
     headers,
   });
   return res.data;

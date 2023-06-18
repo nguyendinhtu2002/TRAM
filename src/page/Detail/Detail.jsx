@@ -18,7 +18,6 @@ import Toast from "../../Component/LoadingError/Toast";
 import Footer from "../../Component/FooterComponent/Footer";
 import axios from "axios";
 import { useMutationHooks } from "../../hooks/useMutationHooks";
-import { loginUser } from "../../services/UserServices";
 const moment = require("moment");
 
 function NextArrow(props) {

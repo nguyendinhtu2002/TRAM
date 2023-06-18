@@ -186,6 +186,7 @@ function Header() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel
+              
                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628]
                                 shadow-lg ring-1 ring-gray-900/5"
               >

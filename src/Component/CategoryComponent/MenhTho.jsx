@@ -4,14 +4,23 @@ import { Link } from "react-router-dom";
 import "./main.css";
 import CopyButton from "../ButtonComponent/CoppyButton";
 const settings = {
-  dots: true,
-  infinite: true,
+    infinite: true,
   slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: true,
   speed: 400,
   autoplaySpeed: 3000,
   cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
   //   nextArrow: <NextArrow />,
   //   prevArrow: <PrevArrow />,
 };

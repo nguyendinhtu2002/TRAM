@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import "./main.css";
 import CopyButton from "../ButtonComponent/CoppyButton";
 const settings = {
-  dots: true,
   infinite: true,
   slidesToShow: 2,
   slidesToScroll: 1,
@@ -14,19 +13,27 @@ const settings = {
   speed: 400,
   autoplaySpeed: 3000,
   cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
   //   nextArrow: <NextArrow />,
   //   prevArrow: <PrevArrow />,
 };
 function VongTramNu() {
   return (
-    <div className="bg-gray-100 px-5 pb-3 mt-20">
+    <div className="bg-gray-100 p-5 pb-3 mt-20">
       <div className="py-2">
         <h2 className="font-bold text-2xl pb-3 text-center">
-          ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 05
-        </h2>
-        <h2 className="font-bold text-lg pb-3 text-center">
           ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 06
         </h2>
+
         <Slider {...settings} style={{}}>
           <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div className="mb-4">
@@ -79,26 +86,26 @@ function VongTramNu() {
           </div>
 
           {/* <Link href="#">
-            <img
-              src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
-              className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
-              alt=""
-            />
-          </Link>
-          <Link href="#">
-            <img
-              src="https://thienmochuong.com/wp-content/uploads/2022/12/banner-web_ban-mac-dinh.jpg"
-              className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
-              alt=""
-            />
-          </Link>
-          <Link href="#">
-            <img
-              src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
-              className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
-              alt=""
-            />
-          </Link> */}
+              <img
+                src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
+                className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
+                alt=""
+              />
+            </Link>
+            <Link href="#">
+              <img
+                src="https://thienmochuong.com/wp-content/uploads/2022/12/banner-web_ban-mac-dinh.jpg"
+                className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
+                alt=""
+              />
+            </Link>
+            <Link href="#">
+              <img
+                src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
+                className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
+                alt=""
+              />
+            </Link> */}
         </Slider>
         <p className="leading-relaxed text-justify ">
           <Link
@@ -112,18 +119,18 @@ function VongTramNu() {
           chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
           riêng mình.
         </p>
-        <h3 className="text-3xl font-bold">
-          Ý nghĩa của vòng tay trầm hương dành cho nữ
+        <h3 className="text-3xl py-4 font-bold">
+          Ý nghĩa của vòng tay trầm hương dành cho Nam
         </h3>
         <div className="my-3">
-          <div className="w-96 mx-auto">
+          <div className="lg:w-96 mx-auto">
             <img
               className=" lg:w-96"
               src="https://thienmochuong.com/wp-content/uploads/2023/04/vong-tram-huong-ho-ly-philip.jpg"
               alt="Vòng tay trầm hương"
             />
           </div>
-          <div className="w-96 mx-auto bg-gray-200 py-1">
+          <div className="lg:w-96 mx-auto bg-gray-200 py-1">
             <p className=" text-center b-0">
               <span className="font-semibold italic">
                 Sản phẩm vòng trầm hương 108 hồ ly vàng là món trang sức tinh tế
@@ -154,18 +161,18 @@ function VongTramNu() {
           cho gia chủ trong sự nghiệp cũng như chuyện tình cảm.
         </p>
       </div>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         3 mẹo chọn chiếc Vòng tay trầm hương Nữ phù hợp cho phái đẹp
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2023/03/cach-deo-vong-tram-108-hat-6.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Chọn được một chiếc vòng tay trầm hương nữ đẹp không phải dễ dàng
@@ -180,18 +187,18 @@ function VongTramNu() {
         là việc làm không hề dễ. Bạn đừng lo lắng gì cả, dưới đây là một số mẹo
         giúp bạn chọn được vòng tay thích hợp:
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Chọn vòng đeo tay nữ có màu sắc hợp bản mệnh
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nu-1.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Chọn vòng trầm hương phù hợp cung mệnh cho phái nữ
@@ -234,18 +241,18 @@ function VongTramNu() {
         Bên cạnh đó, còn có rất nhiều sự đa dạng trong màu sắc và kiểu dáng để
         các quý cô có thể lựa chọn.
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Chú trọng kích thước của vòng hạt trầm hương nữ
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2020/08/Vong-tay-Tram-Huong-Thien-Moc-Huong-2021-96.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng tay trầm hương mang đến bình an, may mắn cho người phụ nữ của
@@ -262,18 +269,18 @@ function VongTramNu() {
         vào sở thích cá nhân mà bạn có thể chọn các kích cỡ hạt lớn hơn hoặc nhỏ
         hơn.
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Chọn vòng tay trầm hương phù hợp với trang phục
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2020/08/ho-ly-2.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng tay trầm hương được xem là món phụ kiện thời trang cao cấp
@@ -288,7 +295,7 @@ function VongTramNu() {
         nên bạn không nên chọn bừa trang sức vòng tay. Bởi vì một chiếc vòng độc
         đáo, khác biệt sẽ khiến bạn trở nên đặc biệt và ấn tượng hơn bao hết.
       </p>
-      <h3 className="text-3xl font-bold">
+      <h3 className="text-3xl py-4 font-bold">
         Địa chỉ mua vòng tay trầm hương nữ uy tín
       </h3>
       <p className="leading-relaxed text-justify pt-2">
@@ -296,14 +303,14 @@ function VongTramNu() {
         là Thiên Mộc Hương
       </p>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2020/08/ho-ly-2.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng tay trầm hương được xem là món phụ kiện thời trang cao cấp

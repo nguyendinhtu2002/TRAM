@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./main.css";
 import CopyButton from "../ButtonComponent/CoppyButton";
 const settings = {
-  dots: true,
   infinite: true,
   slidesToShow: 2,
   slidesToScroll: 1,
@@ -12,6 +11,16 @@ const settings = {
   speed: 400,
   autoplaySpeed: 3000,
   cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
   //   nextArrow: <NextArrow />,
   //   prevArrow: <PrevArrow />,
 };
@@ -97,14 +106,14 @@ function VongTramNam() {
           dịu nhờ quá trình ma sát vòng với da tay làm tiết ra mùi hương.
         </p>
         <div className="my-3">
-          <div className="w-96 mx-auto">
+          <div className="lg:w-96 mx-auto">
             <img
               className=" lg:w-96"
               src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-400x400.jpg"
               alt="Vòng tay trầm hương"
             />
           </div>
-          <div className="w-96 mx-auto bg-gray-200 py-1">
+          <div className="lg:w-96 mx-auto bg-gray-200 py-1">
             <p className=" text-center b-0">
               <span className="font-semibold italic">
                 Vòng Trầm Hương cho nam giới
@@ -126,14 +135,14 @@ function VongTramNam() {
         Ý nghĩa đặc biệt vòng tay trầm hương đối với nam giới
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2022/02/avatar-danh-muc-web-vong-tram-huong-cho-nam-e1644400718227.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng tay trầm hương nam Thiên Mộc Hương{" "}
@@ -168,14 +177,14 @@ function VongTramNam() {
         Chọn vòng trầm hương nam có màu sắc hợp bản mệnh
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-4.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Chọn vòng trầm hương phù hợp cung mệnh cho phái nam
@@ -203,14 +212,14 @@ function VongTramNam() {
         Chú trọng kích thước hạt của vòng trầm hương nam
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-5.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Một chiếc vòng có kích thước phù hợp sẽ tạo cho bạn cảm giác thoải
@@ -236,14 +245,14 @@ function VongTramNam() {
         hết.
       </p>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2019/07/V%C3%B2ng-Tay-Tr%E1%BA%A7m-H%C6%B0%C6%A1ng-Ph%C3%BAc-L%E1%BB%99c-Th%E1%BB%8D1-400x400.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng trầm hương được xem là món phụ kiện thể hiện đẳng cấp của các
@@ -284,14 +293,14 @@ function VongTramNam() {
       </ul>
 
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2019/07/Vong-tay-Tram-Huong-32.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng tay trầm hương thiên mộc hương Lá bùa Tây Tạng dành cho nam
@@ -318,14 +327,14 @@ function VongTramNam() {
       </p>
 
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2022/07/cua-hang-thien-moc-huong.jpeg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Cửa hàng Thiên Mộc Hương HCM

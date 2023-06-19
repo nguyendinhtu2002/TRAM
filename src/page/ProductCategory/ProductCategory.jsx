@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
@@ -20,6 +20,10 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import VongTramNu from "../../Component/CategoryComponent/VongTramNu";
 import VongTramNam from "../../Component/CategoryComponent/VongTramNam";
 import MenhMoc from "../../Component/CategoryComponent/MenhMoc";
+import MenhThuy from "../../Component/CategoryComponent/MenhThuy";
+import MenhHoa from "../../Component/CategoryComponent/MenhHoa";
+import MenhTho from "../../Component/CategoryComponent/MenhTho";
+import MenhKim from "../../Component/CategoryComponent/MenhKim";
 
 // import Loading from "../../Component/LoadingError/"
 
@@ -81,7 +85,7 @@ function ProductCategory() {
 
   const settingsCategories = {
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 1,
     speed: 300,
     nextArrow: <NextArrow />,
@@ -122,7 +126,10 @@ function ProductCategory() {
       setDropdownOpen(!isDropdownOpen);
     };
     const handleOutsideClick = (event) => {
-      if (outsideClickRef.current && !outsideClickRef.current.contains(event.target)) {
+      if (
+        outsideClickRef.current &&
+        !outsideClickRef.current.contains(event.target)
+      ) {
         // Xử lý hành động khi click ra ngoài vùng
         closeDropdown();
       }
@@ -137,82 +144,80 @@ function ProductCategory() {
     }, []);
 
     return (
-        <div ref={outsideClickRef}>
-          <div className="flex items-center justify-center p-4">
-            <div className="relative">
-              <button
-                  id="dropdown"
-                  className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
-                  onClick={toggleDropdown}
+      <div ref={outsideClickRef}>
+        <div className="flex items-center justify-center p-4">
+          <div className="relative">
+            <button
+              id="dropdown"
+              className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
+              onClick={toggleDropdown}
+            >
+              Xuất xứ
+              <svg
+                className="w-4 h-4 ml-2"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Xuất xứ
-                <svg
-                    className="w-4 h-4 ml-2"
-                    aria-hidden="true"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                  id="dropdownContent"
-                  style={{ top: "100%" }}
-                  className={
-                    isDropdownOpen
-                        ? "absolute m-0 z-10 w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700"
-                        : "hidden"
-                  }
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="dropdownContent"
+              style={{ top: "100%" }}
+              className={
+                isDropdownOpen
+                  ? "absolute m-0 z-10 w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700"
+                  : "hidden"
+              }
+            >
+              <ul
+                className="space-y-2 text-sm"
+                aria-labelledby="dropdownDefault"
               >
-                <ul
-                    className="space-y-2 text-sm"
-                    aria-labelledby="dropdownDefault"
-                >
-                  <li className="flex items-center">
-                    <input
-                        id="microsoft"
-                        type="checkbox"
-                        value=""
-                        className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                <li className="flex items-center">
+                  <input
+                    id="microsoft"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
 
-                    />
+                  <label
+                    htmlFor="microsoft"
+                    className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
+                  >
+                    Việt Nam
+                  </label>
+                </li>
 
-                    <label
-                        htmlFor="microsoft"
-                        className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                    >
-                      Việt Nam
-                    </label>
-                  </li>
+                <li className="flex items-center">
+                  <input
+                    id="razor"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
 
-                  <li className="flex items-center">
-                    <input
-                        id="razor"
-                        type="checkbox"
-                        value=""
-                        className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    />
-
-                    <label
-                        htmlFor="razor"
-                        className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                    >
-                      Philippines
-                    </label>
-                  </li>
-                </ul>
-              </div>
+                  <label
+                    htmlFor="razor"
+                    className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
+                  >
+                    Philippines
+                  </label>
+                </li>
+              </ul>
             </div>
           </div>
-
         </div>
+      </div>
     );
   };
   const DropdownItem2 = () => {
@@ -225,7 +230,10 @@ function ProductCategory() {
       setDropdownOpen(!isDropdownOpen);
     };
     const handleOutsideClick = (event) => {
-      if (outsideClickRef.current && !outsideClickRef.current.contains(event.target)) {
+      if (
+        outsideClickRef.current &&
+        !outsideClickRef.current.contains(event.target)
+      ) {
         // Xử lý hành động khi click ra ngoài vùng
         closeDropdown();
       }
@@ -240,81 +248,80 @@ function ProductCategory() {
     }, []);
 
     return (
-        <div ref={outsideClickRef}>
-          <div className="flex items-center justify-center p-4">
-            <div className="relative">
-              <button
-                  id="dropdownCharm"
-                  className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
-                  onClick={toggleDropdown}
+      <div ref={outsideClickRef}>
+        <div className="flex items-center justify-center p-4">
+          <div className="relative">
+            <button
+              id="dropdownCharm"
+              className="capitalize text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800"
+              onClick={toggleDropdown}
+            >
+              Loại Charm
+              <svg
+                className="w-4 h-4 ml-2"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Loại Charm
-                <svg
-                    className="w-4 h-4 ml-2"
-                    aria-hidden="true"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                  id="dropdownContentCharm"
-                  style={{ top: "100%" }}
-                  className={
-                    isDropdownOpen
-                        ? "absolute m-0 z-10 w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700"
-                        : "hidden"
-                  }
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              id="dropdownContentCharm"
+              style={{ top: "100%" }}
+              className={
+                isDropdownOpen
+                  ? "absolute m-0 z-10 w-56 p-3 bg-white rounded-lg shadow dark:bg-gray-700"
+                  : "hidden"
+              }
+            >
+              <ul
+                className="space-y-2 text-sm"
+                aria-labelledby="dropdownDefault"
               >
-                <ul
-                    className="space-y-2 text-sm"
-                    aria-labelledby="dropdownDefault"
-                >
-                  <li className="flex items-center">
-                    <input
-                        id="aquamerine"
-                        type="checkbox"
-                        value=""
-                        className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    />
+                <li className="flex items-center">
+                  <input
+                    id="aquamerine"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
 
-                    <label
-                        htmlFor="aquamerine"
-                        className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                    >
-                      aquamerine
-                    </label>
-                  </li>
+                  <label
+                    htmlFor="aquamerine"
+                    className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
+                  >
+                    aquamerine
+                  </label>
+                </li>
 
-                  <li className="flex items-center">
-                    <input
-                        id="camThachHuyet"
-                        type="checkbox"
-                        value=""
-                        className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                    />
+                <li className="flex items-center">
+                  <input
+                    id="camThachHuyet"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  />
 
-                    <label
-                        htmlFor="camThachHuyet"
-                        className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
-                    >
-                      cẩm thạch huyết
-                    </label>
-                  </li>
-                </ul>
-              </div>
+                  <label
+                    htmlFor="camThachHuyet"
+                    className="capitalize ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"
+                  >
+                    cẩm thạch huyết
+                  </label>
+                </li>
+              </ul>
             </div>
           </div>
-
         </div>
+      </div>
     );
   };
   const DropdownItem3 = () => {
@@ -407,104 +414,21 @@ function ProductCategory() {
     <>
       <HeaderComponent></HeaderComponent>
       <div className="bg-white">
-        {/*start category*/}
-        <div className="bg-[#101608] py-3">
-          <Slider {...settingsCategories}>
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                    Vòng tay trầm hương
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                    Vòng tay trầm hương
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                    Vòng tay trầm hương
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                    Vòng tay trầm hương
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                    Vòng tay trầm hương
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="">
-              <a href="" className="hover:opacity-70">
-                <img
-                  className="rounded-full w-[40%] mx-auto mb-1"
-                  src={vong_tay}
-                  alt="Vòng tay trầm hương"
-                />
-                <div>
-                  <p className="text-white text-center font-bold capitalize">
-                    Vòng tay trầm hương
-                  </p>
-                </div>
-              </a>
-            </div>
-          </Slider>
-        </div>
-        {/*End category*/}
-
         {/*start filter*/}
         <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
+          <div className=" py-3 pb-6 ">
+            <Slider {...settingsCategories}>
+              <div className="">
+                <a href="" className="">
+                  <img
+                    className=" w-full mx-auto mb-1"
+                    src="https://thienmochuong.com/wp-content/uploads/2020/03/Banner-3.jpg"
+                    alt="Vòng tay trầm hương"
+                  />
+                </a>
+              </div>
+            </Slider>
+          </div>
           <div className="w-full mb-8 flex justify-end">
             <div className="flex gap-3 items-center">
               <h2 className="font-bold uppercase">Sắp xếp</h2>
@@ -613,6 +537,14 @@ function ProductCategory() {
             <VongTramNam />
           ) : slug === "menh-moc" ? (
             <MenhMoc />
+          ) : slug === "menh-thuy" ? (
+            <MenhThuy />
+          ) : slug === "menh-hoa" ? (
+            <MenhHoa />
+          ) : slug === "menh-tho" ? (
+            <MenhTho />
+          ) : slug === "menh-kim" ? (
+            <MenhKim />
           ) : (
             ""
           )}
@@ -1034,20 +966,6 @@ function ProductCategory() {
                 </a>
               </div>
             </Slider>
-          </div>
-          <h3 className="text-center pt-6 text-3xl font-medium">
-            Cửa hàng của chúng tôi
-          </h3>
-          <div className="pb-8 mx-auto  pl-4 mt-7 w-full ">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14898.531693015568!2d105.8247304!3d21.0073466!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8109765ba5%3A0xd84740ece05680ee!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUaOG7p3kgbOG7o2k!5e0!3m2!1svi!2s!4v1687060620214!5m2!1svi!2s"
-              width="100%"
-              height="450"
-              style={{ border: "0px" }}
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
           </div>
         </div>
         {/*    end product*/}

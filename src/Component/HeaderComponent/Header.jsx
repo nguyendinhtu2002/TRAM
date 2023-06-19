@@ -20,8 +20,14 @@ const vongtay = [
     name: "Danh mục sản phẩm",
     description: "Get a better understanding of your traffic",
     sub: [
-      { nameSub: "Vòng trầm hương nam", hrefSub: "/productCategory/vong-tram-huong-nam" },
-      { nameSub: "Vòng trầm hương nữ", hrefSub: "/productCategory/vong-tram-huong-nu" },
+      {
+        nameSub: "Vòng trầm hương nam",
+        hrefSub: "/productCategory/vong-tram-huong-nam",
+      },
+      {
+        nameSub: "Vòng trầm hương nữ",
+        hrefSub: "/productCategory/vong-tram-huong-nu",
+      },
     ],
   },
   {
@@ -50,7 +56,6 @@ const nhangTramHuong = [
     href: "/productCategory/nhang-vong-khong-tam",
   },
 ];
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -111,11 +116,7 @@ function Header() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button
-                className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
-                // onMouseEnter={handleVongTayOpen}
-                // onMouseLeave={handleVongTayClose}
-            >
+            <Popover.Button className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
               Vòng tay trầm hương
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
@@ -132,33 +133,31 @@ function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel
-                  className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5"
-              >
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5">
                 <div className="flex p-4">
                   {vongtay.map((item) => (
-                      <div
-                          key={item.name}
-                          className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6"
-                      >
-                        <div className="">
-                          <p className="block uppercase font-semibold text-[#fab55a] mb-2">
-                            {item.name}
-                          </p>
-                          <div className="space-y-3">
-                            {item.sub.map((sub) => (
-                                <div>
-                                  <a
-                                      href={sub.hrefSub}
-                                      className="uppercase font-semibold text-gray-400 hover:text-[#fab55a]"
-                                  >
-                                    {sub.nameSub}
-                                  </a>
-                                </div>
-                            ))}
-                          </div>
+                    <div
+                      key={item.name}
+                      className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6"
+                    >
+                      <div className="">
+                        <p className="block uppercase font-semibold text-[#fab55a] mb-2">
+                          {item.name}
+                        </p>
+                        <div className="space-y-3">
+                          {item.sub.map((sub) => (
+                            <div>
+                              <a
+                                href={sub.hrefSub}
+                                className="uppercase font-semibold text-gray-400 hover:text-[#fab55a]"
+                              >
+                                {sub.nameSub}
+                              </a>
+                            </div>
+                          ))}
                         </div>
                       </div>
+                    </div>
                   ))}
                 </div>
                 {/*<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"></div>*/}
@@ -185,7 +184,6 @@ function Header() {
               leaveTo="opacity-0 translate-y-1"
             >
               <Popover.Panel
-              
                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628]
                                 shadow-lg ring-1 ring-gray-900/5"
               >

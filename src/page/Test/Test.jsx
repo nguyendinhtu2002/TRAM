@@ -56,7 +56,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-function Header() {
+function Test() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const userLogin = useSelector((state) => state.user);
     const cart = useSelector((state) => state.cart.cart);
@@ -68,22 +68,8 @@ function Header() {
         localStorage.clear("access_token");
         localStorage.clear("refresh_token");
     };
+    const [isShowing, setIsShowing] = useState(false)
 
-    const [isVongTayOpen, setIsVongTayOpen] = useState(false);
-    const handleVongTayOpen = () => {
-        setIsVongTayOpen(true);
-    };
-    const handleVongTayClose = () => {
-        setIsVongTayOpen(false);
-    };
-
-    const [isNhangTramHuongOpen, setIsNhangTramHuongOpen] = useState(false);
-    const handleNhangTramHuongOpen = () => {
-        setIsNhangTramHuongOpen(true);
-    };
-    const handleNhangTramHuongClose = () => {
-        setIsNhangTramHuongOpen(false);
-    };
     return (
         <header className="bg-[#101628]">
             {/*start header on PC*/}
@@ -109,12 +95,13 @@ function Header() {
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <Popover className="relative">
+                <Popover.Group className="hidden lg:flex lg:gap-x-12"
+                              >
+                    <Popover className="relative"
+
+                    >
                         <Popover.Button
                             className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
-                            onMouseEnter={handleVongTayOpen}
-                            onMouseOut={handleVongTayClose}
 
                         >
                             Vòng tay trầm hương
@@ -186,6 +173,7 @@ function Header() {
                             leaveTo="opacity-0 translate-y-1"
                         >
                             <Popover.Panel
+
                                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628]
                                 shadow-lg ring-1 ring-gray-900/5"
                             >
@@ -217,6 +205,8 @@ function Header() {
                         Trầm hương đốt
                     </Link>
                 </Popover.Group>
+
+
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-8">
                     <div className="flex gap-4">
                         <Link
@@ -459,4 +449,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Test;

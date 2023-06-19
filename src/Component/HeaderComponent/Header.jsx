@@ -20,8 +20,14 @@ const vongtay = [
     name: "Danh mục sản phẩm",
     description: "Get a better understanding of your traffic",
     sub: [
-      { nameSub: "Vòng trầm hương nam", hrefSub: "/productCategory/vong-tram-huong-nam" },
-      { nameSub: "Vòng trầm hương nữ", hrefSub: "/productCategory/vong-tram-huong-nu" },
+      {
+        nameSub: "Vòng trầm hương nam",
+        hrefSub: "/productCategory/vong-tram-huong-nam",
+      },
+      {
+        nameSub: "Vòng trầm hương nữ",
+        hrefSub: "/productCategory/vong-tram-huong-nu",
+      },
     ],
   },
   {
@@ -70,7 +76,7 @@ function Header() {
   };
 
   const [isVongTayOpen, setIsVongTayOpen] = useState(false);
-  const handleVongTayOpen =   () => {
+  const handleVongTayOpen = () => {
     setIsVongTayOpen(true);
   };
   const handleVongTayClose = () => {
@@ -113,9 +119,8 @@ function Header() {
           <Popover className="relative">
             <Popover.Button
                 className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
-                onMouseEnter={handleVongTayOpen}
-                onMouseOut={handleVongTayClose}
-
+                // onMouseEnter={handleVongTayOpen}
+                // onMouseLeave={ha đndleVongTayClose}
             >
               Vòng tay trầm hương
               <ChevronDownIcon

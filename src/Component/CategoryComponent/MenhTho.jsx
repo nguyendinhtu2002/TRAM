@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./main.css";
 import CopyButton from "../ButtonComponent/CoppyButton";
 const settings = {
-    infinite: true,
+  infinite: true,
   slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: true,

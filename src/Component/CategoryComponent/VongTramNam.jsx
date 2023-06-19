@@ -24,7 +24,6 @@ const settings = {
     //   nextArrow: <NextArrow />,
     //   prevArrow: <PrevArrow />,
 };
-
 function VongTramNam() {
     return (
         <div className="bg-gray-100 p-5 pb-3 mt-20">
@@ -203,8 +202,7 @@ function VongTramNam() {
         <div className="w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
-              Một chiếc vòng có kích thước phù hợp sẽ tạo cho bạn cảm giác thoải
-              mái trong quá trình sử dụng
+              Chọn vòng trầm hương phù hợp cung mệnh cho phái nữ
             </span>
           </p>
         </div>

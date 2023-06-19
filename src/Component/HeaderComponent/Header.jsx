@@ -117,11 +117,7 @@ function Header() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button
-                className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
-                // onMouseEnter={handleVongTayOpen}
-                // onMouseLeave={ha đndleVongTayClose}
-            >
+            <Popover.Button className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
               Vòng tay trầm hương
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"

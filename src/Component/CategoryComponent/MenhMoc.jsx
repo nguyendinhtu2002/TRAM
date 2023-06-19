@@ -20,11 +20,9 @@ function MenhMoc() {
     <div className="bg-gray-100 px-5 pb-3 mt-20">
       <div className="py-2">
         <h2 className="font-bold text-2xl pb-3 text-center">
-          ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 05
-        </h2>
-        <h2 className="font-bold text-lg pb-3 text-center">
           ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 06
         </h2>
+
         <Slider {...settings} style={{}}>
           <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div className="mb-4">
@@ -110,7 +108,7 @@ function MenhMoc() {
           chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
           riêng mình.
         </p>
-        <h3 className="text-3xl py-4 font-bold">
+        <h3 className="text-3xl font-bold">
           Ý nghĩa của vòng tay trầm hương dành cho nữ
         </h3>
         <div className="my-3">

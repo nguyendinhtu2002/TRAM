@@ -4,256 +4,255 @@ import { Link } from "react-router-dom";
 import "./main.css";
 import CopyButton from "../ButtonComponent/CoppyButton";
 const settings = {
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 400,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-            },
-        },
-    ]
-    //   nextArrow: <NextArrow />,
-    //   prevArrow: <PrevArrow />,
+  infinite: true,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 400,
+  autoplaySpeed: 3000,
+  cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+      },
+    },
+  ],
+  //   nextArrow: <NextArrow />,
+  //   prevArrow: <PrevArrow />,
 };
 function VongTramNam() {
-    return (
-        <div className="bg-gray-100 p-5 pb-3 mt-20">
-            <div className="py-2">
-                <h2 className="font-bold text-2xl pb-3 text-center">
-                    ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 06
-                </h2>
+  return (
+    <div className="bg-gray-100 px-5 pb-3 mt-20">
+      <div className="py-2">
+        <h2 className="font-bold text-2xl pb-3 text-center">
+          ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 06
+        </h2>
 
-                <Slider {...settings} style={{}}>
-                    <div
-                        class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                        <div className="mb-4">
-                            <p class="mb-2 text-base font-medium  dark:text-white">
-                                <strong> 200k4790</strong>
-                            </p>
-                        </div>
-                        <div className="mb-4">
-                            <p>Số lượng: 100</p>
-                        </div>
-                        <div className="mb-4">
-                            <p>
-                                Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên
-                                Website{" "}
-                            </p>
-                        </div>
-
-                        <div class="items-center justify-center space-y-4 sm:flex ">
-                            <div className="code">
-                                Mã:
-                                <span className="uppercase"> 200k4790</span>
-                            </div>
-                            <CopyButton textToCopy={"200k4790"}/>
-                        </div>
-                    </div>
-
-                    <div
-                        class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ml-4">
-                        <div className="mb-4">
-                            <p class="mb-2 text-base font-medium  dark:text-white">
-                                <strong> 200k4790</strong>
-                            </p>
-                        </div>
-                        <div className="mb-4">
-                            <p>Số lượng: 100</p>
-                        </div>
-                        <div className="mb-4">
-                            <p>
-                                Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên
-                                Website{" "}
-                            </p>
-                        </div>
-
-                        <div class="items-center justify-center space-y-4 sm:flex ">
-                            <div className="code">
-                                Mã:
-                                <span className="uppercase"> 200k4790</span>
-                            </div>
-                            <CopyButton textToCopy={"200k4790"}/>
-                        </div>
-                    </div>
-
-                    {/* <Link href="#">
-                <img
-                  src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
-                  className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <img
-                  src="https://thienmochuong.com/wp-content/uploads/2022/12/banner-web_ban-mac-dinh.jpg"
-                  className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <img
-                  src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
-                  className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
-                  alt=""
-                />
-              </Link> */}
-                </Slider>
-                <p className="leading-relaxed text-justify ">
-                    <Link
-                        to="/productCategory/vong-tram-huong-nu"
-                        className="text-[#3ea6ff] hover:text-[#fab555]"
-                    >
-                        Vòng tay Trầm hương Nữ
-                    </Link>{" "}
-                    là vật phẩm cực kỳ quý giá, thời thượng và được rất nhiều người ưa
-                    chuộng. <strong>Thiên Mộc Hương</strong> với hơn 40 năm kinh nghiệm
-                    chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
-                    riêng mình.
-                </p>
-                <h3 className="text-3xl py-4 font-bold">
-                    Ý nghĩa của vòng tay trầm hương dành cho Nam
-                </h3>
-                <div className="my-3">
-                    <div className="w-96 mx-auto">
-                        <img
-                            className=" lg:w-96"
-                            src="https://thienmochuong.com/wp-content/uploads/2023/04/vong-tram-huong-ho-ly-philip.jpg"
-                            alt="Vòng tay trầm hương"
-                        />
-                    </div>
-                    <div className="w-96 mx-auto bg-gray-200 py-1">
-                        <p className=" text-center b-0">
-              <span className="font-semibold italic">
-                Sản phẩm vòng trầm hương 108 hồ ly vàng là món trang sức tinh tế
-                cho phái nữ
-              </span>
-                        </p>
-                    </div>
-                </div>
-
-                <blockquote
-                    class="px-4 py-0  border-l-4 border-[#fab55a] bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
-                    <p class="text-base italic font-medium leading-relaxed text-gray-900 dark:text-white">
-                        Trang sức
-                        <strong> Vòng tay Trầm Hương Nữ Thiên Mộc Hương </strong>
-                        luôn hướng tới vẻ đẹp độc đáo, mạnh mẽ, quyết đoán cho phái đẹp. Bên
-                        cạnh đó là những sản phẩm tinh tế, sang trọng, quý phát dành cho
-                        phái nữ từ gỗ Trầm Hương .
-                    </p>
-                </blockquote>
-
-                <p className="leading-relaxed text-justify pt-2">
-                    <Link
-                        to="/productCategory/vong-tram-huong-nu"
-                        className="text-[#3ea6ff] hover:text-[#fab555]"
-                    >
-                        Vòng tay Trầm hương nữ
-                    </Link>{" "}
-                    còn giúp người đeo gặp được nhiều vận may. Bên cạnh đó, nó còn phù hộ
-                    cho gia chủ trong sự nghiệp cũng như chuyện tình cảm.
-                </p>
+        <Slider {...settings} style={{}}>
+          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div className="mb-4">
+              <p class="mb-2 text-base font-medium  dark:text-white">
+                <strong> 200k4790</strong>
+              </p>
             </div>
-            <h3 className="text-3xl py-4 font-bold">
-                3 mẹo chọn chiếc Vòng tay trầm hương Nữ phù hợp cho phái đẹp
-            </h3>
-            <div className="my-3">
-                <div className="w-96 mx-auto">
-                    <img
-                        className=" lg:w-96"
-                        src="https://thienmochuong.com/wp-content/uploads/2023/03/cach-deo-vong-tram-108-hat-6.jpg"
-                        alt="Vòng tay trầm hương"
-                    />
-                </div>
-                <div className="w-96 mx-auto bg-gray-200 py-1">
-                    <p className=" text-center b-0">
-            <span className="font-semibold italic">
-              Chọn được một chiếc vòng tay trầm hương nữ đẹp không phải dễ dàng
-            </span>
-          </p>
+            <div className="mb-4">
+              <p>Số lượng: 100</p>
+            </div>
+            <div className="mb-4">
+              <p>
+                Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên
+                Website{" "}
+              </p>
+            </div>
+
+            <div class="items-center justify-center space-y-4 sm:flex ">
+              <div className="code">
+                Mã:
+                <span className="uppercase"> 200k4790</span>
+              </div>
+              <CopyButton textToCopy={"200k4790"} />
+            </div>
+          </div>
+
+          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ml-4">
+            <div className="mb-4">
+              <p class="mb-2 text-base font-medium  dark:text-white">
+                <strong> 200k4790</strong>
+              </p>
+            </div>
+            <div className="mb-4">
+              <p>Số lượng: 100</p>
+            </div>
+            <div className="mb-4">
+              <p>
+                Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên
+                Website{" "}
+              </p>
+            </div>
+
+            <div class="items-center justify-center space-y-4 sm:flex ">
+              <div className="code">
+                Mã:
+                <span className="uppercase"> 200k4790</span>
+              </div>
+              <CopyButton textToCopy={"200k4790"} />
+            </div>
+          </div>
+        </Slider>
+        <p className="leading-relaxed text-justify ">
+          <Link
+            to="/productCategory/vong-tram-huong-nu"
+            className="text-[#3ea6ff] hover:text-[#fab555]"
+          >
+            Vòng tay Trầm hương Nữ
+          </Link>{" "}
+          là vật phẩm cực kỳ quý giá, thời thượng và được rất nhiều người ưa
+          chuộng. <strong>Thiên Mộc Hương</strong> với hơn 40 năm kinh nghiệm
+          chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
+          riêng mình.
+        </p>
+        <h3 className="text-3xl font-bold">
+          Đặc điểm của vòng trầm hương cho nam
+        </h3>
+        <p className="leading-relaxed text-justify ">
+          Vòng tay trầm hương nam là sản phẩm được nhiều đấng mày râu lựa chọn
+          hiện nay. Với vòng trầm hương chất lượng, người dùng có thể nhìn rõ
+          các vân gỗ trên vòng chỉ bằng mắt thường. Mùi hương của sản phẩm cũng
+          nhẹ nhàng, không quá gắt. Khi đeo lên tay bạn sẽ ngửi thấy mùi thơm
+          dịu nhờ quá trình ma sát vòng với da tay làm tiết ra mùi hương.
+        </p>
+        <div className="my-3">
+          <div className="lg:w-96 mx-auto">
+            <img
+              className=" lg:w-96"
+              src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-400x400.jpg"
+              alt="Vòng tay trầm hương"
+            />
+          </div>
+          <div className="lg:w-96 mx-auto bg-gray-200 py-1">
+            <p className=" text-center b-0">
+              <span className="font-semibold italic">
+                Vòng Trầm Hương cho nam giới
+              </span>
+            </p>
+          </div>
         </div>
+
+        <p className="leading-relaxed text-justify pt-2">
+          Vòng trầm hương nam có đặc điểm khác so với vòng nữ là sản phẩm có
+          kích thước hạt lớn hơn các size vòng nữ, thường là 10 ly, 14 ly hay 18
+          ly tùy vào sở thích mỗi người. Về hình dạng, vòng trầm hương cho nam
+          hay được thiết kế với dạng trụ trúc, dạng mắc tử, đồng hồ với kiểu
+          dáng mạnh mẽ, thanh lịch. Bạn có thể yêu cầu phía người bán mix vòng
+          cùng với các loại charm vàng hay bạc để tăng thêm tính thẩm mỹ hơn.
+        </p>
       </div>
-      <p className="leading-relaxed text-justify">
-        Ngày nay, vòng trầm hương được biết đến như một vật phẩm quý giá nhiều
-        công dụng hữu ích được nữ giới ưa chuộng sử dụng như một món trang sức
-        thời thượng. Nhưng để chọn được chiếc vòng tay phong trầm hương phù hợp
-        là việc làm không hề dễ. Bạn đừng lo lắng gì cả, dưới đây là một số mẹo
-        giúp bạn chọn được vòng tay thích hợp:
-      </p>
       <h3 className="text-3xl font-bold">
-        Chọn vòng đeo tay nữ có màu sắc hợp bản mệnh
+        Ý nghĩa đặc biệt vòng tay trầm hương đối với nam giới
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nu-1.jpg"
+            src="https://thienmochuong.com/wp-content/uploads/2022/02/avatar-danh-muc-web-vong-tram-huong-cho-nam-e1644400718227.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
-              Chọn vòng trầm hương phù hợp cung mệnh cho phái nữ
+              Vòng tay trầm hương nam Thiên Mộc Hương{" "}
+            </span>
+          </p>
+        </div>
+      </div>
+      <blockquote class="px-4 py-0  border-l-4 border-[#fab55a] bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+        <p class="text-base italic font-medium leading-relaxed text-gray-900 dark:text-white">
+          Trang sức
+          <strong> Vòng tay Trầm Hương Nữ Thiên Mộc Hương </strong>
+          luôn hướng tới vẻ đẹp độc đáo, mạnh mẽ, quyết đoán cho phái đẹp. Bên
+          cạnh đó là những sản phẩm tinh tế, sang trọng, quý phát dành cho phái
+          nữ từ gỗ Trầm Hương .
+        </p>
+      </blockquote>
+      <p className="leading-relaxed text-justify pt-2">
+        Vòng tay trầm hương Nam còn giúp người đeo gặp được nhiều vận may. Bên
+        cạnh đó, vòng trầm hương còn phù hộ cho gia chủ trong sự nghiệp kinh
+        doanh, làm ăn thuận lợi.
+      </p>
+      <h3 className="text-3xl font-bold">
+        Mẹo chọn vòng tay trầm hương nam phù hợp dành cho phái mạnh
+      </h3>
+      <p className="leading-relaxed text-justify pt-2">
+        Thị trường hiện nay có rất nhiều mẫu mã đa dạng, phù hợp với nhiều lứa
+        tuổi của đàn ông. Do vậy, để chọn được chiếc vòng tay trầm hương nam phù
+        hợp theo từng cá nhân là việc làm không hề dễ. Hãy để Thiên Mộc Hương
+        mách bạn một số mẹo chọn vòng tay trầm hương nam phù hợp nhé.
+      </p>
+      <h3 className="text-3xl font-bold">
+        Chọn vòng trầm hương nam có màu sắc hợp bản mệnh
+      </h3>
+      <div className="my-3">
+        <div className="lg:w-96 mx-auto">
+          <img
+            className=" lg:w-96"
+            src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-4.jpg"
+            alt="Vòng tay trầm hương"
+          />
+        </div>
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
+          <p className=" text-center b-0">
+            <span className="font-semibold italic">
+              Chọn vòng trầm hương phù hợp cung mệnh cho phái nam
             </span>
           </p>
         </div>
       </div>
       <p className="leading-relaxed text-justify">
-        Với sự đa dạng trong thiết kế, mỗi chiếc vòng trầm hương đều được Thiên
-        Mộc Hương tạo ra để đáp ứng đúng nhu cầu của người dùng. Cho dù bạn là
-        ai, bạn có thể lựa chọn một chiếc vòng mang phong cách riêng, từ kiểu
-        dáng đến màu sắc, để thể hiện phong cách của mình. Dưới đây là cách chọn
-        màu vòng trầm hương hợp mệnh:
+        Mỗi chiếc vòng trầm hương được thiết kế đa dạng theo nhu cầu của người
+        dùng. Các bạn nam có thể chọn chiếc vòng có kiểu dáng, màu sắc để thể
+        hiện phong thái riêng của mình. Nhưng muốn mang lại vận may, bình an,
+        may mắn cần chọn vòng đá có màu sắc hợp mệnh như sau:
       </p>
       <ul class="list-disc ml-5 mb-[1.3em]">
         <li className="mb-1">
-          Người thuộc mệnh Kim: Nên chọn màu vàng, màu nâu đất, màu trắng hoặc
-          màu bạc.
+          Mệnh Kim: màu vàng, nâu đất, màu trắng, màu bạc
         </li>
-        <li className="mb-1">
-          Người thuộc mệnh Mộc: Charm xanh lá cây, đen hoặc xanh nước biển là
-          lựa chọn lý tưởng.
-        </li>
-        <li className="mb-1">
-          Người thuộc mệnh Thủy: Charm màu xanh đen và màu trắng sẽ làm nổi bật
-          và hợp mệnh.
-        </li>
-        <li className="mb-1">
-          Người thuộc mệnh Hỏa: Màu trắng và màu tím hợp mệnh, giúp đem lại sự
-          nổi bật và cuốn hút.
-        </li>
-        <li className="mb-1">
-          Người thuộc mệnh Thổ: Màu vàng hoặc hồng hợp mệnh sẽ mang đến sự ấm áp
-          và duyên dáng.
-        </li>
+        <li className="mb-1">Mệnh Mộc: xanh lá cây, đen, xanh nước biển</li>
+        <li className="mb-1">Mệnh Thủy: màu xanh đen, màu trắng</li>
+        <li className="mb-1">Mệnh Hỏa: màu trắng, màu tím</li>
+        <li className="mb-1">Mệnh Thổ: màu vàng hoặc phớt hồng</li>
       </ul>
-      <p className="leading-relaxed text-justify">
-        Ngày nay, vòng tay trầm hương cho phái nữ đã trở thành một sự kết hợp
-        tuyệt vời từ nhiều chất liệu (vàng, bạc hoặc đá) và các charm độc đáo.
-        Bên cạnh đó, còn có rất nhiều sự đa dạng trong màu sắc và kiểu dáng để
-        các quý cô có thể lựa chọn.
-      </p>
+
       <h3 className="text-3xl font-bold">
-        Chú trọng kích thước của vòng hạt trầm hương nữ
+        Chú trọng kích thước hạt của vòng trầm hương nam
       </h3>
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2020/08/Vong-tay-Tram-Huong-Thien-Moc-Huong-2021-96.jpg"
+            src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-5.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
+          <p className=" text-center b-0">
+            <span className="font-semibold italic">
+              Một chiếc vòng có kích thước phù hợp sẽ tạo cho bạn cảm giác thoải
+              mái trong quá trình sử dụng
+            </span>
+          </p>
+        </div>
+      </div>
+      <p className="leading-relaxed text-justify pt-2">
+        Chọn kích thước hạt của vòng phù hợp sẽ cho bạn một trải nghiệm tốt
+        trong quá trình đeo. Hơn nữa, kích thước phù hợp sẽ càng làm tăng thêm
+        tính thẩm mỹ, tạo điểm nhấn ấn tượng cho phong cách của các quý ông.
+      </p>
+      <h3 className="text-3xl font-bold">
+        Chọn vòng tay phù hợp với trang phục
+      </h3>
+      <p className="leading-relaxed text-justify pt-2">
+        Ngày nay, không chỉ nữ giới, cả nam giới cũng rất chú trọng vẻ ngoài của
+        mình. Điều đó thể hiện rõ trong cách lựa chọn vòng tay trầm hương nam
+        phù hợp với phong cách ăn mặc, để giúp quý ông trở nên tinh tế lịch lãm
+        nhất. Vậy nên bạn không nên chọn bừa trang sức vòng tay bởi một chiếc
+        vòng độc đáo, khác biệt sẽ khiến bạn trở nên đặc biệt và ấn tượng hơn
+        hết.
+      </p>
+      <div className="my-3">
+        <div className="lg:w-96 mx-auto">
+          <img
+            className=" lg:w-96"
+            src="https://thienmochuong.com/wp-content/uploads/2019/07/V%C3%B2ng-Tay-Tr%E1%BA%A7m-H%C6%B0%C6%A1ng-Ph%C3%BAc-L%E1%BB%99c-Th%E1%BB%8D1-400x400.jpg"
+            alt="Vòng tay trầm hương"
+          />
+        </div>
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng trầm hương được xem là món phụ kiện thể hiện đẳng cấp của các
@@ -294,70 +293,19 @@ function VongTramNam() {
       </ul>
 
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2019/07/Vong-tay-Tram-Huong-32.jpg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
-                    </p>
-                </div>
-            </div>
-            <p className="leading-relaxed text-justify pt-2">
-                Điều quan trọng là người dùng nên xác định chiếc vòng nào sẽ phù hợp bản
-                thân mình, với công việc… Kích thước vòng hạt phù hợp sẽ càng làm tăng
-                thêm tính thẩm mỹ và tạo điểm nhấn ấn tượng cho phong cách của bạn. Các
-                kích thước hạt phổ biến với các quý cô 6mm – 7mm – 8mm. Tuy nhiên, tuỳ
-                vào sở thích cá nhân mà bạn có thể chọn các kích cỡ hạt lớn hơn hoặc nhỏ
-                hơn.
-            </p>
-            <h3 className="text-3xl py-4 font-bold">
-                Chọn vòng tay trầm hương phù hợp với trang phục
-            </h3>
-            <div className="my-3">
-                <div className="w-96 mx-auto">
-                    <img
-                        className=" lg:w-96"
-                        src="https://thienmochuong.com/wp-content/uploads/2020/08/ho-ly-2.jpg"
-                        alt="Vòng tay trầm hương"
-                    />
-                </div>
-                <div className="w-96 mx-auto bg-gray-200 py-1">
-                    <p className=" text-center b-0">
             <span className="font-semibold italic">
               Vòng tay trầm hương thiên mộc hương Lá bùa Tây Tạng dành cho nam
               giới mệnh Thổ
             </span>
-                    </p>
-                </div>
-            </div>
-            <p className="leading-relaxed text-justify pt-2">
-                Ngày nay, ngoại hình đóng vai trò thiết thực trong cuộc sống. Điều đó
-                thể hiện rõ trong cách lựa chọn vòng tay trầm hương nữ phù hợp với phong
-                cách ăn mặc. Giúp phái đẹp trở nên sang trọng và thanh lịch hơn hẳn. Vậy
-                nên bạn không nên chọn bừa trang sức vòng tay. Bởi vì một chiếc vòng độc
-                đáo, khác biệt sẽ khiến bạn trở nên đặc biệt và ấn tượng hơn bao hết.
-            </p>
-            <h3 className="text-3xl py-4 font-bold">
-                Địa chỉ mua vòng tay trầm hương nữ uy tín
-            </h3>
-            <p className="leading-relaxed text-justify pt-2">
-                Một trong những lựa chọn hàng đầu khi mua vòng tay trầm hương nữ chính
-                là Thiên Mộc Hương
-            </p>
-            <div className="my-3">
-                <div className="w-96 mx-auto">
-                    <img
-                        className=" lg:w-96"
-                        src="https://thienmochuong.com/wp-content/uploads/2020/08/ho-ly-2.jpg"
-                        alt="Vòng tay trầm hương"
-                    />
-                </div>
-                <div className="w-96 mx-auto bg-gray-200 py-1">
-                    <p className=" text-center b-0">
           </p>
         </div>
       </div>
@@ -379,14 +327,14 @@ function VongTramNam() {
       </p>
 
       <div className="my-3">
-        <div className="w-96 mx-auto">
+        <div className="lg:w-96 mx-auto">
           <img
             className=" lg:w-96"
             src="https://thienmochuong.com/wp-content/uploads/2022/07/cua-hang-thien-moc-huong.jpeg"
             alt="Vòng tay trầm hương"
           />
         </div>
-        <div className="w-96 mx-auto bg-gray-200 py-1">
+        <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
               Cửa hàng Thiên Mộc Hương HCM

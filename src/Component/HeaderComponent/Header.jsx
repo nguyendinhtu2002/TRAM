@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
@@ -57,7 +57,6 @@ const nhangTramHuong = [
   },
 ];
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -75,21 +74,64 @@ function Header() {
     localStorage.clear("refresh_token");
   };
 
-  const [isVongTayOpen, setIsVongTayOpen] = useState(false);
-  const handleVongTayOpen = () => {
-    setIsVongTayOpen(true);
-  };
-  const handleVongTayClose = () => {
-    setIsVongTayOpen(false);
-  };
+  let timeout;
+  const timeoutDuration = 200;
 
-  const [isNhangTramHuongOpen, setIsNhangTramHuongOpen] = useState(false);
-  const handleNhangTramHuongOpen = () => {
-    setIsNhangTramHuongOpen(true);
+  const buttonRef = useRef(null);
+  const buttonRef1 = useRef(null);
+
+  const [openState, setOpenState] = useState(false);
+  const [openState1, setOpenState1] = useState(false);
+
+  const toggleMenu = (open) => {
+    setOpenState((openState) => !openState);
+    buttonRef?.current?.click();
   };
-  const handleNhangTramHuongClose = () => {
-    setIsNhangTramHuongOpen(false);
+  const toggleMenuNhang = (open) => {
+    setOpenState1((openState) => !openState);
+    buttonRef1?.current?.click();
   };
+  const onHover = (open, action) => {
+    if (
+      (!open && !openState && action === "onMouseEnter") ||
+      (open && openState && action === "onMouseLeave")
+    ) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => toggleMenu(open), timeoutDuration);
+    }
+  };
+  const onHoverNhang = (open, action) => {
+    if (
+      (!open && !openState1 && action === "onMouseEnter") ||
+      (open && openState1 && action === "onMouseLeave")
+    ) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => toggleMenuNhang(open), timeoutDuration);
+    }
+  };
+  const handleClick = (open) => {
+    setOpenState(!open);
+    clearTimeout(timeout);
+  };
+  const handleClickNhang = (open) => {
+    setOpenState1(!open);
+    clearTimeout(timeout);
+  };
+  const handleClickOutside = (event) => {
+    if (buttonRef.current && !buttonRef.current.contains(event.target)) {
+      event.stopPropagation();
+    }
+    if (buttonRef1.current && !buttonRef1.current.contains(event.target)) {
+      event.stopPropagation();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
   return (
     <header className="bg-[#101628]">
       {/*start header on PC*/}
@@ -117,99 +159,124 @@ function Header() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
-              Vòng tay trầm hương
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel
-                  className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5"
+            {({ open }) => (
+              <div
+                onMouseEnter={() => onHover(open, "onMouseEnter", "vongtay")}
+                onMouseLeave={() => onHover(open, "onMouseLeave", "vongtay")}
+                className="flex flex-col"
               >
-                <div className="flex p-4">
-                  {vongtay.map((item) => (
-                      <div
+                <Popover.Button
+                  ref={buttonRef}
+                  className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
+                >
+                  <div onClick={() => handleClick(open)}>
+                    {" "}
+                    Vòng tay trầm hương
+                  </div>
+                  <ChevronDownIcon
+                    className="h-5 w-5 flex-none text-gray-400"
+                    aria-hidden="true"
+                  />
+                </Popover.Button>
+
+                <Transition
+                  as={Fragment}
+                  show={open}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5">
+                    <div className="flex p-4">
+                      {vongtay.map((item) => (
+                        <div
                           key={item.name}
                           className="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6"
-                      >
-                        <div className="">
-                          <p className="block uppercase font-semibold text-[#fab55a] mb-2">
-                            {item.name}
-                          </p>
-                          <div className="space-y-3">
-                            {item.sub.map((sub) => (
+                        >
+                          <div className="">
+                            <p className="block uppercase font-semibold text-[#fab55a] mb-2">
+                              {item.name}
+                            </p>
+                            <div className="space-y-3">
+                              {item.sub.map((sub) => (
                                 <div>
                                   <a
-                                      href={sub.hrefSub}
-                                      className="uppercase font-semibold text-gray-400 hover:text-[#fab55a]"
+                                    href={sub.hrefSub}
+                                    className="uppercase font-semibold text-gray-400 hover:text-[#fab55a]"
                                   >
                                     {sub.nameSub}
                                   </a>
                                 </div>
-                            ))}
+                              ))}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                  ))}
-                </div>
-                {/*<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"></div>*/}
-              </Popover.Panel>
-            </Transition>
+                      ))}
+                    </div>
+
+                    {/*<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50"></div>*/}
+                  </Popover.Panel>
+                </Transition>
+              </div>
+            )}
           </Popover>
 
           <Popover className="relative">
-            <Popover.Button className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]">
-              Nhang trầm hương
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel
-              
-                className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628]
-                                shadow-lg ring-1 ring-gray-900/5"
+            {({ open }) => (
+              <div
+                onMouseEnter={() => onHoverNhang(open, "onMouseEnter", "nhang")}
+                onMouseLeave={() => onHoverNhang(open, "onMouseLeave", "nhang")}
+                className="flex flex-col"
               >
-                <div className="p-4">
-                  {nhangTramHuong.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex gap-x-6 rounded-lg px-4 py-2 text-sm leading-6"
-                    >
-                      <div className="">
-                        <Link
-                          to={item.href}
-                          className="block uppercase font-semibold text-white hover:text-[#fab55a] mb-2"
+                <Popover.Button
+                  ref={buttonRef1}
+                  className="uppercase flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
+                >
+                  <div onClick={() => handleClickNhang(open)}>
+                    {" "}
+                    Nhang trầm hương
+                  </div>
+                  <ChevronDownIcon
+                    className="h-5 w-5 flex-none text-gray-400"
+                    aria-hidden="true"
+                  />
+                </Popover.Button>
+
+                <Transition
+                  as={Fragment}
+                  show={open}
+                  enter="transition ease-out duration-200"
+                  enterFrom="opacity-0 translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition ease-in duration-150"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 translate-y-1"
+                >
+                  <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-[#101628] shadow-lg ring-1 ring-gray-900/5">
+                    <div className="p-4">
+                      {nhangTramHuong.map((item) => (
+                        <div
+                          key={item.name}
+                          className="group relative flex gap-x-6 rounded-lg px-4 py-2 text-sm leading-6"
                         >
-                          {item.name}
-                        </Link>
-                      </div>
+                          <div className="">
+                            <Link
+                              to={item.href}
+                              className="block uppercase font-semibold text-white hover:text-[#fab55a] mb-2"
+                            >
+                              {item.name}
+                            </Link>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </Popover.Panel>
-            </Transition>
+                  </Popover.Panel>
+                </Transition>
+              </div>
+            )}
           </Popover>
 
           <Link

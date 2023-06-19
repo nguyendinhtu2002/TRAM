@@ -84,18 +84,16 @@ function ProductCategory() {
   // console.log(data)
 
   const settingsCategories = {
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    // infinite: true,
+    slidesToShow: 5,
     speed: 300,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -104,14 +102,12 @@ function ProductCategory() {
         breakpoint: 786,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],
@@ -431,18 +427,18 @@ function ProductCategory() {
           </div>
           <div className="w-full mb-8 flex justify-end">
             <div className="flex gap-3 items-center">
-              <h2 className="font-bold uppercase">Sắp xếp</h2>
+              <label htmlFor="filter" className="font-bold uppercase">Sắp xếp</label>
               <select
                 className="block rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
-                                               placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                               placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                 name=""
-                id=""
+                id="filter"
               >
-                <option value="">Theo mức độ phổ biến</option>
-                <option value="">Theo điểm đánh giá</option>
-                <option value="">Mới nhất</option>
-                <option value="">Thứ tự theo giá: thấp đến cao</option>
-                <option value="">Thứ tự theo giá: cao đến thấp</option>
+                <option className="sm:text-sm" value="">Theo mức độ phổ biến</option>
+                <option className="sm:text-sm" value="">Theo điểm đánh giá</option>
+                <option className="sm:text-sm" value="">Mới nhất</option>
+                <option className="sm:text-sm" value="">Thứ tự theo giá: thấp đến cao</option>
+                <option className="sm:text-sm" value="">Thứ tự theo giá: cao đến thấp</option>
               </select>
             </div>
           </div>
@@ -758,6 +754,7 @@ function ProductCategory() {
                 </div>
               </div>
             </div>
+
             <div className="grid-cols-1">
               <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-center">
                 <a href="#">
@@ -871,6 +868,7 @@ function ProductCategory() {
             </div>
           </div>
 
+          {/*Start watched*/}
           <h3 className="text-center pt-6 text-3xl font-medium">
             Sản Phẩm Đã Xem
           </h3>
@@ -884,7 +882,7 @@ function ProductCategory() {
                     alt="Vòng tay trầm hương"
                   />
                   <div>
-                    <p className="text-white text-center font-bold capitalize">
+                    <p className="text-center font-bold capitalize">
                       Vòng tay trầm hương
                     </p>
                   </div>
@@ -899,7 +897,7 @@ function ProductCategory() {
                     alt="Vòng tay trầm hương"
                   />
                   <div>
-                    <p className="text-white text-center font-bold capitalize">
+                    <p className="text-center font-bold capitalize">
                       Vòng tay trầm hương
                     </p>
                   </div>
@@ -914,7 +912,7 @@ function ProductCategory() {
                     alt="Vòng tay trầm hương"
                   />
                   <div>
-                    <p className="text-white text-center font-bold capitalize">
+                    <p className=" text-center font-bold capitalize">
                       Vòng tay trầm hương
                     </p>
                   </div>
@@ -929,7 +927,7 @@ function ProductCategory() {
                     alt="Vòng tay trầm hương"
                   />
                   <div>
-                    <p className="text-white text-center font-bold capitalize">
+                    <p className="text-center font-bold capitalize">
                       Vòng tay trầm hương
                     </p>
                   </div>
@@ -944,7 +942,7 @@ function ProductCategory() {
                     alt="Vòng tay trầm hương"
                   />
                   <div>
-                    <p className="text-white text-center font-bold capitalize">
+                    <p className=" text-center font-bold capitalize">
                       Vòng tay trầm hương
                     </p>
                   </div>
@@ -959,7 +957,7 @@ function ProductCategory() {
                     alt="Vòng tay trầm hương"
                   />
                   <div>
-                    <p className="text-white text-center font-bold capitalize">
+                    <p className="text-center font-bold capitalize">
                       Vòng tay trầm hương
                     </p>
                   </div>
@@ -967,6 +965,7 @@ function ProductCategory() {
               </div>
             </Slider>
           </div>
+        {/*  End watched*/}
         </div>
         {/*    end product*/}
       </div>

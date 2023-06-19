@@ -42,6 +42,17 @@ function ProductCategory   () {
   };
   const { isLoading, data } = useQuery(["products"], handleGetDetailProducts);
   // console.log(data)
+  const settingsBanners = {
+    infinite: true,
+    autoplay:true,
+    slidesToShow: 1,
+    slidesToScroll:1,
+    speed: 300,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+
+  };
+
 
   const settingsCategories = {
     // infinite: true,
@@ -339,7 +350,7 @@ function ProductCategory   () {
           {/*start filter*/}
           <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
             <div className=" py-3 pb-6 ">
-              <Slider {...settingsCategories}>
+              <Slider {...settingsBanners}>
                 <div className="">
                   <a href="" className="">
                     <img

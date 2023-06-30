@@ -26,6 +26,7 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { createWishList } from "../../features/wishlistSlide/wishlistSlide";
 import Footer from "../../Component/FooterComponent/Footer";
+import { createHistory } from "../../features/historySlide/historySlide";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -200,12 +201,12 @@ function Homepage() {
       },
     ],
   };
-  const ImageItem = ({ image, handleGetDetailProduct, id,link }) => {
+  const ImageItem = ({ image, handleAddWishList, id, link }) => {
     const [isHover, setHover] = useState(null);
     const [isHoverIcon, setHoverIcon] = useState(null);
 
     const handleClick = (id) => {
-      handleGetDetailProduct(id);
+      handleAddWishList(id);
     };
     return (
       <div
@@ -244,10 +245,11 @@ function Homepage() {
     const res = await ProductService.getProduct();
     return res;
   };
-  const handleGetDetailProduct = async (id) => {
+  const handleAddWishList = async (id) => {
     const res = await ProductService.getDetail(id);
     dispatch(createWishList(res));
-    // return res;
+
+
   };
   const { isLoading, data } = useQuery(["products"], fetchProduct);
   const options = {
@@ -411,9 +413,8 @@ function Homepage() {
                 <div className="">
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                     <ImageItem
-                        image={item.images[0]}
-                        link={`/detail/${item._id}`}
-
+                      image={item.images[0]}
+                      link={`/detail/${item._id}`}
                     />
                     <div className="py-5 px-3 max-w-md">
                       <div>
@@ -528,7 +529,7 @@ function Homepage() {
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                     <ImageItem
                       image={product.images[0]}
-                      handleGetDetailProduct={handleGetDetailProduct}
+                      handleAddWishList={handleAddWishList}
                       id={product._id}
                       link={`/detail/${product._id}`}
                     />
@@ -642,7 +643,7 @@ function Homepage() {
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                     <ImageItem
                       image={product.images[0]}
-                      handleGetDetailProduct={handleGetDetailProduct}
+                      handleAddWishList={handleAddWishList}
                       id={product._id}
                       link={`/detail/${product._id}`}
                     />{" "}
@@ -756,10 +757,9 @@ function Homepage() {
                   <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
                     <ImageItem
                       image={product.images[0]}
-                      handleGetDetailProduct={handleGetDetailProduct}
+                      handleAddWishList={handleAddWishList}
                       id={product._id}
                       link={`/detail/${product._id}`}
-
                     />{" "}
                     <div className="py-5 px-3 max-w-md">
                       <div>
@@ -876,7 +876,7 @@ function Homepage() {
         </div>
       </div>
       {/*    end customer rating*/}
-      <Footer/>
+      <Footer />
     </div>
   );
 }

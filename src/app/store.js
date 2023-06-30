@@ -4,6 +4,7 @@ import quantityReducers from '../features/quantitySlide/quantitySlide'
 import productReducers from '../features/productSlide/productSlide'
 import wishlistReducers from '../features/wishlistSlide/wishlistSlide'
 import cartReducers from '../features/cartSlide/cartSlide'
+import historyReducers from '../features/historySlide/historySlide'
 
 import {
   persistStore,
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
     quantity: quantityReducers,
     wishlist:wishlistReducers,
     product:productReducers,
-    cart:cartReducers
+    cart:cartReducers,
+    history:historyReducers
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

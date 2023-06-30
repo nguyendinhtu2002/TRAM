@@ -18,6 +18,8 @@ import Toast from "../../Component/LoadingError/Toast";
 import Footer from "../../Component/FooterComponent/Footer";
 import axios from "axios";
 import { useMutationHooks } from "../../hooks/useMutationHooks";
+import { createHistory } from "../../features/historySlide/historySlide";
+import HistoryComponent from "../../Component/HistoryComponent/HistoryComponent";
 const moment = require("moment");
 
 function NextArrow(props) {
@@ -89,7 +91,7 @@ function Detail() {
   };
   const handleGetDetailProduct = async (id) => {
     const res = await ProductService.getDetail(id);
-
+    // dispatch(createHistory(res));
     return res;
   };
   const { isLoading, data } = useQuery(["productDetail"], () =>
@@ -107,7 +109,11 @@ function Detail() {
   const options = {
     maximumFractionDigits: 0,
   };
-
+  useEffect(()=>{
+    if(data){
+      dispatch(createHistory(data));
+    }
+  },[data])
   const formattedAmount = (amount, options) => {
     return amount.toLocaleString(undefined, options);
   };
@@ -918,6 +924,7 @@ function Detail() {
                   Bình luận
                 </button>
               </form>
+              <HistoryComponent/>
               {/* {data?.reviews.length > 0 ? (
                 <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
                   <footer className="flex justify-between items-center mb-2">

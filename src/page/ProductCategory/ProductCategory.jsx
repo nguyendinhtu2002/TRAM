@@ -1,18 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
-import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
-import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
-import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import * as UserService from "../../services/UserServices";
-import { updateUser } from "../../features/userSlide/userSlide";
 import * as ProductService from "../../services/ProductService";
 import { useQuery } from "react-query";
-import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
 import Footer from "../../Component/FooterComponent/Footer";
 import { Link, useParams } from "react-router-dom";
 import { Rating } from "@mui/material";
@@ -24,8 +16,8 @@ import MenhThuy from "../../Component/CategoryComponent/MenhThuy";
 import MenhHoa from "../../Component/CategoryComponent/MenhHoa";
 import MenhTho from "../../Component/CategoryComponent/MenhTho";
 import MenhKim from "../../Component/CategoryComponent/MenhKim";
-
-// import Loading from "../../Component/LoadingError/"
+import { useSelector } from "react-redux";
+import HistoryComponent from "../../Component/HistoryComponent/HistoryComponent";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -410,6 +402,7 @@ function ProductCategory() {
       </>
     );
   };
+  
   return (
     <>
       <HeaderComponent></HeaderComponent>
@@ -871,102 +864,7 @@ function ProductCategory() {
             </div>
           </div>
 
-          <h3 className="text-center pt-6 text-3xl font-medium">
-            Sản Phẩm Đã Xem
-          </h3>
-          <div className="pt-7">
-            <Slider {...settingsCategories}>
-              <div className="">
-                <a href="" className="hover:opacity-70">
-                  <img
-                    className="rounded-full w-[40%] mx-auto mb-1"
-                    src={vong_tay}
-                    alt="Vòng tay trầm hương"
-                  />
-                  <div>
-                    <p className="text-white text-center font-bold capitalize">
-                      Vòng tay trầm hương
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div className="">
-                <a href="" className="hover:opacity-70">
-                  <img
-                    className="rounded-full w-[40%] mx-auto mb-1"
-                    src={vong_tay}
-                    alt="Vòng tay trầm hương"
-                  />
-                  <div>
-                    <p className="text-white text-center font-bold capitalize">
-                      Vòng tay trầm hương
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div className="">
-                <a href="" className="hover:opacity-70">
-                  <img
-                    className="rounded-full w-[40%] mx-auto mb-1"
-                    src={vong_tay}
-                    alt="Vòng tay trầm hương"
-                  />
-                  <div>
-                    <p className="text-white text-center font-bold capitalize">
-                      Vòng tay trầm hương
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div className="">
-                <a href="" className="hover:opacity-70">
-                  <img
-                    className="rounded-full w-[40%] mx-auto mb-1"
-                    src={vong_tay}
-                    alt="Vòng tay trầm hương"
-                  />
-                  <div>
-                    <p className="text-white text-center font-bold capitalize">
-                      Vòng tay trầm hương
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div className="">
-                <a href="" className="hover:opacity-70">
-                  <img
-                    className="rounded-full w-[40%] mx-auto mb-1"
-                    src={vong_tay}
-                    alt="Vòng tay trầm hương"
-                  />
-                  <div>
-                    <p className="text-white text-center font-bold capitalize">
-                      Vòng tay trầm hương
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div className="">
-                <a href="" className="hover:opacity-70">
-                  <img
-                    className="rounded-full w-[40%] mx-auto mb-1"
-                    src={vong_tay}
-                    alt="Vòng tay trầm hương"
-                  />
-                  <div>
-                    <p className="text-white text-center font-bold capitalize">
-                      Vòng tay trầm hương
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </Slider>
-          </div>
+            <HistoryComponent/>
         </div>
         {/*    end product*/}
       </div>

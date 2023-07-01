@@ -1,4 +1,4 @@
 Giao diện:
-    Paginate cho các trang hiển thị sản phẩm
-    link blog
     Header
+    Comment hiển thị ảnh (64883469d27bf28582dbff05)
+    Gửi CV

@@ -138,66 +138,6 @@ function Detail() {
       }
     }
   };
-  const CommentItem = () => {
-    const [reply, setReply] = useState(null);
-    return (
-      <>
-        <div className="flex items-center mt-4 space-x-4">
-          <button
-            onClick={() => setReply(true)}
-            className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400"
-          >
-            <svg
-              aria-hidden="true"
-              className="mr-1 w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              ></path>
-            </svg>
-            Phản hồi
-          </button>
-        </div>
-        <div className={reply ? "block" : "hidden"}>
-          <div className="relative py-3">
-            <button
-              className="absolute top-0 right-0 z-10 px-3 py-1 rounded-md bg-orange-500 text-white hover:bg-orange-600"
-              onClick={() => setReply(false)}
-            >
-              X
-            </button>
-          </div>
-          <form className=" mt-3">
-            <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-              <label htmlFor="comment" className="sr-only">
-                Your comment
-              </label>
-              <textarea
-                id="comment"
-                rows="2"
-                className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
-                placeholder="Bình luận..."
-                required
-              ></textarea>
-            </div>
-            <button
-              className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-red-700
-                            rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-red-800"
-            >
-              Bình luận
-            </button>
-          </form>
-        </div>
-      </>
-    );
-  };
   const ProductSlider = ({ images }) => {
     const settings = {
       dots: true,
@@ -1004,170 +944,93 @@ function Detail() {
               ) : (
                 ""
               )} */}
-              {data?.reviews.length > 0 && (
-                <>
-                  {data.reviews.map((review) => {
-                    if (review.status === "approved") {
-                      return (
-                        <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
-                          <footer className="flex justify-between items-center mb-2">
-                            <div className="flex items-center">
-                              <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                <img
-                                  className="mr-2 w-6 h-6 rounded-full"
-                                  src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                  alt="Michael Gough"
-                                />
-                                {userLogin.email}
-                              </p>
-                              <p className="text-sm text-gray-600 dark:text-gray-400">
-                                {formattedDateTime(review.createdAt)}
-                              </p>
-                            </div>
-                            <button
-                              id="dropdownComment1Button"
-                              data-dropdown-toggle="dropdownComment1"
-                              className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                              type="button"
-                            >
-                              <svg
-                                className="w-5 h-5"
-                                aria-hidden="true"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                              </svg>
-                              <span className="sr-only">Comment settings</span>
-                            </button>
+              {/*{data?.reviews.length > 0 && (*/}
+              {/*  <>*/}
+              {/*    {data.reviews.map((review) => {*/}
+              {/*      if (review.status === "approved") {*/}
+              {/*        return (*/}
+              {/*          <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">*/}
+              {/*            <footer className="flex justify-between items-center mb-2">*/}
+              {/*              <div className="flex items-center">*/}
+              {/*                <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">*/}
+              {/*                  <img*/}
+              {/*                    className="mr-2 w-6 h-6 rounded-full"*/}
+              {/*                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"*/}
+              {/*                    alt="Michael Gough"*/}
+              {/*                  />*/}
+              {/*                  {userLogin.email}*/}
+              {/*                </p>*/}
+              {/*                <p className="text-sm text-gray-600 dark:text-gray-400">*/}
+              {/*                  {formattedDateTime(review.createdAt)}*/}
+              {/*                </p>*/}
+              {/*              </div>*/}
+              {/*              <button*/}
+              {/*                id="dropdownComment1Button"*/}
+              {/*                data-dropdown-toggle="dropdownComment1"*/}
+              {/*                className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"*/}
+              {/*                type="button"*/}
+              {/*              >*/}
+              {/*                <svg*/}
+              {/*                  className="w-5 h-5"*/}
+              {/*                  aria-hidden="true"*/}
+              {/*                  fill="currentColor"*/}
+              {/*                  viewBox="0 0 20 20"*/}
+              {/*                  xmlns="http://www.w3.org/2000/svg"*/}
+              {/*                >*/}
+              {/*                  <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>*/}
+              {/*                </svg>*/}
+              {/*                <span className="sr-only">Comment settings</span>*/}
+              {/*              </button>*/}
 
-                            <div
-                              id="dropdownComment1"
-                              className="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-                            >
-                              <ul
-                                className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                aria-labelledby="dropdownMenuIconHorizontalButton"
-                              >
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                  >
-                                    Sửa
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                  >
-                                    Xóa
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                  >
-                                    Báo cáo
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </footer>
-                          <p className="text-gray-500 dark:text-gray-400">
-                            {review.comment}
-                          </p>
-                          <CommentItem></CommentItem>
-                        </article>
-                      );
-                    } else {
-                      return null;
-                    }
-                  })}
-                </>
-              )}
-              {/* <article className="p-6 mb-6 ml-6 lg:ml-12 text-base bg-white rounded-lg dark:bg-gray-900">
-                <footer className="flex justify-between items-center mb-2">
-                  <div className="flex items-center">
-                    <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                      <img
-                        className="mr-2 w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                        alt="Jese Leos"
-                      />
-                      Jese Leos
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      <time
-                        pubdate
-                        dateTime="2022-02-12"
-                        title="February 12th, 2022"
-                      >
-                        Feb. 12, 2022
-                      </time>
-                    </p>
-                  </div>
-                  <button
-                    id="dropdownComment2Button"
-                    data-dropdown-toggle="dropdownComment2"
-                    className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    type="button"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                    </svg>
-                    <span className="sr-only">Comment settings</span>
-                  </button>
+              {/*              <div*/}
+              {/*                id="dropdownComment1"*/}
+              {/*                className="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"*/}
+              {/*              >*/}
+              {/*                <ul*/}
+              {/*                  className="py-1 text-sm text-gray-700 dark:text-gray-200"*/}
+              {/*                  aria-labelledby="dropdownMenuIconHorizontalButton"*/}
+              {/*                >*/}
+              {/*                  <li>*/}
+              {/*                    <a*/}
+              {/*                      href="#"*/}
+              {/*                      className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"*/}
+              {/*                    >*/}
+              {/*                      Sửa*/}
+              {/*                    </a>*/}
+              {/*                  </li>*/}
+              {/*                  <li>*/}
+              {/*                    <a*/}
+              {/*                      href="#"*/}
+              {/*                      className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"*/}
+              {/*                    >*/}
+              {/*                      Xóa*/}
+              {/*                    </a>*/}
+              {/*                  </li>*/}
+              {/*                  <li>*/}
+              {/*                    <a*/}
+              {/*                      href="#"*/}
+              {/*                      className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"*/}
+              {/*                    >*/}
+              {/*                      Báo cáo*/}
+              {/*                    </a>*/}
+              {/*                  </li>*/}
+              {/*                </ul>*/}
+              {/*              </div>*/}
+              {/*            </footer>*/}
+              {/*            <p className="text-gray-500 dark:text-gray-400">*/}
+              {/*              {review.comment}*/}
+              {/*            </p>*/}
+              {/*            <CommentItem></CommentItem>*/}
+              {/*          </article>*/}
+              {/*        );*/}
+              {/*      } else {*/}
+              {/*        return null;*/}
+              {/*      }*/}
+              {/*    })}*/}
+              {/*  </>*/}
+              {/*)}*/}
 
-                  <div
-                    id="dropdownComment2"
-                    className="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-                  >
-                    <ul
-                      className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                      aria-labelledby="dropdownMenuIconHorizontalButton"
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Sửa
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Xóa
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Báo cáo
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </footer>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Much appreciated! Glad you liked it ☺️
-                </p>
-                <CommentItem></CommentItem>
-              </article>
+               {/*Start Comment content*/}
               <article className="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                 <footer className="flex justify-between items-center mb-2">
                   <div className="flex items-center">
@@ -1182,73 +1045,25 @@ function Detail() {
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       <time
                         pubdate
-                        dateTime="2022-03-12"
-                        title="March 12th, 2022"
+                        dateTime="2023-06-20"
+                        title="20/06/2023"
                       >
-                        Mar. 12, 2022
+                        20/06/2023
                       </time>
                     </p>
                   </div>
-                  <button
-                    id="dropdownComment3Button"
-                    data-dropdown-toggle="dropdownComment3"
-                    className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    type="button"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      aria-hidden="true"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                    </svg>
-                    <span className="sr-only">Comment settings</span>
-                  </button>
 
-                  <div
-                    id="dropdownComment3"
-                    className="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-                  >
-                    <ul
-                      className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                      aria-labelledby="dropdownMenuIconHorizontalButton"
-                    >
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Sửa
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Xóa
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          Báo cáo
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </footer>
                 <p className="text-gray-500 dark:text-gray-400">
-                  The article covers the essentials, challenges, myths and
-                  stages the UX designer should consider while creating the
-                  design strategy.
+                  Sản phẩm này thật tuyệt vời!!!.
                 </p>
-                <CommentItem></CommentItem>
-              </article> */}
+                <div className="mt-3 flex gap-3 w-screen max-w-xs">
+                  <img className="w-40" src={vong_tay} alt="Ảnh đánh giá"/>
+                  <img className="w-40" src={vong_tay} alt="Ảnh đánh giá"/>
+                </div>
+              </article>
+            {/*  End comment content*/}
+
             </div>
           </section>
         </>

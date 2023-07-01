@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { useMutationHooks } from "../../hooks/useMutationHooks";
 import * as UserService from "../../services/UserServices";
 import { toast } from "react-toastify";
@@ -184,6 +184,15 @@ function SignUp() {
                   Đăng ký
                 </button>
               </div>
+              <Link
+                  to={"/login"}
+                  className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold
+                                    leading-6 text-white shadow-sm bg-amber-600
+                                    hover:bg-amber-500 focus-visible:outline focus-visible:outline-2
+                                    focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Bạn đã có tài khoản?
+              </Link>
             </form>
           </div>
         </div>

@@ -15,6 +15,8 @@ import Toast from "../../Component/LoadingError/Toast";
 import { resetCart, updatePrice } from "../../features/cartSlide/cartSlide";
 import { useMutationHooks } from "../../hooks/useMutationHooks";
 function Checkout() {
+  const [changeAddress, setChangeAddress] = useState(false);
+
   const count = useSelector((state) => state.quantity.value);
   const userLogin = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
@@ -252,94 +254,114 @@ function Checkout() {
                   <label className="font-medium inline-block mb-3 text-sm uppercase">
                     Tỉnh/Thành phố *
                   </label>
-                  <select
-                    className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                  <input
+                      className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
              placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    onChange={(e) => {
-                      const selectedOption =
-                        e.target.options[e.target.selectedIndex];
-                      const provinceCode = selectedOption.dataset.code;
-                      setCodeHuyen(provinceCode);
-                    }}
-                  >
-                    {loadingMap ? (
-                      <option>Loading...</option>
-                    ) : (
-                      dataMap.map((province) => (
-                        <option
-                          key={province.id}
-                          value={province.name}
-                          data-code={province.code}
-                          selected={userLogin.address[0]?.city === province.name}
-                        >
-                          {province.name}
-                        </option>
-                      ))
-                    )}
-                  </select>
+                      readOnly
+                      type="text"
+                      value={userLogin.address[0]?.city}/>
+
+             {/*     <select*/}
+             {/*       className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300*/}
+             {/*placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"*/}
+             {/*       onChange={(e) => {*/}
+             {/*         const selectedOption =*/}
+             {/*           e.target.options[e.target.selectedIndex];*/}
+             {/*         const provinceCode = selectedOption.dataset.code;*/}
+             {/*         setCodeHuyen(provinceCode);*/}
+             {/*       }}*/}
+             {/*     >*/}
+             {/*       {loadingMap ? (*/}
+             {/*         <option>Loading...</option>*/}
+             {/*       ) : (*/}
+
+             {/*         dataMap.map((province) => (*/}
+             {/*           <option*/}
+             {/*             key={province.id}*/}
+             {/*             value={province.name}*/}
+             {/*             data-code={province.code}*/}
+             {/*             selected={userLogin.address[0]?.city === province.name}*/}
+             {/*           >*/}
+             {/*             {province.name}*/}
+             {/*           </option>*/}
+             {/*         ))*/}
+             {/*       )}*/}
+             {/*     </select>*/}
                 </div>
                 <div className="w-1/4">
                   <label className="font-medium inline-block mb-3 text-sm uppercase">
                     Quận/Huyện *
                   </label>
-                  <select
-                    className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                  <input
+                      className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
     placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    onChange={(e) => {
-                      const selectedOption =
-                        e.target.options[e.target.selectedIndex];
-                      const districtCode = selectedOption.dataset.code;
-                      setCodeXa(districtCode);
-                    }}
-                  >
-                    {loadingProvince ? (
-                      <option>Loading...</option>
-                    ) : (
-                      dataProvince.map((district) => (
-                        <option
-                          key={district.id}
-                          value={district.name}
-                          selected={
-                            userLogin.address[0]?.district === district.name
-                          }
-                          data-code={district.code}
-                        >
-                          {district.name}
-                        </option>
-                      ))
-                    )}
-                  </select>
+                      readOnly
+                      type="text"
+                  value={userLogin.address[0]?.district}/>
+    {/*              <select*/}
+    {/*                className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300*/}
+    {/*placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"*/}
+    {/*                onChange={(e) => {*/}
+    {/*                  const selectedOption =*/}
+    {/*                    e.target.options[e.target.selectedIndex];*/}
+    {/*                  const districtCode = selectedOption.dataset.code;*/}
+    {/*                  setCodeXa(districtCode);*/}
+    {/*                }}*/}
+    {/*              >*/}
+    {/*                {loadingProvince ? (*/}
+    {/*                  <option>Loading...</option>*/}
+    {/*                ) : (*/}
+    {/*                  dataProvince.map((district) => (*/}
+    {/*                    <option*/}
+    {/*                      key={district.id}*/}
+    {/*                      value={district.name}*/}
+    {/*                      selected={*/}
+    {/*                        userLogin.address[0]?.district === district.name*/}
+    {/*                      }*/}
+    {/*                      data-code={district.code}*/}
+    {/*                    >*/}
+    {/*                      {district.name}*/}
+    {/*                    </option>*/}
+    {/*                  ))*/}
+    {/*                )}*/}
+    {/*              </select>*/}
                 </div>
 
                 <div className="w-1/4">
                   <label className="font-medium inline-block mb-3 text-sm uppercase">
                     Xã/Phường/Thị trấn *
                   </label>
-                  <select
-                    className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                  <input
+                      className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
              placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    onChange={(e) => {
-                      // const selectedOption =
-                      //   e.target.options[e.target.selectedIndex];
-                      // const provinceCode = selectedOption.dataset.code;
-                      // setCode(provinceCode);
-                    }}
-                  >
-                    {loadingWards ? (
-                      <option>Loading...</option>
-                    ) : (
-                      dataWards.map((ward) => (
-                        <option
-                          key={ward.id}
-                          value={ward.name}
-                          data-code={ward.code}
-                          selected={userLogin.address[0]?.ward === ward.name}
-                        >
-                          {ward.name}
-                        </option>
-                      ))
-                    )}
-                  </select>
+                      readOnly
+                      value={userLogin.address[0]?.ward}
+                      type="text"/>
+             {/*     <select*/}
+             {/*       className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300*/}
+             {/*placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"*/}
+             {/*       onChange={(e) => {*/}
+             {/*         // const selectedOption =*/}
+             {/*         //   e.target.options[e.target.selectedIndex];*/}
+             {/*         // const provinceCode = selectedOption.dataset.code;*/}
+             {/*         // setCode(provinceCode);*/}
+             {/*       }}*/}
+             {/*     >*/}
+             {/*       {loadingWards ? (*/}
+             {/*         <option>Loading...</option>*/}
+             {/*       ) : (*/}
+             {/*         dataWards.map((ward) => (*/}
+             {/*           <option*/}
+             {/*             key={ward.id}*/}
+             {/*             value={ward.name}*/}
+             {/*             data-code={ward.code}*/}
+             {/*             selected={userLogin.address[0]?.ward === ward.name}*/}
+             {/*           >*/}
+             {/*             {ward.name}*/}
+             {/*           </option>*/}
+             {/*         ))*/}
+             {/*       )}*/}
+             {/*     </select>*/}
                 </div>
               </div>
               <div className="py-3">
@@ -378,10 +400,162 @@ function Checkout() {
                 />
               </div>
             </div>
+            <div className="flex items-center gap-2">
+              <input
+                  type="checkbox"
+                  id="changeAddress"
+                  className="border-2 border-gray-300 focus:outline-none"
+                  onChange={() => setChangeAddress(!changeAddress)}
+              />
+              <label
+                  htmlFor="changeAddress"
+                  className="font-medium inline-block text-sm uppercase"
+              >
+                Đổi địa chỉ giao hàng
+              </label>
+            </div>
+
+            {changeAddress&&(
+                <div className="mt-3 items-center -mx-8 px-6 pb-5">
+                  <div className="flex justify-between gap">
+                    <div className="w-1/4">
+                      <label className="font-medium inline-block mb-3 text-sm uppercase">
+                        Tỉnh/Thành phố *
+                      </label>
+                           <select
+                             className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                      placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                             onChange={(e) => {
+                               const selectedOption =
+                                 e.target.options[e.target.selectedIndex];
+                               const provinceCode = selectedOption.dataset.code;
+                               setCodeHuyen(provinceCode);
+                             }}
+                           >
+                             {loadingMap ? (
+                               <option>Loading...</option>
+                             ) : (
+
+                               dataMap.map((province) => (
+                                 <option
+                                   key={province.id}
+                                   value={province.name}
+                                   data-code={province.code}
+                                   selected={userLogin.address[0]?.city === province.name}
+                                 >
+                                   {province.name}
+                                 </option>
+                               ))
+                             )}
+                           </select>
+                    </div>
+                    <div className="w-1/4">
+                      <label className="font-medium inline-block mb-3 text-sm uppercase">
+                        Quận/Huyện *
+                      </label>
+                                    <select
+                                      className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                      placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                      onChange={(e) => {
+                                        const selectedOption =
+                                          e.target.options[e.target.selectedIndex];
+                                        const districtCode = selectedOption.dataset.code;
+                                        setCodeXa(districtCode);
+                                      }}
+                                    >
+                                      {loadingProvince ? (
+                                        <option>Loading...</option>
+                                      ) : (
+                                        dataProvince.map((district) => (
+                                          <option
+                                            key={district.id}
+                                            value={district.name}
+                                            selected={
+                                              userLogin.address[0]?.district === district.name
+                                            }
+                                            data-code={district.code}
+                                          >
+                                            {district.name}
+                                          </option>
+                                        ))
+                                      )}
+                                    </select>
+                    </div>
+
+                    <div className="w-1/4">
+                      <label className="font-medium inline-block mb-3 text-sm uppercase">
+                        Xã/Phường/Thị trấn *
+                      </label>
+                           <select
+                             className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                      placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                             onChange={(e) => {
+                               // const selectedOption =
+                               //   e.target.options[e.target.selectedIndex];
+                               // const provinceCode = selectedOption.dataset.code;
+                               // setCode(provinceCode);
+                             }}
+                           >
+                             {loadingWards ? (
+                               <option>Loading...</option>
+                             ) : (
+                               dataWards.map((ward) => (
+                                 <option
+                                   key={ward.id}
+                                   value={ward.name}
+                                   data-code={ward.code}
+                                   selected={userLogin.address[0]?.ward === ward.name}
+                                 >
+                                   {ward.name}
+                                 </option>
+                               ))
+                             )}
+                           </select>
+                    </div>
+                  </div>
+                  <div className="py-3">
+                    <label
+                        htmlFor="address"
+                        className="font-medium inline-block mb-3 text-sm uppercase"
+                    >
+                      Địa chỉ
+                    </label>
+                    <input
+                        id="address"
+                        name="address"
+                        type="text"
+                        autoComplete="address"
+                        required
+                        className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                                               placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        value={userLogin.address[0]?.address}
+                    />
+                  </div>
+                  <div className="pb-3">
+                    <label
+                        htmlFor="note"
+                        className="font-medium inline-block mb-3 text-sm uppercase"
+                    >
+                      Ghi chú
+                    </label>
+                    <input
+                        id="note"
+                        name="note"
+                        type="text"
+                        autoComplete="address"
+                        required
+                        className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                                               placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+            )}
+
 
             <Link
               to="/"
-              className="flex font-semibold text-indigo-600 text-sm mt-10"
+              className="flex font-semibold text-indigo-600 hover:text-indigo-500 text-sm mt-10"
             >
               <svg
                 className="fill-current mr-2 text-indigo-600 w-4"

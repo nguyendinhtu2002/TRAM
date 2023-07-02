@@ -118,7 +118,7 @@ function Detail() {
         dispatch(addCart(updatedData));
         if (!toast.isActive(toastId.current)) {
           toastId.current = toast.success(
-            "Thêm vào cart thành công",
+            "Thêm vào giỏ hàng thành công",
             Toastobjects
           );
         }

@@ -1,4 +1,4 @@
 Giao diện:
     Header
     Comment hiển thị ảnh (64883469d27bf28582dbff05)
-    Gửi CV
+    Đăng ký xong phải chuyển về đăng nhập

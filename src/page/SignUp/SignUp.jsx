@@ -60,6 +60,7 @@ function SignUp() {
     if (!error && isSuccess) {
       if (!toast.isActive(toastId.current)) {
         toastId.current = toast.success("Thành công", Toastobjects);
+        history("/login");
       }
     } else if (error) {
       if (!toast.isActive(toastId.current)) {

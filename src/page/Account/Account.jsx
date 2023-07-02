@@ -90,6 +90,7 @@ function Account() {
     let storageData = localStorage.getItem("access_token");
 
     const decoded = jwt_decode(userLogin?.access_token);
+
     if (phone != "" && city != "" && address != "" && district != "") {
       mutationAddress.mutate({
         id: decoded.id,
@@ -101,7 +102,10 @@ function Account() {
         code: [codeCity, code, codewards],
         access_token: userLogin?.access_token,
       });
-    } else {
+    }
+    else if (phone.length!=10){
+      toastId.current = toast.error("Số điện thoại phải đủ 10 số!", Toastobjects);
+    }else {
       if (!toast.isActive(toastId.current)) {
         toastId.current = toast.error("Không được bỏ trống!", Toastobjects);
       }
@@ -376,6 +380,7 @@ function Account() {
                     setCodeCity(provinceCode);
                   }}
                 >
+                  <option value="" disabled selected>Chọn Thành phố</option>
                   {loadingMap ? (
                     <option>Loading...</option>
                   ) : (
@@ -409,6 +414,7 @@ function Account() {
                     setDistrict(e.target.value);
                   }}
                 >
+                  <option value="" disabled selected>Chọn Quận/Huyện</option>
                   {loadingProvince ? (
                     <option>Loading...</option>
                   ) : (
@@ -441,6 +447,7 @@ function Account() {
                     setWard(e.target.value);
                   }}
                 >
+                  <option value="" disabled selected>Chọn Xã/Phường/Thị trấn</option>
                   {loadingWards ? (
                     <option>Loading...</option>
                   ) : (

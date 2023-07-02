@@ -66,9 +66,9 @@ function Checkout() {
   };
   useEffect(() => {
     if (userLogin.id !== "") {
-      setCodeCity(userLogin.address[0].code[0]);
-      setCodeHuyen(userLogin.address[0].code[1]);
-      // setCodeWards(userLogin.address[0].code[2])
+      setCodeCity(userLogin.address[0]?.code[0]);
+      setCodeHuyen(userLogin.address[0]?.code[1]);
+      // setCodeWards(userLogin.address[0]?.code[2])
     }
   }, [userLogin]);
   const handleGetVoucher = async () => {
@@ -150,7 +150,7 @@ function Checkout() {
       }
     };
     if (userLogin.id) {
-      setAddress(userLogin.address[0].address);
+      setAddress(userLogin.address[0]?.address);
     }
     if (loadingMap) {
       fetchMaps();
@@ -222,7 +222,7 @@ function Checkout() {
                     required
                     className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
                                                placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    value={userLogin.address[0].phoneNumber}
+                    value={userLogin.address[0]?.phoneNumber}
                   />
                 </div>
 
@@ -270,7 +270,7 @@ function Checkout() {
                           key={province.id}
                           value={province.name}
                           data-code={province.code}
-                          selected={userLogin.address[0].city === province.name}
+                          selected={userLogin.address[0]?.city === province.name}
                         >
                           {province.name}
                         </option>
@@ -300,7 +300,7 @@ function Checkout() {
                           key={district.id}
                           value={district.name}
                           selected={
-                            userLogin.address[0].district === district.name
+                            userLogin.address[0]?.district === district.name
                           }
                           data-code={district.code}
                         >
@@ -333,7 +333,7 @@ function Checkout() {
                           key={ward.id}
                           value={ward.name}
                           data-code={ward.code}
-                          selected={userLogin.address[0].ward === ward.name}
+                          selected={userLogin.address[0]?.ward === ward.name}
                         >
                           {ward.name}
                         </option>
@@ -357,7 +357,7 @@ function Checkout() {
                   required
                   className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
                                                placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={userLogin.address[0].address}
+                  value={userLogin.address[0]?.address}
                 />
               </div>
               <div className="pb-3">

@@ -211,9 +211,9 @@ function Account() {
       <HeaderComponent></HeaderComponent>
 
       <Toast />
-      <div className="">
+      <div className="lg:p-0 p-5">
         <div className="bg-gray-200 mb-5">
-          <h1 className="uppercase text-3xl font-bold px-20 py-8">Tài khoản</h1>
+          <h1 className="uppercase text-3xl font-bold px-20 py-8 text-center">Tài khoản</h1>
         </div>
         <div className="container mx-auto lg:flex lg:gap-10">
           <form className="mx-auto w-full max-w-lg mb-10">

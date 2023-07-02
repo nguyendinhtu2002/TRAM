@@ -145,7 +145,7 @@ function Header() {
                             <div className="flex items-center justify-between px-2 uppercase text-sm text-white">
                                 <a
                                     className="menu-hover my-2 py-2 font-medium lg:mx-1 hover:text-[#fab55a]"
-                                >Nhang Trầm Hương
+                                >Vòng tay trầm hương
                                 </a>
                                 <span>
                                 <svg

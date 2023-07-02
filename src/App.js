@@ -83,7 +83,7 @@ function App() {
         <Route path="/productCategory/:slug" element={<ProductCategory />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/test/:slug" element={<Test />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );

@@ -167,14 +167,16 @@ function Account() {
       setEmail(userLogin.email);
       setLastName(userLogin.lastName);
       setFirstName(userLogin.firstName);
-      setAddress(userLogin.address[0].address);
-      setCity(userLogin.address[0].city);
-      setDistrict(userLogin.address[0].district);
-      setPhone(userLogin.address[0].phoneNumber);
+      if (userLogin.address[0]) {
+        setAddress(userLogin.address[0].address);
+        setCity(userLogin.address[0].city);
+        setDistrict(userLogin.address[0].district);
+        setPhone(userLogin.address[0].phoneNumber);
+        setCodeCity(userLogin.address[0].code[0]);
+        setCodeHuyen(userLogin.address[0].code[1]);
+        // setCodeWards(userLogin.address[0].code[2]);
+      }
       setWard(userLogin.ward);
-      setCodeCity(userLogin.address[0].code[0]);
-      setCodeHuyen(userLogin.address[0].code[1])
-      // setCodeWards(userLogin.address[0].code[2])
     }
     if (!error && isSuccess) {
       if (!toast.isActive(toastId.current)) {
@@ -382,7 +384,7 @@ function Account() {
                         key={province.id}
                         value={province.name}
                         data-code={province.code}
-                        selected={userLogin.address[0].city === province.name}
+                        selected={userLogin.address[0]?.city === province.name}
                       >
                         {province.name}
                       </option>
@@ -414,9 +416,8 @@ function Account() {
                       <option
                         key={district.id}
                         value={district.name}
-                        selected={
-                          userLogin.address[0].district=== district.name
-                        }
+                        selected={userLogin.address[0]?.district === district.name}
+
                         data-code={district.code}
                       >
                         {district.name}
@@ -448,7 +449,7 @@ function Account() {
                         key={ward.id}
                         value={ward.name}
                         data-code={ward.code}
-                        selected={userLogin.address[0].ward === ward.name}
+                        selected={userLogin.address[0]?.ward === ward.name}
                       >
                         {ward.name}
                       </option>
@@ -487,7 +488,7 @@ function Account() {
           </form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

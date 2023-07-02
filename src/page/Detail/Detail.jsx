@@ -552,7 +552,7 @@ function Detail() {
                     {data?.count ? (
                       <tr className="bg-gray-100 px-6 py-3">
                         <td className="px-6 py-3">
-                          {data?.count.map((item) => (
+                          {/* {data?.count.map((item) => (
                             <>
                               <span className="">Số lượng :</span>{" "}
                               <span>
@@ -562,7 +562,7 @@ function Detail() {
                                   : "Hạt"}
                               </span>
                             </>
-                          ))}
+                          ))} */}
                         </td>
                       </tr>
                     ) : (

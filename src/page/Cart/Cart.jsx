@@ -89,7 +89,7 @@ function Cart() {
                                                 className="font-semibold hover:text-red-500 text-gray-500 text-xs cursor-pointer">Remove
                                             </a>
                                             <span className="md:hidden font-semibold text-sm text-gray-600">{item.quantityOrder} x </span>
-                                            <span className="md:hidden font-bold text-sm">${formattedAmount(item.priceReal)}</span>
+                                            <span className="md:hidden font-bold text-sm">{formattedAmount(item.priceReal)}đ</span>
                                         </div>
                                     </div>
                                     <div className="hidden md:flex justify-center w-full md:w-1/5">
@@ -116,8 +116,8 @@ function Cart() {
                                         </button>
 
                                     </div>
-                                    <span className="hidden md:block text-center md:w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal)}</span>
-                                    <span className="hidden md:block text-center md:w-1/5 font-semibold text-sm">${formattedAmount(item.priceReal * item.quantityOrder)}</span>
+                                    <span className="hidden md:block text-center md:w-1/5 font-semibold text-sm">{formattedAmount(item.priceReal)}đ</span>
+                                    <span className="hidden md:block text-center md:w-1/5 font-semibold text-sm">{formattedAmount(item.priceReal * item.quantityOrder)}đ</span>
                                 </div>) : <div className="text-center">Không có sản phẩm nào</div>
 
                         }
@@ -136,7 +136,7 @@ function Cart() {
                             <h1 className="font-semibold text-2xl border-b pb-8">Cộng giỏ hàng</h1>
                             <div className="flex justify-between mt-10 mb-5">
                                 <span className="font-bold text-sm uppercase text-[#e7ad00]">Tạm tính</span>
-                                <span className="font-semibold text-sm">{formattedAmount(cart.totalPrice)}$</span>
+                                <span className="font-semibold text-sm">{formattedAmount(cart.totalPrice)}đ</span>
                             </div>
                             <div className="py-5">
                                 <label htmlFor="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Mã
@@ -159,7 +159,7 @@ function Cart() {
                             <div className="border-t mt-8">
                                 <div className="flex font-bold justify-between py-6 text-sm uppercase text-[#e7ad00]">
                                     <span>Tổng tiền</span>
-                                    <span>${formattedAmount(cart.totalPrice)}</span>
+                                    <span>{formattedAmount(cart.totalPrice)}đ</span>
                                 </div>
                                 <Link to="/checkout">
                                     <button

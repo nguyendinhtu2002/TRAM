@@ -348,12 +348,12 @@ function Detail() {
                       <p className="text-sm font-medium">
                         Voucher giảm trực tiếp khi mua trên website:{" "}
                       </p>
-                      {voucher?.vouchers.map((item) => (
+                      {voucher.map((item) => (
                         <p className="text-sm">
                           <span className="text-[#F99B1C] font-bold">
                             {item.code}
                           </span>{" "}
-                          – Giảm {formattedAmount(item.discount)}VND Cho đơn
+                          – Giảm <span className="font-bold">{formattedAmount(item.discount)}đ</span> Cho đơn
                           hàng từ 1.590.000
                         </p>
                       ))}

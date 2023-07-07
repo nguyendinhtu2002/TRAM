@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
 import Toast from "../../Component/LoadingError/Toast";
-import { useMutationHooks } from "../../hooks/useMutationHooks";
-import { updateUser } from "../../features/userSlide/userSlide";
+import {useMutationHooks} from "../../hooks/useMutationHooks";
+import {updateUser} from "../../features/userSlide/userSlide";
 import * as UserService from "../../services/UserServices";
 import jwt_decode from "jwt-decode";
+import logo from "../../dist/assets/images/TRAM DINH-02.png";
 
 function ForgotPassword() {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function ForgotPassword() {
     const [email, setEmail] = useState("");
     const userLogin = useSelector((state) => state.user);
 
-    const { id } = userLogin;
+    const {id} = userLogin;
 
     const toastId = React.useRef(null);
     const Toastobjects = {
@@ -27,67 +28,51 @@ function ForgotPassword() {
         draggable: true,
         progress: undefined,
     };
-    const mutation = useMutationHooks((data) => UserService.loginUser(data));
-    const { data, error, isLoading, isError, isSuccess } = mutation;
+    const mutation = useMutationHooks((data) => UserService.forgotPassword(data));
+    const {data, error, isLoading, isError, isSuccess} = mutation;
 
     const submitHandler = async (e) => {
         e.preventDefault();
-
         mutation.mutate({
             email,
         });
     };
-    const handleGetDetailsUser = async (id, token) => {
-        const res = await UserService.getDetailsUser(id, token);
-        // console.log(res);
-        dispatch(updateUser({ ...res?.data, access_token: token }));
-    };
+
     useEffect(() => {
         if (error === null && isSuccess) {
-            localStorage.setItem("access_token", JSON.stringify(data?.access_token));
-            localStorage.setItem(
-                "refresh_token",
-                JSON.stringify(data?.refresh_token)
-            );
-            if (data?.access_token) {
-                const decoded = jwt_decode(data?.access_token);
-                if (decoded?.id) {
-                    handleGetDetailsUser(decoded?.id, data?.access_token);
-                }
-                if (!toast.isActive(toastId.current)) {
-                    toastId.current = toast.success("Thành công", Toastobjects);
-                }
-            }
 
-            // dispatch(updateUser({ data }))
+
+            if (!toast.isActive(toastId.current)) {
+                toastId.current = toast.success("Thành công", Toastobjects);
+            }
+            // history("/login");
         } else if (error) {
             if (!toast.isActive(toastId.current)) {
-                toastId.current = toast.error(error.response.data.message, Toastobjects);
+                toastId.current = toast.error(
+                    error.response.data.message,
+                    Toastobjects
+                );
             }
         }
+    }, [isSuccess, history, error]);
 
-        if (id !== "") {
-            history("/login");
-        }
-    }, [isSuccess, history, id, error]);
 
     return (
         <>
-            <Toast />
+            <Toast/>
             <div>
                 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-                    <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                        <img
-                            className="mx-auto h-10 w-auto"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                            alt="Your Company"
-                        />
-                        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                            Quên mật khẩu
-                        </h2>
-                    </div>
+                    <Link to="/">
+               <span className="block relative w-32 mx-auto">
+               <img
+                   className="transform scale-150 absolute"
+                   src={logo}
+                   alt="Tram Dinh"
+               />
+            </span>
+                    </Link>
 
-                    <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <div className="mt-28 sm:mx-auto sm:w-full sm:max-w-sm">
                         <form className="space-y-6" action="#" method="POST">
                             <div>
                                 <label

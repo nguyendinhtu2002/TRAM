@@ -53,3 +53,10 @@ export const updateAddress = async (id, data, access_token) => {
   });
   return res.data;
 };
+
+export const forgotPassword = async (data) => {
+  const res = await axios.post(`${URL}api/v1/users/updatePassword`, data, {
+    withCredentials: true,
+  });
+  return res.data;
+};

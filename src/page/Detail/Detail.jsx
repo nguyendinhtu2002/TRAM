@@ -109,11 +109,11 @@ function Detail() {
   const options = {
     maximumFractionDigits: 0,
   };
-  useEffect(()=>{
-    if(data){
+  useEffect(() => {
+    if (data) {
       dispatch(createHistory(data));
     }
-  },[data])
+  }, [data]);
   const formattedAmount = (amount, options) => {
     return amount.toLocaleString(undefined, options);
   };
@@ -229,14 +229,27 @@ function Detail() {
       }
       setShowModal(false);
     } else if (error) {
-      if (!toast.isActive(toastId.current)) {
-        toastId.current = toast.error(
-          error.response.data.message,
-          Toastobjects
-        );
+      if (error && error.response && error.response.status === 401) {
+        if (!toast.isActive(toastId.current)) {
+          toastId.current = toast.error(
+            "Chưa đăng nhập vui lòng đăng nhập!",
+            Toastobjects
+          );
+        }
+      } else {
+        if (!toast.isActive(toastId.current)) {
+          toastId.current = toast.error(
+            error.response.data.message,
+            Toastobjects
+          );
+        }
       }
     }
   }, [error, isSuccess]);
+  const approvedReviews = data?.reviews.filter(
+    (review) => review.status === "approved"
+  );
+  const commentCount = approvedReviews?.length;
   return (
     <>
       <HeaderComponent></HeaderComponent>
@@ -348,13 +361,16 @@ function Detail() {
                       <p className="text-sm font-medium">
                         Voucher giảm trực tiếp khi mua trên website:{" "}
                       </p>
-                      {voucher.map((item) => (
+                      {voucher?.map((item) => (
                         <p className="text-sm">
                           <span className="text-[#F99B1C] font-bold">
                             {item.code}
                           </span>{" "}
-                          – Giảm <span className="font-bold">{formattedAmount(item.discount)}đ</span> Cho đơn
-                          hàng từ 1.590.000
+                          – Giảm{" "}
+                          <span className="font-bold">
+                            {formattedAmount(item.discount)}đ
+                          </span>{" "}
+                          Cho đơn hàng từ 1.590.000
                         </p>
                       ))}
                     </div>
@@ -841,7 +857,7 @@ function Detail() {
             <div className="max-w-4xl mx-auto px-4">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
-                  Bình luận ({data?.reviews.length})
+                  Bình luận ({commentCount})
                 </h2>
               </div>
               <form className="mb-6">
@@ -864,7 +880,7 @@ function Detail() {
                   Bình luận
                 </button>
               </form>
-              <HistoryComponent/>
+              {/* <HistoryComponent /> */}
               {/* {data?.reviews.length > 0 ? (
                 <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
                   <footer className="flex justify-between items-center mb-2">
@@ -1037,40 +1053,40 @@ function Detail() {
               {/*  </>*/}
               {/*)}*/}
 
-               {/*Start Comment content*/}
-              <article className="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-                <footer className="flex justify-between items-center mb-2">
-                  <div className="flex items-center">
-                    <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                      <img
-                        className="mr-2 w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                        alt="Bonnie Green"
-                      />
-                      Bonnie Green
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      <time
-                        pubdate
-                        dateTime="2023-06-20"
-                        title="20/06/2023"
-                      >
-                        20/06/2023
-                      </time>
-                    </p>
+              {/*Start Comment content*/}
+              {approvedReviews?.map((item) => (
+                <article className="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                  <footer className="flex justify-between items-center mb-2">
+                    <div className="flex items-center">
+                      <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                        <img
+                          className="mr-2 w-6 h-6 rounded-full"
+                          src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                          alt="Bonnie Green"
+                        />
+                        {item.username}
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <time pubdate dateTime="2023-06-20" title="20/06/2023">
+                          {moment(item.createdAt).format("YYYY-MM-DD HH:mm:ss")}
+                        </time>
+                      </p>
+                    </div>
+                  </footer>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    {item.comment}
+                  </p>
+                  <div className="mt-3 flex gap-3 w-screen max-w-xs">
+                    <img
+                      className="w-40"
+                      src={item.images[0]}
+                      alt="Ảnh đánh giá"
+                    />
                   </div>
-
-                </footer>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Sản phẩm này thật tuyệt vời!!!.
-                </p>
-                <div className="mt-3 flex gap-3 w-screen max-w-xs">
-                  <img className="w-40" src={vong_tay} alt="Ảnh đánh giá"/>
-                  <img className="w-40" src={vong_tay} alt="Ảnh đánh giá"/>
-                </div>
-              </article>
-            {/*  End comment content*/}
-
+                </article>
+              ))}
+              {/*  End comment content*/}
+              <HistoryComponent />
             </div>
           </section>
         </>

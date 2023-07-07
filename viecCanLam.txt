@@ -1,4 +1,0 @@
-Giao diện:
-    Header
-    Comment hiển thị ảnh (64883469d27bf28582dbff05)
-    Thêm lựa chọn đổi địa chỉ thanh toán ở checkout như Shopee

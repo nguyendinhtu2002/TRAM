@@ -8,6 +8,7 @@ import { router } from "./router";
 import DefaultComponent from "./Component/DefaultComponent/DefaultComponent";
 import Login from "./page/Login/Login";
 import SignUp from "./page/SignUp/SignUp";
+import ForgotPassword from "./page/ForgotPassword/ForgotPassword";
 import Account from "./page/Account/Account";
 import Wishlist from "./page/Wishlist/Wishlist";
 import Cart from "./page/Cart/Cart";
@@ -73,6 +74,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />

@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 
 import {Dialog, Disclosure} from "@headlessui/react";
 import {
-    Bars3Icon,
-    XMarkIcon,
+    Bars3Icon, XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {ChevronDownIcon} from "@heroicons/react/20/solid";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -14,47 +13,32 @@ import PersonIcon from "@mui/icons-material/Person";
 import {useDispatch, useSelector} from "react-redux";
 import {resetUser} from "../../features/userSlide/userSlide";
 
-const vongtay = [
-    {
-        name: "Danh mục sản phẩm",
-        description: "Get a better understanding of your traffic",
-        sub: [
-            {
-                nameSub: "Vòng trầm hương nam",
-                hrefSub: "/productCategory/vong-tram-huong-nam",
-            },
-            {
-                nameSub: "Vòng trầm hương nữ",
-                hrefSub: "/productCategory/vong-tram-huong-nu",
-            },
-        ],
-    },
-    {
-        name: "Vòng tay theo mệnh",
-        description: "Speak directly to your customers",
-        sub: [
-            {nameSub: "Mệnh mộc", hrefSub: "/productCategory/menh-moc"},
-            {nameSub: "Mệnh thủy", hrefSub: "/productCategory/menh-thuy"},
-            {nameSub: "Mệnh hỏa", hrefSub: "/productCategory/menh-hoa"},
-            {nameSub: "Mệnh thổ", hrefSub: "/productCategory/menh-tho"},
-            {nameSub: "Mệnh kim", hrefSub: "/productCategory/menh-kim"},
-        ],
-    },
-];
-const nhangTramHuong = [
-    {
-        name: "Nhang vòng trầm hương",
-        href: "/productCategory/nhang-vong-tram-huong",
-    },
-    {
-        name: "Nhang trầm có tăm",
-        href: "/productCategory/nhang-vong-co-tam",
-    },
-    {
-        name: "Nhang trầm không tăm",
-        href: "/productCategory/nhang-vong-khong-tam",
-    },
-];
+import logo from "../../dist/assets/images/TRAM DINH.png"
+
+const vongtay = [{
+    name: "Danh mục sản phẩm", description: "Get a better understanding of your traffic", sub: [{
+        nameSub: "Vòng trầm hương nam", hrefSub: "/productCategory/vong-tram-huong-nam",
+    }, {
+        nameSub: "Vòng trầm hương nữ", hrefSub: "/productCategory/vong-tram-huong-nu",
+    },],
+}, {
+    name: "Vòng tay theo mệnh",
+    description: "Speak directly to your customers",
+    sub: [{nameSub: "Mệnh mộc", hrefSub: "/productCategory/menh-moc"}, {
+        nameSub: "Mệnh thủy",
+        hrefSub: "/productCategory/menh-thuy"
+    }, {nameSub: "Mệnh hỏa", hrefSub: "/productCategory/menh-hoa"}, {
+        nameSub: "Mệnh thổ",
+        hrefSub: "/productCategory/menh-tho"
+    }, {nameSub: "Mệnh kim", hrefSub: "/productCategory/menh-kim"},],
+},];
+const nhangTramHuong = [{
+    name: "Nhang vòng trầm hương", href: "/productCategory/nhang-vong-tram-huong",
+}, {
+    name: "Nhang trầm có tăm", href: "/productCategory/nhang-vong-co-tam",
+}, {
+    name: "Nhang trầm không tăm", href: "/productCategory/nhang-vong-khong-tam",
+},];
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -74,8 +58,7 @@ function Header() {
     };
 
 
-    return (
-        <>
+    return (<>
             <header className="bg-[#101628]">
                 {/*start header on PC*/}
 
@@ -85,11 +68,16 @@ function Header() {
                 >
                     <div className="flex lg:flex-1">
                         <Link to="/" className="-m-1.5 p-1.5">
-            <span className="uppercase text-white text-3xl font-bold">
-              Logo
-            </span>
+                            <span className="block w-28">
+                              <img
+                                  className="transform scale-150"
+                                  src={logo}
+                                  alt=""
+                              />
+                            </span>
                         </Link>
                     </div>
+
                     <div className="flex lg:hidden">
                         <button
                             type="button"
@@ -128,16 +116,14 @@ function Header() {
                             <div
                                 className="invisible absolute z-50 flex rounded-lg w-screen max-w-sm flex-col bg-[#101628] py-4 px-4 shadow-xl group-hover:visible"
                             >
-                                {nhangTramHuong.map((item) => (
-                                    <>
+                                {nhangTramHuong.map((item) => (<>
                                         <Link
                                             key={item.name}
                                             to={item.href}
                                             className="my-2 block py-1 font-semibold text-white hover:text-[#fab55a] md:mx-2"
                                         >{item.name}
                                         </Link>
-                                    </>
-                                ))}
+                                    </>))}
                             </div>
                         </div>
 
@@ -166,27 +152,23 @@ function Header() {
                             </div>
                             <div
                                 className="flex w-screen max-w-md invisible absolute z-50 rounded-lg bg-[#101628] py-1 px-4 shadow-xl group-hover:visible">
-                                {vongtay.map((item) => (
-                                    <>
+                                {vongtay.map((item) => (<>
                                         <div
                                             className="p-4"
                                         >
                                             <p className="block uppercase font-semibold text-[#fab55a] mb-2">
                                                 {item.name}
                                             </p>
-                                            {item.sub.map((sub) => (
-                                                <>
+                                            {item.sub.map((sub) => (<>
                                                     <Link
                                                         key={sub.nameSub}
                                                         to={sub.hrefSub}
                                                         className="my-2 block py-1 font-semibold text-white hover:text-[#fab55a]"
                                                     >{sub.nameSub}
                                                     </Link>
-                                                </>
-                                            ))}
+                                                </>))}
                                         </div>
-                                    </>
-                                ))}
+                                    </>))}
                             </div>
 
                         </div>
@@ -234,8 +216,7 @@ function Header() {
                             </Link>
                         </div>
 
-                        {!userLogin.id ? (
-                            <>
+                        {!userLogin.id ? (<>
                                 <Link
                                     to="/login"
                                     className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
@@ -248,17 +229,14 @@ function Header() {
                                 >
                                     Sign up
                                 </Link>
-                            </>
-                        ) : (
-                            <>
+                            </>) : (<>
                                 <button
                                     onClick={handleLogout}
                                     className="text-sm font-semibold leading-6 text-white hover:text-[#fab55a]"
                                 >
                                     Log out
                                 </button>
-                            </>
-                        )}
+                            </>)}
                     </div>
                 </nav>
                 {/*end header on PC*/}
@@ -289,22 +267,17 @@ function Header() {
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
                                     <Disclosure as="div" className="-mx-3">
-                                        {({open}) => (
-                                            <>
+                                        {({open}) => (<>
                                                 <Disclosure.Button
                                                     className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-[#fab55a]">
                                                     Vòng tay trầm hương
                                                     <ChevronDownIcon
-                                                        className={classNames(
-                                                            open ? "rotate-180" : "",
-                                                            "h-5 w-5 flex-none"
-                                                        )}
+                                                        className={classNames(open ? "rotate-180" : "", "h-5 w-5 flex-none")}
                                                         aria-hidden="true"
                                                     />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className="mt-2 space-y-2">
-                                                    {[...vongtay].map((item) => (
-                                                        <>
+                                                    {[...vongtay].map((item) => (<>
                                                             <Disclosure.Button
                                                                 key={item.name}
                                                                 as="a"
@@ -313,40 +286,31 @@ function Header() {
                                                             >
                                                                 {item.name}
                                                             </Disclosure.Button>
-                                                            {[...item.sub].map((sub) => (
-                                                                <>
+                                                            {[...item.sub].map((sub) => (<>
                                                                     <a
                                                                         href={sub.hrefSub}
                                                                         className="block  rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
                                                                     >
                                                                         {sub.nameSub}
                                                                     </a>
-                                                                </>
-                                                            ))}
-                                                        </>
-                                                    ))}
+                                                                </>))}
+                                                        </>))}
                                                 </Disclosure.Panel>
-                                            </>
-                                        )}
+                                            </>)}
                                     </Disclosure>
 
                                     <Disclosure as="div" className="-mx-3">
-                                        {({open}) => (
-                                            <>
+                                        {({open}) => (<>
                                                 <Disclosure.Button
                                                     className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-[#fab55a]">
                                                     Nhang trầm hương
                                                     <ChevronDownIcon
-                                                        className={classNames(
-                                                            open ? "rotate-180" : "",
-                                                            "h-5 w-5 flex-none"
-                                                        )}
+                                                        className={classNames(open ? "rotate-180" : "", "h-5 w-5 flex-none")}
                                                         aria-hidden="true"
                                                     />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className="mt-2 space-y-2">
-                                                    {[...nhangTramHuong].map((item) => (
-                                                        <>
+                                                    {[...nhangTramHuong].map((item) => (<>
                                                             <Disclosure.Button
                                                                 key={item.name}
                                                                 as="a"
@@ -355,11 +319,9 @@ function Header() {
                                                             >
                                                                 {item.name}
                                                             </Disclosure.Button>
-                                                        </>
-                                                    ))}
+                                                        </>))}
                                                 </Disclosure.Panel>
-                                            </>
-                                        )}
+                                            </>)}
                                     </Disclosure>
                                     <a
                                         href="#"
@@ -416,8 +378,7 @@ function Header() {
                     </span>
                                         </Link>
                                     </div>
-                                    {!userLogin.id ? (
-                                        <div className="mt-3">
+                                    {!userLogin.id ? (<div className="mt-3">
                                             <Link
                                                 to="/Login"
                                                 className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
@@ -430,25 +391,21 @@ function Header() {
                                             >
                                                 Sign up
                                             </Link>
-                                        </div>
-                                    ) : (
-                                        <div className="mt-3">
+                                        </div>) : (<div className="mt-3">
                                             <button
                                                 onClick={handleLogout}
                                                 className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-[#fab55a] hover:text-[#101628]"
                                             >
                                                 Log out
                                             </button>
-                                        </div>
-                                    )}
+                                        </div>)}
                                 </div>
                             </div>
                         </div>
                     </Dialog.Panel>
                 </Dialog>
             </header>
-        </>
-    );
+        </>);
 }
 
 export default Header;

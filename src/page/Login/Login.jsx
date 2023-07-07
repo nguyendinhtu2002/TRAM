@@ -15,6 +15,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const userLogin = useSelector((state) => state.user);
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
   const { id } = userLogin;
 
   const toastId = React.useRef(null);
@@ -71,6 +73,10 @@ function Login() {
       history("/");
     }
   }, [isSuccess, history, id, error]);
+
+  const handleTogglePassword = () => {
+    setIsShowPassword(!isShowPassword);
+  };
   return (
     <>
       <Toast />
@@ -131,7 +137,7 @@ function Login() {
                   <input
                     id="password"
                     name="password"
-                    type="password"
+                    type={isShowPassword ? "text" : "password"}
                     autoComplete="current-password"
                     required
                     className="block w-full rounded-md border-0 p-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
@@ -139,6 +145,24 @@ function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
+              </div>
+
+              <div className="flex gap-2 items-center">
+                <div className="">
+                  <input
+                      id="isShowPassword"
+                      type="checkbox"
+                      className="block con rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300
+                                       placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      onChange={handleTogglePassword}
+                  />
+                </div>
+                <label
+                    htmlFor="isShowPassword"
+                    className="text-sm font-medium leading-6 text-gray-900"
+                >
+                  Hiển thị mật khẩu
+                </label>
               </div>
 
               <div className="bg-indigo-600 rounded">

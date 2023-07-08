@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.91ef2a54.css",
-    "main.js": "/static/js/main.3f53e32a.js",
+    "main.js": "/static/js/main.4cd67231.js",
     "static/media/TRAM DINH-02.png": "/static/media/TRAM DINH-02.0f80dd2e1a694e89b479.png",
     "static/media/TRAM DINH.png": "/static/media/TRAM DINH.593b998ed48eaeb9237d.png",
+    "static/media/banner-tram-huong-dot.jpg": "/static/media/banner-tram-huong-dot.a3f4a5d376da615c4f50.jpg",
     "static/media/tram_huong_1.jpg": "/static/media/tram_huong_1.61c5cc84046a26ef1345.jpg",
     "static/media/tram_huong_3.jpg": "/static/media/tram_huong_3.866ead3072bab3c04f5c.jpg",
     "static/media/vong-tay-tram-huong.jpg": "/static/media/vong-tay-tram-huong.a0e9b9331333489cd321.jpg",
@@ -16,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.91ef2a54.css",
-    "static/js/main.3f53e32a.js"
+    "static/js/main.4cd67231.js"
   ]
 }

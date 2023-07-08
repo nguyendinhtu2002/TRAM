@@ -6,6 +6,7 @@ import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
 import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
+import banner_tram_huong_dot from "../../dist/assets/images/banner-tram-huong-dot.jpg";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -445,7 +446,7 @@ function Homepage() {
             <div className="">
               <img
                   className="rounded-2xl  "
-                  src="https:thienmochuong.com/wp-content/uploads/2022/06/banner-tram-huong-dot.jpg"
+                  src={banner_tram_huong_dot}
                   alt=""
               />
             </div>
@@ -559,7 +560,7 @@ function Homepage() {
             <div className="">
               <img
                   className="rounded-2xl "
-                  src="https:thienmochuong.com/wp-content/uploads/2022/06/banner-tram-huong-dot.jpg"
+                  src={banner_tram_huong_dot}
                   alt=""
               />
             </div>
@@ -673,7 +674,7 @@ function Homepage() {
             <div className="">
               <img
                   className="rounded-2xl "
-                  src="https:thienmochuong.com/wp-content/uploads/2022/06/banner-tram-huong-dot.jpg"
+                  src={banner_tram_huong_dot}
                   alt=""
               />
             </div>

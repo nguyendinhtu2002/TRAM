@@ -8,6 +8,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import {Link} from "react-router-dom";
+import logo from "../../dist/assets/images/TRAM DINH.png";
+
 function Footer() {
     return (
         <>
@@ -17,28 +19,42 @@ function Footer() {
                         <div className="mb-6 md:mb-0">
                             <Link to="/" className="flex items-center">
                                 <span
-                                    className="self-center text-2xl font-semibold whitespace-nowrap text-white">Logo</span>
+                                    className="self-center whitespace-nowrap block w-28"> <img
+                                    className="transform scale-150"
+                                    src={logo}
+                                    alt=""
+                                /></span>
                             </Link>
                             <ul className="mt-5 text-gray-300 font-medium">
                                 <li className="mb-3">
                                     <span
-                                          className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><FmdGoodIcon fontSize={'small'}></FmdGoodIcon></span>### ABC, P.ABC, quận XYZ, Hà Nội</span>
+                                        className="text-sm "><span
+                                        className="align-top w-2 mr-1 text-[#fab55a]"><FmdGoodIcon
+                                        fontSize={'small'}></FmdGoodIcon></span>### ABC, P.ABC, quận XYZ, Hà Nội</span>
                                 </li>
                                 <li className="mb-3">
                                     <span
-                                          className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><LocalPhoneIcon fontSize={'small'}></LocalPhoneIcon></span>0123456789</span>
+                                        className="text-sm "><span
+                                        className="align-top w-2 mr-1 text-[#fab55a]"><LocalPhoneIcon
+                                        fontSize={'small'}></LocalPhoneIcon></span>0123456789</span>
                                 </li>
                                 <li className="mb-3">
                                     <span
-                                          className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><MailIcon fontSize={'small'}></MailIcon></span>tramhuong@gmail.com</span>
+                                        className="text-sm "><span
+                                        className="align-top w-2 mr-1 text-[#fab55a]"><MailIcon
+                                        fontSize={'small'}></MailIcon></span>tramhuong@gmail.com</span>
                                 </li>
                                 <li className="mb-3">
                                     <span
-                                          className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><AssignmentTurnedInIcon fontSize={'small'}></AssignmentTurnedInIcon></span>GPKD: 0123456789 - 24/05/2023</span>
+                                        className="text-sm "><span
+                                        className="align-top w-2 mr-1 text-[#fab55a]"><AssignmentTurnedInIcon
+                                        fontSize={'small'}></AssignmentTurnedInIcon></span>GPKD: 0123456789 - 24/05/2023</span>
                                 </li>
                                 <li className="mb-3">
                                     <span
-                                          className="text-sm "><span className="align-top w-2 mr-1 text-[#fab55a]"><WatchLaterIcon fontSize={'small'}></WatchLaterIcon></span>8h00 AM - 10h00 PM</span>
+                                        className="text-sm "><span
+                                        className="align-top w-2 mr-1 text-[#fab55a]"><WatchLaterIcon
+                                        fontSize={'small'}></WatchLaterIcon></span>8h00 AM - 10h00 PM</span>
                                 </li>
                             </ul>
 
@@ -48,28 +64,36 @@ function Footer() {
                                 <h2 className="mb-6 text-sm font-bold  uppercase text-white">Chính sách</h2>
                                 <ul className="text-gray-300 font-medium">
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Chính sách bảo vệ</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Chính
+                                            sách bảo vệ</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Chính sách thành viên</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Chính
+                                            sách thành viên</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Chính sách vận chuyển</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Chính
+                                            sách vận chuyển</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Đăng ký đại lý</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Đăng
+                                            ký đại lý</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Đổi trả và bảo hành</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Đổi
+                                            trả và bảo hành</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Hướng dẫn thanh toán</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Hướng
+                                            dẫn thanh toán</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Thiết kế và dịch vụ</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Thiết
+                                            kế và dịch vụ</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Thu - đổi vàng charm</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Thu -
+                                            đổi vàng charm</Link>
                                     </li>
 
 
@@ -80,19 +104,23 @@ function Footer() {
                                 <ul className="text-gray-300 font-medium">
                                     <li className="mb-3">
                                         <Link to="/blog"
-                                           className="text-sm hover:underline hover:text-[#fab55a]">Giới thiệu</Link>
+                                              className="text-sm hover:underline hover:text-[#fab55a]">Giới thiệu</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Tin tức</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Tin
+                                            tức</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Liên hệ</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Liên
+                                            hệ</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Tuyển dụng</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Tuyển
+                                            dụng</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Điều khoản dịch vụ</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Điều
+                                            khoản dịch vụ</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -100,13 +128,16 @@ function Footer() {
                                 <h2 className="mb-6 text-sm font-bold  uppercase text-white">Bộ sưu tập</h2>
                                 <ul className="text-gray-300 dark:text-gray-400 font-medium">
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Vòng tay trầm hương</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Vòng
+                                            tay trầm hương</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Nhang trầm hương</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Nhang
+                                            trầm hương</Link>
                                     </li>
                                     <li className="mb-3">
-                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Trầm hương đốt</Link>
+                                        <Link to="/blog" className="text-sm hover:underline hover:text-[#fab55a]">Trầm
+                                            hương đốt</Link>
                                     </li>
                                 </ul>
                             </div>

@@ -415,7 +415,7 @@ function ProductCategory() {
                 <a href="" className="">
                   <img
                     className=" w-full mx-auto mb-1"
-                    src="https://thienmochuong.com/wp-content/uploads/2020/03/Banner-3.jpg"
+                    src="https://i.imgur.com/ZaL8uPH.png"
                     alt="Vòng tay trầm hương"
                   />
                 </a>

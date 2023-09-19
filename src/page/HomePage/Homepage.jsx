@@ -321,21 +321,21 @@ function Homepage() {
             <Slider {...settings} style={{}}>
               <Link href="#">
                 <img
-                    src={vong_tay}
+                    src={"https://i.imgur.com/ZaL8uPH.png"}
                     className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
               </Link>
               <Link href="#">
                 <img
-                    src={vong_tay}
+                    src={"https://i.imgur.com/ZaL8uPH.png"}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
               </Link>
               <Link href="#">
                 <img
-                    src={vong_tay}
+                    src={"https://i.imgur.com/ZaL8uPH.png"}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />

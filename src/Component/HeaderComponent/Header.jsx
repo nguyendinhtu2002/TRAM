@@ -70,7 +70,7 @@ function Header() {
                         <Link to="/" className="-m-1.5 p-1.5">
                             <span className="block w-28">
                               <img
-                                  className="transform scale-150"
+                                  className="transform "
                                   src={logo}
                                   alt=""
                               />

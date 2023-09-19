@@ -20,7 +20,7 @@ function Footer() {
                             <Link to="/" className="flex items-center">
                                 <span
                                     className="self-center whitespace-nowrap block w-28 translate-x-1/4"> <img
-                                    className="transform scale-150"
+                                    className="transform "
                                     src={logo}
                                     alt=""
                                 /></span>

@@ -1,5 +1,5 @@
 import React from "react";
-import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
+import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.png";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";

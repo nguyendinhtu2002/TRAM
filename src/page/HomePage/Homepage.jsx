@@ -328,7 +328,7 @@ function Homepage() {
               </Link>
               <Link href="#">
                 <img
-                    src={vong_tay}
+                    src={banner_tram_huong_dot}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
@@ -360,7 +360,7 @@ function Homepage() {
                         <Link href="" className="hover:opacity-70">
                           <img
                               className="rounded-full w-[40%] mx-auto mb-1"
-                              src={vong_tay}
+                              src={category.image}
                               alt={category.name}
                           />
                           <div>

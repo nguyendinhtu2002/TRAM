@@ -134,7 +134,7 @@ function MenhThuy() {
       </h3>
       <p className="leading-relaxed text-justify">Đá phong thủy mệnh Thủy</p>
       <p className="leading-relaxed text-justify ">
-        Thiên Mộc Hương gợi ý một số loại đá phong thủy phù hợp cho mệnh Thủy,
+        Trầm Hương Lê Trà gợi ý một số loại đá phong thủy phù hợp cho mệnh Thủy,
         giúp chủ mệnh cải thiện vận khí và tài lộc. Ngoài ra, khi chọn đá phong
         thủy, chủ nhân cũng cần cân nhắc về yếu tố màu sắc hợp mệnh. Thủy có mối
         quan hệ tương khắc với mệnh Hỏa. Vì vậy, bạn nên né những màu sắc của
@@ -183,7 +183,7 @@ function MenhThuy() {
         trầm mới phát huy hết tác dụng.
       </p>
       <p className="leading-relaxed text-justify ">
-        Từ đó, Thiên Mộc Hương đã cho ra đời BỘ SƯU TẬP VÒNG TAY MỆNH THỦY. Với
+        Từ đó, Trầm Hương Lê Trà đã cho ra đời BỘ SƯU TẬP VÒNG TAY MỆNH THỦY. Với
         mục đích giúp khách hàng thân thương của mình có thể sở hữu những chiếc
         vòng trầm hương hợp với mệnh phong thủy của mình; mang lại sự may mắn và
         suôn sẻ trong cuộc sống. Hãy cùng xem qua BST này nhé!

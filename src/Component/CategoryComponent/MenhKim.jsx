@@ -181,7 +181,7 @@ function MenhKim() {
         phát huy hết tác dụng.
       </p>
       <p className="leading-relaxed text-justify ">
-        Từ đó, Thiên Mộc Hương cho ra mắt BST vòng tay trầm hương này để giúp
+        Từ đó, Trầm Hương Lê Trà cho ra mắt BST vòng tay trầm hương này để giúp
         chủ nhân mệnh kim dễ dàng chọn lựa được chiếc vòng phù hợp nhất.
       </p>
     </div>

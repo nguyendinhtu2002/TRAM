@@ -115,7 +115,7 @@ function VongTramNu() {
             Vòng tay Trầm hương Nữ
           </Link>{" "}
           là vật phẩm cực kỳ quý giá, thời thượng và được rất nhiều người ưa
-          chuộng. <strong>Thiên Mộc Hương</strong> với hơn 40 năm kinh nghiệm
+          chuộng. <strong>Trầm Hương Lê Trà</strong> với hơn 40 năm kinh nghiệm
           chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
           riêng mình.
         </p>
@@ -143,7 +143,7 @@ function VongTramNu() {
         <blockquote class="px-4 py-0  border-l-4 border-[#fab55a] bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
           <p class="text-base italic font-medium leading-relaxed text-gray-900 dark:text-white">
             Trang sức
-            <strong> Vòng tay Trầm Hương Nữ Thiên Mộc Hương </strong>
+            <strong> Vòng tay Trầm Hương Nữ Trầm Hương Lê Trà </strong>
             luôn hướng tới vẻ đẹp độc đáo, mạnh mẽ, quyết đoán cho phái đẹp. Bên
             cạnh đó là những sản phẩm tinh tế, sang trọng, quý phát dành cho
             phái nữ từ gỗ Trầm Hương .
@@ -300,7 +300,7 @@ function VongTramNu() {
       </h3>
       <p className="leading-relaxed text-justify pt-2">
         Một trong những lựa chọn hàng đầu khi mua vòng tay trầm hương nữ chính
-        là Thiên Mộc Hương
+        là Trầm Hương Lê Trà
       </p>
       <div className="my-3">
         <div className="lg:w-96 mx-auto">
@@ -322,7 +322,7 @@ function VongTramNu() {
         <strong>Điện thoại</strong>: 0933.348.368
       </p>
       <p className="leading-relaxed text-justify pt-2 pb-4">
-        <strong>Thiên Mộc Hương </strong> cam kết sẽ mang đến cho quý khách hàng
+        <strong>Trầm Hương Lê Trà </strong> cam kết sẽ mang đến cho quý khách hàng
         sản phẩm uy tín, chất lượng; được làm từ 100% trầm hương tự nhiên. Sản
         phẩm trải qua quá trình gia công thủ công bởi những nghệ nhân từ làng
         nghề Thủy Xuân – Huế đảm bảo mùi hương trầm thanh khiết, vẹn nguyên

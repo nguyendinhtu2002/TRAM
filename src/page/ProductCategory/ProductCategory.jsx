@@ -543,7 +543,7 @@ function ProductCategory() {
           )}
 
           <h3 className="text-center pt-6 text-3xl font-medium">
-            Lý Do Nên Chọn Thiên Mộc Hương
+            Lý Do Nên Chọn Trầm Hương Lê Trà
           </h3>
           <div className="grid xl:grid-cols-4 md:grid-cols-1 gap-5 pt-7 ">
             <div className="grid-cols-1">

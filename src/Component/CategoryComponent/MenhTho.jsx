@@ -85,7 +85,7 @@ function MenhTho() {
         </Slider>
         <p className="leading-relaxed text-justify pt-2 pb-4 ">
           Mỗi người đều mang trong mình một mệnh phong thủy khác nhau tùy thuộc
-          vào năm sinh. Trong bài viết này Thiên Mộc Hương sẽ cùng bạn tìm hiểu
+          vào năm sinh. Trong bài viết này Trầm Hương Lê Trà sẽ cùng bạn tìm hiểu
           về vòng đeo tay bằng gỗ trầm hương cho mệnh Thổ. Từ đó cùng nhau đi
           tìm câu trả lời về màu sắc may mắn cho mệnh Thổ.
         </p>
@@ -202,7 +202,7 @@ function MenhTho() {
         mới lạ hơn.
       </p>
       <p className="leading-relaxed text-justify ">
-        BST Vòng tay mệnh Thổ được Thiên Mộc Hương nghiên cứu để giúp khách hàng
+        BST Vòng tay mệnh Thổ được Trầm Hương Lê Trà nghiên cứu để giúp khách hàng
         cho có thêm nhiều sự lựa chọn về vòng tay phong thủy may mắn cho chính
         mình.
       </p>

@@ -198,7 +198,7 @@ function MenhHoa() {
         đường sự nghiệp và cả tình duyên.
       </p>
       <p className="leading-relaxed text-justify py-4">
-        Từ đó, Thiên Mộc Hương đã cho ra đời BỘ SƯU TẬP VÒNG TAY MỆNH HỎA để
+        Từ đó, Trầm Hương Lê Trà đã cho ra đời BỘ SƯU TẬP VÒNG TAY MỆNH HỎA để
         giúp khách hàng thân thương của mình có thể sở hữu những chiếc vòng trầm
         hương hợp với mệnh của mình; mang lại sự may mắn và suôn sẻ trong cuộc
         sống. Hãy cùng xem qua BST này nhé!

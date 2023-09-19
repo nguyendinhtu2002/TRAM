@@ -567,7 +567,7 @@ function Test() {
                 <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] px-2 py-3 space-y-10">
                     <div className="mt-4 px-2 flex justify-between">
                         <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">
-                            Vòng trầm Thiên Mộc Hương
+                            Vòng trầm Trầm Hương Lê Trà
                         </h3>
                         <a
                             href=""

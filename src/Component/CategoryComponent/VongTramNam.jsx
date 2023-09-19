@@ -91,7 +91,7 @@ function VongTramNam() {
             Vòng tay Trầm hương Nữ
           </Link>{" "}
           là vật phẩm cực kỳ quý giá, thời thượng và được rất nhiều người ưa
-          chuộng. <strong>Thiên Mộc Hương</strong> với hơn 40 năm kinh nghiệm
+          chuộng. <strong>Trầm Hương Lê Trà</strong> với hơn 40 năm kinh nghiệm
           chế tác Trầm Hương giúp bạn dễ dàng chọn lựa sản phẩm phù hợp cho
           riêng mình.
         </p>
@@ -145,7 +145,7 @@ function VongTramNam() {
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
-              Vòng tay trầm hương nam Thiên Mộc Hương{" "}
+              Vòng tay trầm hương nam Trầm Hương Lê Trà{" "}
             </span>
           </p>
         </div>
@@ -153,7 +153,7 @@ function VongTramNam() {
       <blockquote class="px-4 py-0  border-l-4 border-[#fab55a] bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
         <p class="text-base italic font-medium leading-relaxed text-gray-900 dark:text-white">
           Trang sức
-          <strong> Vòng tay Trầm Hương Nữ Thiên Mộc Hương </strong>
+          <strong> Vòng tay Trầm Hương Nữ Trầm Hương Lê Trà </strong>
           luôn hướng tới vẻ đẹp độc đáo, mạnh mẽ, quyết đoán cho phái đẹp. Bên
           cạnh đó là những sản phẩm tinh tế, sang trọng, quý phát dành cho phái
           nữ từ gỗ Trầm Hương .
@@ -170,7 +170,7 @@ function VongTramNam() {
       <p className="leading-relaxed text-justify pt-2">
         Thị trường hiện nay có rất nhiều mẫu mã đa dạng, phù hợp với nhiều lứa
         tuổi của đàn ông. Do vậy, để chọn được chiếc vòng tay trầm hương nam phù
-        hợp theo từng cá nhân là việc làm không hề dễ. Hãy để Thiên Mộc Hương
+        hợp theo từng cá nhân là việc làm không hề dễ. Hãy để Trầm Hương Lê Trà
         mách bạn một số mẹo chọn vòng tay trầm hương nam phù hợp nhé.
       </p>
       <h3 className="text-3xl font-bold">
@@ -303,7 +303,7 @@ function VongTramNam() {
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
-              Vòng tay trầm hương thiên mộc hương Lá bùa Tây Tạng dành cho nam
+              Vòng tay trầm hương Trầm Hương Lê Trà Lá bùa Tây Tạng dành cho nam
               giới mệnh Thổ
             </span>
           </p>
@@ -320,7 +320,7 @@ function VongTramNam() {
         lượng cao cấp với giá thành phải chăng nhất.
       </p>
       <p className="leading-relaxed text-justify pt-2">
-        Mọi sản phẩm vòng tay trầm hương cho nam tại nhà Thiên Mộc Hương đều
+        Mọi sản phẩm vòng tay trầm hương cho nam tại nhà Trầm Hương Lê Trà đều
         được tạo nên từ bàn tay khéo léo, tỉ mỉ và cẩn thận của người nghệ nhân.
         Mọi chi tiết đều vô cùng tinh xảo, do đó đây là item được rất nhiều đấng
         mày râu lựa chọn làm trang sức đeo tay hàng ngày.
@@ -337,13 +337,13 @@ function VongTramNam() {
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
             <span className="font-semibold italic">
-              Cửa hàng Thiên Mộc Hương HCM
+              Cửa hàng Trầm Hương Lê Trà HCM
             </span>
           </p>
         </div>
       </div>
       <p className="leading-relaxed text-justify pt-2">
-        Thiên Mộc Hương cam kết sẽ mang đến cho quý khách hàng sản phẩm uy tín,
+        Trầm Hương Lê Trà cam kết sẽ mang đến cho quý khách hàng sản phẩm uy tín,
         chất lượng; được làm từ 100% trầm hương tự nhiên. Sản phẩm trải qua quá
         trình gia công thủ công bởi những nghệ nhân từ làng nghề Thủy Xuân –
         Huế. Khi có nhu cầu, bạn cần liên hệ với chúng tôi – nhà trực tiếp sản

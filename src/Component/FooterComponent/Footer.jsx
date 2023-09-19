@@ -19,37 +19,43 @@ function Footer() {
                         <div className="mb-6 md:mb-0">
                             <Link to="/" className="flex items-center">
                                 <span
-                                    className="self-center whitespace-nowrap block w-28"> <img
+                                    className="self-center whitespace-nowrap block w-28 translate-x-1/4"> <img
                                     className="transform scale-150"
                                     src={logo}
                                     alt=""
                                 /></span>
                             </Link>
-                            <ul className="mt-5 text-gray-300 font-medium">
+                            <ul className="mt-8 text-gray-300 font-medium">
                                 <li className="mb-3">
                                     <span
                                         className="text-sm "><span
                                         className="align-top w-2 mr-1 text-[#fab55a]"><FmdGoodIcon
-                                        fontSize={'small'}></FmdGoodIcon></span>### ABC, P.ABC, quận XYZ, Hà Nội</span>
+                                        fontSize={'small'}></FmdGoodIcon></span>LK 03, 04 KĐT Roman Plaza, Đại Mỗ, Nam Từ Liêm, Hà Nội</span>
                                 </li>
                                 <li className="mb-3">
                                     <span
                                         className="text-sm "><span
                                         className="align-top w-2 mr-1 text-[#fab55a]"><LocalPhoneIcon
-                                        fontSize={'small'}></LocalPhoneIcon></span>0123456789</span>
+                                        fontSize={'small'}></LocalPhoneIcon></span>0823.611.668</span>
+                                </li>
+                                <li className="mb-3">
+                                    <span
+                                        className="text-sm "><span
+                                        className="align-top w-2 mr-1 text-[#fab55a]"><FacebookIcon
+                                        fontSize={'small'}></FacebookIcon></span>facebook.com/tramhuongletravn</span>
                                 </li>
                                 <li className="mb-3">
                                     <span
                                         className="text-sm "><span
                                         className="align-top w-2 mr-1 text-[#fab55a]"><MailIcon
-                                        fontSize={'small'}></MailIcon></span>tramhuong@gmail.com</span>
+                                        fontSize={'small'}></MailIcon></span>lekhanhtra1108@gmail.com</span>
                                 </li>
-                                <li className="mb-3">
-                                    <span
-                                        className="text-sm "><span
-                                        className="align-top w-2 mr-1 text-[#fab55a]"><AssignmentTurnedInIcon
-                                        fontSize={'small'}></AssignmentTurnedInIcon></span>GPKD: 0123456789 - 24/05/2023</span>
-                                </li>
+                                {/*<li className="mb-3">*/}
+                                {/*    <span*/}
+                                {/*        className="text-sm "><span*/}
+                                {/*        className="align-top w-2 mr-1 text-[#fab55a]"><AssignmentTurnedInIcon*/}
+                                {/*        fontSize={'small'}></AssignmentTurnedInIcon></span>GPKD: 0123456789 - 24/05/2023</span>*/}
+                                {/*</li>*/}
                                 <li className="mb-3">
                                     <span
                                         className="text-sm "><span
@@ -148,7 +154,7 @@ function Footer() {
           <span className="text-sm text-white sm:text-center ">© 2023 Bản quyền thuộc về Tram Huong
           </span>
                         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                            <Link to="/" className="text-white hover:text-[#fab55a]">
+                            <Link to="https://www.facebook.com/tramhuongletravn" className="text-white hover:text-[#fab55a]">
                                 <FacebookIcon></FacebookIcon>
                                 <span className="sr-only">Facebook page</span>
                             </Link>

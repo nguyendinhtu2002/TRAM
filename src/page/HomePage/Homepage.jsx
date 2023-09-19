@@ -5,8 +5,8 @@ import { useSwiper } from "swiper/react";
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
-import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
-import banner_tram_huong_dot from "../../dist/assets/images/banner-tram-huong-dot.jpg";
+import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.png";
+import banner_tram_huong_dot from "../../dist/assets/images/banner-tram-huong-dot.png";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -321,21 +321,21 @@ function Homepage() {
             <Slider {...settings} style={{}}>
               <Link href="#">
                 <img
-                    src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
+                    src={vong_tay}
                     className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
               </Link>
               <Link href="#">
                 <img
-                    src="https://thienmochuong.com/wp-content/uploads/2022/12/banner-web_ban-mac-dinh.jpg"
+                    src={vong_tay}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
               </Link>
               <Link href="#">
                 <img
-                    src="https://thienmochuong.com/wp-content/uploads/2023/04/banner-master-box.jpg"
+                    src={vong_tay}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
@@ -568,7 +568,7 @@ function Homepage() {
           <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] px-2 py-3 space-y-10">
             <div className="mt-4 px-2 flex justify-between">
               <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">
-                Vòng trầm Thiên Mộc Hương
+                Vòng trầm hương Lê Trà
               </h3>
               <Link
                   to="/productCategory/tram-huong-dot"
@@ -820,40 +820,40 @@ function Homepage() {
               />
             </div>
           </div>
-          <div className="md:flex md:gap-10 md:items-center">
-            <div className="">
-              <img
-                  className="rounded-[100%] "
-                  src={image_3}
-                  alt="Cảm nhận khác hanng"
-              />
-            </div>
-            <div className="space-y-6 w-full">
-              <div>
-                <h2 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">
-                  Cảm nhận khách hàng
-                </h2>
-              </div>
-              <div>
-                <Rating
-                    name="read-only"
-                    value={5}
-                    readOnly
-                    emptyIcon={<StarOutlineIcon style={{ color: "yellow" }} />}
-                    onChange={(event, newValue) => {
-                      // Xử lý thay đổi đánh giá
-                    }}
-                />
-                <p className="text-white text-justify leading-relaxed">
-                  Lần đầu tiên mua Vòng Tay Trầm Hương nên rất lo, vì hàng giả
-                  nhiều nhưng hữu duyên được các bạn nhân viên tư vấn nhiệt tình.
-                  Rất là xúc động khi có những bạn nhân viên nhiệt tình đến vậy dù
-                  giá trị món mình mua cũng không lớn lắm. Chắc chắn sẽ ủng hộ
-                  thêm cho shop. Chúc shop làm ăn ngày càng phát đạt nhé
-                </p>
-              </div>
-            </div>
-          </div>
+          {/*<div className="md:flex md:gap-10 md:items-center">*/}
+          {/*  <div className="">*/}
+          {/*    <img*/}
+          {/*        className="rounded-[100%] "*/}
+          {/*        src={image_3}*/}
+          {/*        alt="Cảm nhận khác hanng"*/}
+          {/*    />*/}
+          {/*  </div>*/}
+          {/*  <div className="space-y-6 w-full">*/}
+          {/*    <div>*/}
+          {/*      <h2 className="text-white font-bold text-xl md:text-2xl lg:text-3xl">*/}
+          {/*        Cảm nhận khách hàng*/}
+          {/*      </h2>*/}
+          {/*    </div>*/}
+          {/*    <div>*/}
+          {/*      <Rating*/}
+          {/*          name="read-only"*/}
+          {/*          value={5}*/}
+          {/*          readOnly*/}
+          {/*          emptyIcon={<StarOutlineIcon style={{ color: "yellow" }} />}*/}
+          {/*          onChange={(event, newValue) => {*/}
+          {/*            // Xử lý thay đổi đánh giá*/}
+          {/*          }}*/}
+          {/*      />*/}
+          {/*      <p className="text-white text-justify leading-relaxed">*/}
+          {/*        Lần đầu tiên mua Vòng Tay Trầm Hương nên rất lo, vì hàng giả*/}
+          {/*        nhiều nhưng hữu duyên được các bạn nhân viên tư vấn nhiệt tình.*/}
+          {/*        Rất là xúc động khi có những bạn nhân viên nhiệt tình đến vậy dù*/}
+          {/*        giá trị món mình mua cũng không lớn lắm. Chắc chắn sẽ ủng hộ*/}
+          {/*        thêm cho shop. Chúc shop làm ăn ngày càng phát đạt nhé*/}
+          {/*      </p>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
         {/*    end customer rating*/}
         <Footer />

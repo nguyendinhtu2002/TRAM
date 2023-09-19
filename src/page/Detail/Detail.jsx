@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
-import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
+import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.png";
 import Loading from "../../Component/LoadingError/Loading";
 import Rating from "@mui/material/Rating";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";

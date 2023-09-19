@@ -16,6 +16,7 @@ import MenhThuy from "../../Component/CategoryComponent/MenhThuy";
 import MenhHoa from "../../Component/CategoryComponent/MenhHoa";
 import MenhTho from "../../Component/CategoryComponent/MenhTho";
 import MenhKim from "../../Component/CategoryComponent/MenhKim";
+import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.png"
 import { useSelector } from "react-redux";
 import HistoryComponent from "../../Component/HistoryComponent/HistoryComponent";
 
@@ -415,7 +416,7 @@ function ProductCategory() {
                 <a href="" className="">
                   <img
                     className=" w-full mx-auto mb-1"
-                    src="https://i.imgur.com/ZaL8uPH.png"
+                    src={vong_tay}
                     alt="Vòng tay trầm hương"
                   />
                 </a>

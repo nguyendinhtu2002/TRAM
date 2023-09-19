@@ -5,7 +5,7 @@ import { useSwiper } from "swiper/react";
 import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
 import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
-import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.jpg";
+import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.png";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import "swiper/css";
 import "swiper/css/pagination";

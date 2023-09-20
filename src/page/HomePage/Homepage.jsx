@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper";
 import { useSwiper } from "swiper/react";
 
-import image_1 from "../../dist/assets/images/tram_huong_1.jpg";
-import image_2 from "../../dist/assets/images/tram_huong_2.jpg";
 import image_3 from "../../dist/assets/images/tram_huong_3.jpg";
-import vong_tay from "../../dist/assets/images/vong-tay-tram-huong.png";
-import banner_tram_huong_dot from "../../dist/assets/images/banner-tram-huong-dot.png";
+import slider from "../../dist/assets/images/vong-tay-tram-huong.png";
+import vong_tay from "../../dist/assets/images/vong-tram-huong.png";
+import logo from "../../dist/assets/images/banner-tram-huong-dot.png";
+import my_nghe_tram_huong from "../../dist/assets/images/my-nghe-tram-huong.jpeg";
+import tram_huong_dot from "../../dist/assets/images/tram-huong-dot.png";
 import HeaderComponent from "../../Component/HeaderComponent/Header";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -321,21 +322,21 @@ function Homepage() {
             <Slider {...settings} style={{}}>
               <Link href="#">
                 <img
-                    src={vong_tay}
+                    src={slider}
                     className="mx-auto rounded-lg w-full block object-fill max-[600px]:h-[12rem] max-[900px]:h-[20rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
               </Link>
               <Link href="#">
                 <img
-                    src={banner_tram_huong_dot}
+                    src={logo}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
               </Link>
               <Link href="#">
                 <img
-                    src={vong_tay}
+                    src={slider}
                     className="mx-auto rounded-lg w-full block object-fill max-[900px]:h-[12rem]  max-[1024px]:h-[28rem] h-[38rem]"
                     alt=""
                 />
@@ -410,11 +411,14 @@ function Homepage() {
 
                           <div className="flex justify-center gap-2">
                             <p className="text-white text-center font-bold overflow-wrap">
-                              1.590.000 đ
+                              Liên hệ
                             </p>
-                            <p className=" text-sm text-gray-600 text-center font-bold line-through overflow-wrap">
-                              1.990.000 đ
-                            </p>
+                            {/*<p className="text-white text-center font-bold overflow-wrap">*/}
+                            {/*  1.590.000 đ*/}
+                            {/*</p>*/}
+                            {/*<p className=" text-sm text-gray-600 text-center font-bold line-through overflow-wrap">*/}
+                            {/*  1.990.000 đ*/}
+                            {/*</p>*/}
                           </div>
                           <div className="flex justify-center mt-2 items-center gap-3">
                             <Rating
@@ -446,7 +450,7 @@ function Homepage() {
             <div className="">
               <img
                   className="rounded-2xl  "
-                  src={banner_tram_huong_dot}
+                  src={tram_huong_dot}
                   alt=""
               />
             </div>
@@ -527,7 +531,8 @@ function Homepage() {
 
                           <div className="flex justify-center gap-2">
                             <p className="text-white text-center font-bold overflow-wrap">
-                              {formattedAmount(product.priceReal) + " " + " đ"}
+                              Liên hệ
+                              {/*{formattedAmount(product.priceReal) + " " + " đ"}*/}
                             </p>
                           </div>
                           <div className="flex justify-center mt-2 items-center gap-3">
@@ -560,7 +565,7 @@ function Homepage() {
             <div className="">
               <img
                   className="rounded-2xl "
-                  src={banner_tram_huong_dot}
+                  src={vong_tay}
                   alt=""
               />
             </div>
@@ -568,7 +573,7 @@ function Homepage() {
           <div className="rounded-2xl mx-auto lg:w-[70%] w-full lg: bg-[#101628] px-2 py-3 space-y-10">
             <div className="mt-4 px-2 flex justify-between">
               <h3 className="text-white capitalize font-bold lg:text-4xl sm:text-3xl text-xl">
-                Vòng trầm hương Lê Trà
+                Vòng trầm hương
               </h3>
               <Link
                   to="/productCategory/tram-huong-dot"
@@ -641,7 +646,8 @@ function Homepage() {
 
                           <div className="flex justify-center gap-2">
                             <p className="text-white text-center font-bold overflow-wrap">
-                              {formattedAmount(product.priceReal) + " " + "đ"}
+                              Liên hệ
+                              {/*{formattedAmount(product.priceReal) + " " + "đ"}*/}
                             </p>
                           </div>
                           <div className="flex justify-center mt-2 items-center gap-3">
@@ -674,7 +680,7 @@ function Homepage() {
             <div className="">
               <img
                   className="rounded-2xl "
-                  src={banner_tram_huong_dot}
+                  src={my_nghe_tram_huong}
                   alt=""
               />
             </div>
@@ -755,7 +761,8 @@ function Homepage() {
 
                           <div className="flex justify-center gap-2">
                             <p className="text-white text-center font-bold overflow-wrap">
-                              {formattedAmount(product.priceReal) + " " + "đ"}
+                              Liên hệ
+                              {/*{formattedAmount(product.priceReal) + " " + "đ"}*/}
                             </p>
                           </div>
                           <div className="flex justify-center mt-2 items-center gap-3">

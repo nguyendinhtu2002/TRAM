@@ -351,16 +351,16 @@ function VongTramNam() {
         môn cao, tâm huyết.
       </p>
       <p className="leading-relaxed text-justify pt-4 pb-4">
-        <strong>Website</strong>: https://thienmochuong.com
+        <strong>Website</strong>: https://tramhuongletravn.com/
       </p>
       <p className="leading-relaxed text-justify pt-2 pb-4">
-        <strong>Điện thoại</strong>: 0933.348.368
+        <strong>Điện thoại</strong>: 0823.611.668
       </p>
       <p className="leading-relaxed text-justify pt-2 pb-4">
         <strong>Địa chỉ cửa hàng:</strong>:
       </p>
       <p className="leading-relaxed text-justify pt-2 pb-4">
-        <strong>Hà Nội: 120 Hai Bà Trưng, Quận Hoàn Kiếm, Hà Nội</strong>:
+        <strong>LK 03, 04 KĐT Roman Plaza, Đại Mỗ, Nam Từ Liêm, Hà Nội</strong>:
       </p>
       <div className="pb-8 mx-auto w-3/4 pl-4 ">
         <iframe

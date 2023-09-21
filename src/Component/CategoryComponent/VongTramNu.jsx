@@ -319,7 +319,7 @@ function VongTramNu() {
         </div>
       </div>
       <p className="leading-relaxed text-justify pt-2 pb-4">
-        <strong>Điện thoại</strong>: 0933.348.368
+        <strong>Điện thoại</strong>: 0823.611.668
       </p>
       <p className="leading-relaxed text-justify pt-2 pb-4">
         <strong>Trầm Hương Lê Trà </strong> cam kết sẽ mang đến cho quý khách hàng

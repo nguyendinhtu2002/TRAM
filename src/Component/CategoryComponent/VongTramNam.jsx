@@ -28,67 +28,67 @@ function VongTramNam() {
   return (
     <div className="bg-gray-100 px-5 pb-3 mt-20">
       <div className="py-2">
-        <h2 className="font-bold text-2xl pb-3 text-center">
-          ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 06
-        </h2>
+        {/*<h2 className="font-bold text-2xl pb-3 text-center">*/}
+        {/*  ƯU ĐÃI ĐỘC QUYỀN ONLINE THÁNG 06*/}
+        {/*</h2>*/}
 
-        <Slider {...settings} style={{}}>
-          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <div className="mb-4">
-              <p class="mb-2 text-base font-medium  dark:text-white">
-                <strong> 200k4790</strong>
-              </p>
-            </div>
-            <div className="mb-4">
-              <p>Số lượng: 100</p>
-            </div>
-            <div className="mb-4">
-              <p>
-                Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên
-                Website{" "}
-              </p>
-            </div>
+        {/*<Slider {...settings} style={{}}>*/}
+        {/*  <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">*/}
+        {/*    <div className="mb-4">*/}
+        {/*      <p class="mb-2 text-base font-medium  dark:text-white">*/}
+        {/*        <strong> 200k4790</strong>*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
+        {/*    <div className="mb-4">*/}
+        {/*      <p>Số lượng: 100</p>*/}
+        {/*    </div>*/}
+        {/*    <div className="mb-4">*/}
+        {/*      <p>*/}
+        {/*        Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên*/}
+        {/*        Website{" "}*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
 
-            <div class="items-center justify-center space-y-4 sm:flex ">
-              <div className="code">
-                Mã:
-                <span className="uppercase"> 200k4790</span>
-              </div>
-              <CopyButton textToCopy={"200k4790"} />
-            </div>
-          </div>
+        {/*    <div class="items-center justify-center space-y-4 sm:flex ">*/}
+        {/*      <div className="code">*/}
+        {/*        Mã:*/}
+        {/*        <span className="uppercase"> 200k4790</span>*/}
+        {/*      </div>*/}
+        {/*      <CopyButton textToCopy={"200k4790"} />*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
 
-          <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ml-4">
-            <div className="mb-4">
-              <p class="mb-2 text-base font-medium  dark:text-white">
-                <strong> 200k4790</strong>
-              </p>
-            </div>
-            <div className="mb-4">
-              <p>Số lượng: 100</p>
-            </div>
-            <div className="mb-4">
-              <p>
-                Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên
-                Website{" "}
-              </p>
-            </div>
+        {/*  <div class="w-full p-4  bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ml-4">*/}
+        {/*    <div className="mb-4">*/}
+        {/*      <p class="mb-2 text-base font-medium  dark:text-white">*/}
+        {/*        <strong> 200k4790</strong>*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
+        {/*    <div className="mb-4">*/}
+        {/*      <p>Số lượng: 100</p>*/}
+        {/*    </div>*/}
+        {/*    <div className="mb-4">*/}
+        {/*      <p>*/}
+        {/*        Giảm 200k cho đơn hàng từ 4.790.000 khi mua trực tiếp trên*/}
+        {/*        Website{" "}*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
 
-            <div class="items-center justify-center space-y-4 sm:flex ">
-              <div className="code">
-                Mã:
-                <span className="uppercase"> 200k4790</span>
-              </div>
-              <CopyButton textToCopy={"200k4790"} />
-            </div>
-          </div>
-        </Slider>
+        {/*    <div class="items-center justify-center space-y-4 sm:flex ">*/}
+        {/*      <div className="code">*/}
+        {/*        Mã:*/}
+        {/*        <span className="uppercase"> 200k4790</span>*/}
+        {/*      </div>*/}
+        {/*      <CopyButton textToCopy={"200k4790"} />*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</Slider>*/}
         <p className="leading-relaxed text-justify ">
           <Link
             to="/productCategory/vong-tram-huong-nu"
             className="text-[#3ea6ff] hover:text-[#fab555]"
           >
-            Vòng tay Trầm hương Nữ
+            Vòng tay Trầm hương Nam
           </Link>{" "}
           là vật phẩm cực kỳ quý giá, thời thượng và được rất nhiều người ưa
           chuộng. <strong>Trầm Hương Lê Trà</strong> với hơn 40 năm kinh nghiệm
@@ -107,11 +107,11 @@ function VongTramNam() {
         </p>
         <div className="my-3">
           <div className="lg:w-96 mx-auto">
-            <img
-              className=" lg:w-96"
-              src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-400x400.jpg"
-              alt="Vòng tay trầm hương"
-            />
+            {/*<img*/}
+            {/*  className=" lg:w-96"*/}
+            {/*  src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-400x400.jpg"*/}
+            {/*  alt="Vòng tay trầm hương"*/}
+            {/*/>*/}
           </div>
           <div className="lg:w-96 mx-auto bg-gray-200 py-1">
             <p className=" text-center b-0">
@@ -178,11 +178,11 @@ function VongTramNam() {
       </h3>
       <div className="my-3">
         <div className="lg:w-96 mx-auto">
-          <img
-            className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-4.jpg"
-            alt="Vòng tay trầm hương"
-          />
+          {/*<img*/}
+          {/*  className=" lg:w-96"*/}
+          {/*  src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-4.jpg"*/}
+          {/*  alt="Vòng tay trầm hương"*/}
+          {/*/>*/}
         </div>
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
@@ -213,11 +213,11 @@ function VongTramNam() {
       </h3>
       <div className="my-3">
         <div className="lg:w-96 mx-auto">
-          <img
-            className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-5.jpg"
-            alt="Vòng tay trầm hương"
-          />
+          {/*<img*/}
+          {/*  className=" lg:w-96"*/}
+          {/*  src="https://thienmochuong.com/wp-content/uploads/2021/10/vong-tram-huong-nam-5.jpg"*/}
+          {/*  alt="Vòng tay trầm hương"*/}
+          {/*/>*/}
         </div>
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
@@ -246,11 +246,11 @@ function VongTramNam() {
       </p>
       <div className="my-3">
         <div className="lg:w-96 mx-auto">
-          <img
-            className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2019/07/V%C3%B2ng-Tay-Tr%E1%BA%A7m-H%C6%B0%C6%A1ng-Ph%C3%BAc-L%E1%BB%99c-Th%E1%BB%8D1-400x400.jpg"
-            alt="Vòng tay trầm hương"
-          />
+          {/*<img*/}
+          {/*  className=" lg:w-96"*/}
+          {/*  src="https://thienmochuong.com/wp-content/uploads/2019/07/V%C3%B2ng-Tay-Tr%E1%BA%A7m-H%C6%B0%C6%A1ng-Ph%C3%BAc-L%E1%BB%99c-Th%E1%BB%8D1-400x400.jpg"*/}
+          {/*  alt="Vòng tay trầm hương"*/}
+          {/*/>*/}
         </div>
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
@@ -294,11 +294,11 @@ function VongTramNam() {
 
       <div className="my-3">
         <div className="lg:w-96 mx-auto">
-          <img
-            className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2019/07/Vong-tay-Tram-Huong-32.jpg"
-            alt="Vòng tay trầm hương"
-          />
+          {/*<img*/}
+          {/*  className=" lg:w-96"*/}
+          {/*  src="https://thienmochuong.com/wp-content/uploads/2019/07/Vong-tay-Tram-Huong-32.jpg"*/}
+          {/*  alt="Vòng tay trầm hương"*/}
+          {/*/>*/}
         </div>
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">
@@ -328,11 +328,11 @@ function VongTramNam() {
 
       <div className="my-3">
         <div className="lg:w-96 mx-auto">
-          <img
-            className=" lg:w-96"
-            src="https://thienmochuong.com/wp-content/uploads/2022/07/cua-hang-thien-moc-huong.jpeg"
-            alt="Vòng tay trầm hương"
-          />
+          {/*<img*/}
+          {/*  className=" lg:w-96"*/}
+          {/*  src="https://thienmochuong.com/wp-content/uploads/2022/07/cua-hang-thien-moc-huong.jpeg"*/}
+          {/*  alt="Vòng tay trầm hương"*/}
+          {/*/>*/}
         </div>
         <div className="lg:w-96 mx-auto bg-gray-200 py-1">
           <p className=" text-center b-0">

@@ -147,18 +147,21 @@ function HistoryComponent() {
                           className="text-center"
                         >
                           <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
-                            Lư đốt trầm hương hoa sen bằng sứ{" "}
+                              {item.name}{" "}
                           </h5>
                         </Link>
                       </div>
 
                       <div className="flex justify-center gap-2">
-                        <p className="text-white text-center font-bold overflow-wrap">
-                          1.590.000 đ
-                        </p>
-                        <p className=" text-sm text-gray-600 text-center font-bold line-through overflow-wrap">
-                          1.990.000 đ
-                        </p>
+                          <p className="text-white text-center font-bold overflow-wrap">
+                              Liên hệ
+                          </p>
+                        {/*<p className="text-white text-center font-bold overflow-wrap">*/}
+                        {/*  1.590.000 đ*/}
+                        {/*</p>*/}
+                        {/*<p className=" text-sm text-gray-600 text-center font-bold line-through overflow-wrap">*/}
+                        {/*  1.990.000 đ*/}
+                        {/*</p>*/}
                       </div>
                       <div className="flex justify-center mt-2 items-center gap-3">
                         <Rating

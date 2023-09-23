@@ -359,11 +359,11 @@ function Homepage() {
                     <>
                       <div className="">
                         <Link href="" className="hover:opacity-70">
-                          <img
-                              className="rounded-full w-[40%] mx-auto mb-1"
-                              src={category.image}
-                              alt={category.name}
-                          />
+                          {/*<img*/}
+                          {/*    className="rounded-full w-[40%] mx-auto mb-1"*/}
+                          {/*    src={logo}*/}
+                          {/*    alt={category.name}*/}
+                          {/*/>*/}
                           <div>
                             <p className="text-white text-center font-bold capitalize">
                               {category.name}
@@ -480,32 +480,32 @@ function Homepage() {
                 </svg>
               </Link>
             </div>
-            <div className="hidden xl:flex xl:gap-3 xl:pl-2">
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Nhang trầm hương
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Nụ Trầm Hương
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Trầm Hương Miếng
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Bột Trầm Hương
-              </Link>
-            </div>
+            {/*<div className="hidden xl:flex xl:gap-3 xl:pl-2">*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Nhang trầm hương*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Nụ Trầm Hương*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Trầm Hương Miếng*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Bột Trầm Hương*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
             <div className="py-3 h-[70%]">
               <Slider {...settingsProducts}>
                 {vongTramProducts.map((product) => (
@@ -595,32 +595,32 @@ function Homepage() {
                 </svg>
               </Link>
             </div>
-            <div className="hidden xl:flex xl:gap-3 xl:pl-2">
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Nhang trầm hương
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Nụ Trầm Hương
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Trầm Hương Miếng
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Bột Trầm Hương
-              </Link>
-            </div>
+            {/*<div className="hidden xl:flex xl:gap-3 xl:pl-2">*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Nhang trầm hương*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Nụ Trầm Hương*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Trầm Hương Miếng*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Bột Trầm Hương*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
             <div className="py-3 h-[70%]">
               <Slider {...settingsProducts}>
                 {thienMocHuongTramProducts.map((product) => (
@@ -710,32 +710,32 @@ function Homepage() {
                 </svg>
               </Link>
             </div>
-            <div className="hidden xl:flex xl:gap-3 xl:pl-2">
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Nhang trầm hương
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Nụ Trầm Hương
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Trầm Hương Miếng
-              </Link>
-              <Link
-                  to="/productCategory/tram-huong-dot"
-                  className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "
-              >
-                Bột Trầm Hương
-              </Link>
-            </div>
+            {/*<div className="hidden xl:flex xl:gap-3 xl:pl-2">*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Nhang trầm hương*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Nụ Trầm Hương*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Trầm Hương Miếng*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*      to="/productCategory/tram-huong-dot"*/}
+            {/*      className="capitalize text-white rounded-lg border p-2 hover:text-amber-500 hover:border-amber-500 "*/}
+            {/*  >*/}
+            {/*    Bột Trầm Hương*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
             <div className="py-3 h-[70%]">
               <Slider {...settingsProducts}>
                 {huongDotMyNgheTramHuongProducts.map((product) => (

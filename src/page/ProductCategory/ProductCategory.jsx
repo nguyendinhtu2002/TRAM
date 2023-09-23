@@ -491,17 +491,20 @@ function ProductCategory() {
                     <div className="flex flex-col justify-between">
                       <div className="flex items-center justify-center mx-auto">
                         <p className=" text-sm font-medium text-gray-900 mx-auto ">
-                          {formattedAmount(product.priceReal)} đ
+                          Liên hệ
                         </p>
-                        <p
-                          className={
-                            product.priceOld != 0
-                              ? "text-xs font-medium tracking-normal text-gray-600 text-center  line-through overflow-wrap pl-2"
-                              : "hidden"
-                          }
-                        >
-                          {formattedAmount(product.priceOld)} đ
-                        </p>
+                        {/*<p className=" text-sm font-medium text-gray-900 mx-auto ">*/}
+                        {/*  {formattedAmount(product.priceReal)} đ*/}
+                        {/*</p>*/}
+                        {/*<p*/}
+                        {/*  className={*/}
+                        {/*    product.priceOld != 0*/}
+                        {/*      ? "text-xs font-medium tracking-normal text-gray-600 text-center  line-through overflow-wrap pl-2"*/}
+                        {/*      : "hidden"*/}
+                        {/*  }*/}
+                        {/*>*/}
+                        {/*  {formattedAmount(product.priceOld)} đ*/}
+                        {/*</p>*/}
                       </div>
                       <div className="flex items-center justify-center flex-wrap">
                         <Rating

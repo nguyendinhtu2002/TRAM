@@ -292,7 +292,8 @@ function Detail() {
                     </span>
                   </div>
                   <h2 className="text-2xl text-amber-500 font-bold mb-3">
-                    {formattedAmount(data?.priceReal, options)} đ
+                    Liên hệ
+                    {/*{formattedAmount(data?.priceReal, options)} đ*/}
                   </h2>
                   <p className="leading-relaxed">{data?.description}</p>
 

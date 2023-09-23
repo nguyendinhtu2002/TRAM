@@ -404,7 +404,7 @@ function Homepage() {
                                 className="text-center"
                             >
                               <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
-                                Lư đốt trầm hương hoa sen bằng sứ{" "}
+                                {item.name}{" "}
                               </h5>
                             </Link>
                           </div>
@@ -524,7 +524,7 @@ function Homepage() {
                                 className="text-center"
                             >
                               <h5 className="mb-2 text-sm font-bold tracking-tight text-white overflow-wrap">
-                                Lư đốt trầm hương hoa sen bằng sứ{" "}
+                                {product.name}{" "}
                               </h5>
                             </Link>
                           </div>

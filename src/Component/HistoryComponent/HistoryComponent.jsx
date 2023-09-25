@@ -51,7 +51,7 @@ function HistoryComponent() {
     const settingsSales = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
@@ -135,7 +135,7 @@ function HistoryComponent() {
             <Slider {...settingsSales}>
               {product?.map((item) => (
                 <div className="">
-                  <div className="rounded-lg bg-[#192034] mx-auto w-[95%]">
+                  <div className="rounded-lg bg-[#192034] mx-auto w-[45%]">
                     <ImageItem
                       image={item.images[0]}
                       link={`/detail/${item._id}`}
